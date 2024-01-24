@@ -1,0 +1,33 @@
+### Post
+POST http://localhost:8080/article_type
+Content-Type: application/json
+
+{
+  "nameUz": "aaa",
+  "nameRu": "bbb",
+  "nameEn": "ccc",
+  "orderNumber": "4"
+}
+
+### Update
+PUT http://localhost:8080/article_type/updateById/1
+Content-Type: application/json
+
+{
+  "nameUz": "bbb",
+  "nameRu": "bbb",
+  "nameEn": "ccc"
+}
+
+### Delete
+DELETE http://localhost:8080/article_type/deleteById/4
+
+### Get all by Pagination
+GET http://localhost:8080/article_type/allByPagination?page=1&size=3
+
+### Get all by Language
+GET http://localhost:8080/article_type/getByLang?language=ru
+
+
+
+
