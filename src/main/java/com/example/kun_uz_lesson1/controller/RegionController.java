@@ -27,13 +27,13 @@ public class RegionController {
     public ResponseEntity<RegionDTO> creat(@RequestBody RegionDTO regionDTO) {
         return ResponseEntity.ok(regionService.create(regionDTO));
     }
-    @PutMapping("/updateById")
-    public ResponseEntity<RegionDTO> creat(@RequestParam("id") Integer id,
+    @PutMapping("/updateById/{id}")
+    public ResponseEntity<RegionDTO> updateById(@PathVariable("id") Integer id,
                                                 @RequestBody RegionDTO regionDTO) {
         return ResponseEntity.ok(regionService.update(id,regionDTO));
     }
-    @DeleteMapping("/deleteById")
-    public ResponseEntity<String> delete(@RequestParam("id") Integer id) {
+    @DeleteMapping("/deleteById/{id}")
+    public ResponseEntity<String> delete(@PathVariable("id") Integer id) {
         return ResponseEntity.ok(regionService.delete(id));
     }
     @GetMapping("/all")

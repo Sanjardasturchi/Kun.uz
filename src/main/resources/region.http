@@ -1,0 +1,30 @@
+### Post
+POST http://localhost:8080/region
+Content-Type: application/json
+
+{
+  "nameUz": "bbb",
+  "nameRu": "bbb",
+  "nameEn": "ccc",
+  "orderNumber": "5"
+}
+
+### Update
+PUT http://localhost:8080/region/updateById/5
+Content-Type: application/json
+
+{
+  "nameUz": "aaa",
+  "nameRu": "bbb",
+  "nameEn": "ccc"
+}
+
+### Delete
+DELETE http://localhost:8080/region/deleteById/4
+
+### Get all
+GET http://localhost:8080/region/all
+
+### Get all by Language
+GET http://localhost:8080/region/getByLang?language=uz
+

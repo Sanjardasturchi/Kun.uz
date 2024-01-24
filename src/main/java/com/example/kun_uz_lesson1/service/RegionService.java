@@ -1,5 +1,6 @@
 package com.example.kun_uz_lesson1.service;
 
+import com.example.kun_uz_lesson1.dto.ArticleTypeDTO;
 import com.example.kun_uz_lesson1.dto.RegionDTO;
 import com.example.kun_uz_lesson1.entity.RegionEntity;
 import com.example.kun_uz_lesson1.exp.AppBadException;
@@ -8,6 +9,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.time.LocalDateTime;
+import java.util.LinkedList;
 import java.util.List;
 import java.util.Optional;
 
@@ -15,23 +17,24 @@ import java.util.Optional;
 public class RegionService {
     @Autowired
     private RegionRepository regionRepository;
+
     public RegionDTO create(RegionDTO dto) {
         if (dto.getOrderNumber() == null
                 || all().size() + 1 < dto.getOrderNumber()
                 || dto.getOrderNumber() < 1) {
             throw new AppBadException("Wrong order number");
         }
-        if (dto.getNameUz()==null||dto.getNameUz().length()<1){
+        if (dto.getNameUz() == null || dto.getNameUz().length() < 1) {
             throw new AppBadException("Wrong order name_uz");
         }
-        if (dto.getNameRu()==null||dto.getNameRu().length()<1){
+        if (dto.getNameRu() == null || dto.getNameRu().length() < 1) {
             throw new AppBadException("Wrong order name_ru");
         }
 
-        if (dto.getNameEn()==null||dto.getNameEn().length()<1){
+        if (dto.getNameEn() == null || dto.getNameEn().length() < 1) {
             throw new AppBadException("Wrong order name_en");
         }
-        RegionEntity entity=new RegionEntity();
+        RegionEntity entity = new RegionEntity();
         entity.setOrderNumber(dto.getOrderNumber());
         entity.setNameUz(dto.getNameUz());
         entity.setNameRu(dto.getNameRu());
@@ -53,39 +56,74 @@ public class RegionService {
         RegionEntity entity = optional.get();
         if (dto.getOrderNumber() != null) {
             entity.setOrderNumber(dto.getOrderNumber());
-        }else {
+        } else {
             dto.setOrderNumber(entity.getOrderNumber());
         }
         if (dto.getNameUz() != null) {
             entity.setNameUz(dto.getNameUz());
-        }else {
+        } else {
             dto.setNameUz(entity.getNameUz());
         }
         if (dto.getNameRu() != null) {
             entity.setNameRu(dto.getNameRu());
-        }else {
+        } else {
             dto.setNameRu(entity.getNameRu());
         }
         if (dto.getNameEn() != null) {
             entity.setNameEn(dto.getNameEn());
-        }else {
+        } else {
             dto.setNameEn(entity.getNameEn());
         }
         regionRepository.save(entity);
         dto.setVisible(entity.getVisible());
         dto.setId(entity.getId());
         dto.setCreatedDate(entity.getCreatedDate());
-        return dto;    }
+        return dto;
+    }
 
     public String delete(Integer id) {
-        return null;
+        regionRepository.deleteById(id);
+        return "DONE";
     }
 
     public List<RegionDTO> all() {
-        return null;
+        return toDTOListFromIterable(regionRepository.findAll());
     }
 
     public List<RegionDTO> getByLang(String language) {
-        return null;
+        Iterable<RegionEntity> all = regionRepository.findAll();
+        List<RegionDTO> dtoList = new LinkedList<>();
+        for (RegionEntity entity : all) {
+            RegionDTO dto = new RegionDTO();
+            dto.setId(entity.getId());
+            switch (language) {
+//                case "uz" -> dto.setNameUz(entity.getNameUz());
+                case "ru" -> dto.setNameRu(entity.getNameRu());
+                case "en" -> dto.setNameEn(entity.getNameEn());
+                default -> dto.setNameUz(entity.getNameUz());
+            }
+            dtoList.add(dto);
+        }
+        return dtoList;
+    }
+
+    private List<RegionDTO> toDTOListFromIterable(Iterable<RegionEntity> entities) {
+        List<RegionDTO> dtoList = new LinkedList<>();
+        for (RegionEntity entity : entities) {
+            dtoList.add(toDTO(entity));
+        }
+        return dtoList;
+    }
+
+    private RegionDTO toDTO(RegionEntity entity) {
+        RegionDTO dto = new RegionDTO();
+        dto.setId(entity.getId());
+        dto.setNameUz(entity.getNameUz());
+        dto.setNameRu(entity.getNameRu());
+        dto.setNameEn(entity.getNameEn());
+        dto.setVisible(entity.getVisible());
+        dto.setOrderNumber(entity.getOrderNumber());
+        dto.setCreatedDate(entity.getCreatedDate());
+        return dto;
     }
 }
