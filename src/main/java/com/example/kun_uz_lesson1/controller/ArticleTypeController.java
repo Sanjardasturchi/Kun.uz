@@ -26,25 +26,28 @@ public class ArticleTypeController {
     //    5. Get By Lang (Language keladi shu language dagi name larini berib yuboramiz)
     //        (id,key,name) (name ga tegishli name_.. dagi qiymat qo'yiladi.)
     @PostMapping("")
-    public ResponseEntity<ArticleTypeDTO> creat(@RequestBody ArticleTypeDTO articleTypeDTO) {
-        return ResponseEntity.ok(articleTypeService.create(articleTypeDTO));
+    public ResponseEntity<ArticleTypeDTO> creat(@RequestBody ArticleTypeDTO articleTypeDTO,
+                                                @RequestHeader("Authorization")String jwt) {
+        return ResponseEntity.ok(articleTypeService.create(articleTypeDTO,jwt));
     }
 
     @PutMapping("/updateById/{id}")
     public ResponseEntity<ArticleTypeDTO> updateById(@PathVariable("id") Integer id,
-                                                     @RequestBody ArticleTypeDTO articleTypeDTO) {
-        return ResponseEntity.ok(articleTypeService.updateById(id, articleTypeDTO));
+                                                     @RequestBody ArticleTypeDTO articleTypeDTO,
+                                                     @RequestHeader("Authorization")String jwt) {
+        return ResponseEntity.ok(articleTypeService.updateById(id, articleTypeDTO,jwt));
     }
 
     @DeleteMapping("/deleteById/{id}")
-    public ResponseEntity<String> delete(@PathVariable("id") Integer id) {
-        return ResponseEntity.ok(articleTypeService.delete(id));
+    public ResponseEntity<String> delete(@PathVariable("id") Integer id,@RequestHeader("Authorization")String jwt) {
+        return ResponseEntity.ok(articleTypeService.delete(id,jwt));
     }
 
     @GetMapping("/allByPagination")
     public ResponseEntity<PageImpl<ArticleTypeDTO>> allByPagination(@RequestParam(value = "page", defaultValue = "1") Integer page,
-                                                              @RequestParam(value = "size", defaultValue = "10") Integer size) {
-        return ResponseEntity.ok(articleTypeService.allByPagination(page, size));
+                                                                    @RequestParam(value = "size", defaultValue = "10") Integer size,
+                                                                    @RequestHeader("Authorization")String jwt) {
+        return ResponseEntity.ok(articleTypeService.allByPagination(page, size,jwt));
     }
     @GetMapping("/getByLang")
     public ResponseEntity<List<ArticleTypeDTO>> getByLang(@RequestParam(value = "language",defaultValue = "uz") AppLanguage language) {

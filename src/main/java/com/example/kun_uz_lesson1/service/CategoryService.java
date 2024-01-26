@@ -1,17 +1,14 @@
 package com.example.kun_uz_lesson1.service;
 
-import com.example.kun_uz_lesson1.dto.ArticleTypeDTO;
+import com.example.kun_uz_lesson1.dto.CategoryDTO;
 import com.example.kun_uz_lesson1.dto.JwtDTO;
-import com.example.kun_uz_lesson1.entity.ArticleTypeEntity;
+import com.example.kun_uz_lesson1.entity.CategoryEntity;
 import com.example.kun_uz_lesson1.enums.AppLanguage;
 import com.example.kun_uz_lesson1.enums.ProfileRole;
 import com.example.kun_uz_lesson1.exp.AppBadException;
-import com.example.kun_uz_lesson1.repository.ArticleTypeRepository;
+import com.example.kun_uz_lesson1.repository.CategoryRepository;
 import com.example.kun_uz_lesson1.util.JWTUtil;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.data.domain.Page;
-import org.springframework.data.domain.PageImpl;
-import org.springframework.data.domain.PageRequest;
 import org.springframework.stereotype.Service;
 
 import java.time.LocalDateTime;
@@ -20,104 +17,106 @@ import java.util.List;
 import java.util.Optional;
 
 @Service
-public class ArticleTypeService {
+public class CategoryService {
     @Autowired
-    private ArticleTypeRepository articleTypeRepository;
-    public ArticleTypeDTO create(ArticleTypeDTO dto, String jwt) {
+    private CategoryRepository categoryRepository;
+    public CategoryDTO create(CategoryDTO dto, String jwt) {
         JwtDTO decode = JWTUtil.decode(jwt);
         if (!decode.getRole().equals(ProfileRole.ADMIN)) {
             throw new AppBadException("You can not");
         }
         if (dto.getOrderNumber() == null
-                || getAll().size() + 1 < dto.getOrderNumber()
+//                || all(jwt).size() + 1 < dto.getOrderNumber()
                 || dto.getOrderNumber() < 1) {
             throw new AppBadException("Wrong order number");
         }
-        if (dto.getNameUz()==null||dto.getNameUz().length()<1){
+        if (dto.getNameUz() == null || dto.getNameUz().length() < 1) {
             throw new AppBadException("Wrong order name_uz");
         }
-        if (dto.getNameRu()==null||dto.getNameRu().length()<1){
+        if (dto.getNameRu() == null || dto.getNameRu().length() < 1) {
             throw new AppBadException("Wrong order name_ru");
         }
 
-        if (dto.getNameEn()==null||dto.getNameEn().length()<1){
+        if (dto.getNameEn() == null || dto.getNameEn().length() < 1) {
             throw new AppBadException("Wrong order name_en");
         }
-        ArticleTypeEntity entity=new ArticleTypeEntity();
+        CategoryEntity entity = new CategoryEntity();
         entity.setOrderNumber(dto.getOrderNumber());
         entity.setNameUz(dto.getNameUz());
         entity.setNameRu(dto.getNameRu());
         entity.setNameEn(dto.getNameEn());
         entity.setVisible(true);
         entity.setCreatedDate(LocalDateTime.now());
-        articleTypeRepository.save(entity);
+        categoryRepository.save(entity);
         dto.setId(entity.getId());
         dto.setVisible(entity.getVisible());
         dto.setCreatedDate(entity.getCreatedDate());
         return dto;
     }
-    public ArticleTypeDTO updateById(Integer id, ArticleTypeDTO dto, String jwt) {
+
+    public CategoryDTO update(Integer id, CategoryDTO dto, String jwt) {
         JwtDTO decode = JWTUtil.decode(jwt);
         if (!decode.getRole().equals(ProfileRole.ADMIN)) {
             throw new AppBadException("You can not");
         }
-        Optional<ArticleTypeEntity> optional = articleTypeRepository.findById(id);
+        Optional<CategoryEntity> optional = categoryRepository.findById(id);
         if (optional.isEmpty()) {
-            throw new AppBadException("ArticleType not found");
+            throw new AppBadException("Region not found");
         }
-        ArticleTypeEntity entity = optional.get();
+        CategoryEntity entity = optional.get();
         if (dto.getOrderNumber() != null) {
             entity.setOrderNumber(dto.getOrderNumber());
-        }else {
+        } else {
             dto.setOrderNumber(entity.getOrderNumber());
         }
         if (dto.getNameUz() != null) {
             entity.setNameUz(dto.getNameUz());
-        }else {
+        } else {
             dto.setNameUz(entity.getNameUz());
         }
         if (dto.getNameRu() != null) {
             entity.setNameRu(dto.getNameRu());
-        }else {
+        } else {
             dto.setNameRu(entity.getNameRu());
         }
         if (dto.getNameEn() != null) {
             entity.setNameEn(dto.getNameEn());
-        }else {
+        } else {
             dto.setNameEn(entity.getNameEn());
         }
-        articleTypeRepository.updateArticle(entity.getId(),entity.getNameUz(),entity.getNameRu(),entity.getNameEn(),entity.getOrderNumber());
+        categoryRepository.updateArticle(entity.getId(), entity.getNameUz(), entity.getNameRu(), entity.getNameEn(), entity.getOrderNumber());
         dto.setVisible(entity.getVisible());
         dto.setId(entity.getId());
         dto.setCreatedDate(entity.getCreatedDate());
         return dto;
     }
+
     public String delete(Integer id, String jwt) {
         JwtDTO decode = JWTUtil.decode(jwt);
         if (!decode.getRole().equals(ProfileRole.ADMIN)) {
             throw new AppBadException("You can not");
         }
-        if (articleTypeRepository.makeDeleted(id)!=0) {
-        return "DONE";
+        if (categoryRepository.makeDeleted(id) != 0) {
+            return "DONE";
         }
-        throw new AppBadException("ArticleType not found");
+        throw new AppBadException("Region not found");
     }
-    public PageImpl<ArticleTypeDTO> allByPagination(Integer page, Integer size, String jwt) {
+
+    public List<CategoryDTO> all(String jwt) {
         JwtDTO decode = JWTUtil.decode(jwt);
         if (!decode.getRole().equals(ProfileRole.ADMIN)) {
             throw new AppBadException("You can not");
         }
-        Page<ArticleTypeEntity> all = articleTypeRepository.findAll(PageRequest.of(page-1,size));
-        return new PageImpl<>(toDTOListFromIterable(all.getContent()),PageRequest.of(page-1,size),all.getTotalElements());
+        return toDTOListFromIterable(categoryRepository.all());
     }
-    public List<ArticleTypeDTO> getByLang(AppLanguage language) {
-        Iterable<ArticleTypeEntity> all = articleTypeRepository.all();
-        List<ArticleTypeDTO> dtoList=new LinkedList<>();
-        for (ArticleTypeEntity entity : all) {
-            ArticleTypeDTO dto=new ArticleTypeDTO();
+
+    public List<CategoryDTO> getByLang(AppLanguage language) {
+        Iterable<CategoryEntity> all = categoryRepository.all();
+        List<CategoryDTO> dtoList = new LinkedList<>();
+        for (CategoryEntity entity : all) {
+            CategoryDTO dto = new CategoryDTO();
             dto.setId(entity.getId());
-            switch (language){
-//                case "uz" -> dto.setNameUz(entity.getNameUz());
+            switch (language) {
                 case uz -> dto.setName(entity.getNameUz());
                 case ru -> dto.setName(entity.getNameRu());
                 default -> dto.setName(entity.getNameEn());
@@ -126,20 +125,19 @@ public class ArticleTypeService {
         }
         return dtoList;
     }
-    public List<ArticleTypeDTO> getAll() {
-        return toDTOListFromIterable(articleTypeRepository.all());
-    }
-    private List<ArticleTypeDTO> toDTOListFromIterable(Iterable<ArticleTypeEntity> entities){
-        List<ArticleTypeDTO> dtoList=new LinkedList<>();
-        for (ArticleTypeEntity entity : entities) {
+
+    private List<CategoryDTO> toDTOListFromIterable(Iterable<CategoryEntity> entities) {
+        List<CategoryDTO> dtoList = new LinkedList<>();
+        for (CategoryEntity entity : entities) {
             if (entity.getVisible()) {
-            dtoList.add(toDTO(entity));
+                dtoList.add(toDTO(entity));
             }
         }
         return dtoList;
     }
-    private ArticleTypeDTO toDTO(ArticleTypeEntity entity){
-        ArticleTypeDTO dto=new ArticleTypeDTO();
+
+    private CategoryDTO toDTO(CategoryEntity entity) {
+        CategoryDTO dto = new CategoryDTO();
         dto.setId(entity.getId());
         dto.setNameUz(entity.getNameUz());
         dto.setNameRu(entity.getNameRu());

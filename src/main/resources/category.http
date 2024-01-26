@@ -1,37 +1,31 @@
 ### Post
-POST http://localhost:8080/article_type
+POST http://localhost:8080/category
 Content-Type: application/json
 Authorization: eyJhbGciOiJIUzUxMiJ9.eyJpYXQiOjE3MDYyNjE1NTMsImlkIjo0LCJyb2xlIjoiQURNSU4iLCJleHAiOjE3MDYzNDc5NTMsImlzcyI6Ikt1blV6VGVzdCJ9.uhqlCGTxscpXkU9s-V_fXUXjp9DYTI771uw0aJwWeD1Ugoz-Lue7RtEmVqbbry7jBA62kRwtDp5iOCy3B2bUdg
 
 {
-  "nameUz": "aaa",
+  "nameUz": "bbb",
   "nameRu": "bbb",
   "nameEn": "ccc",
-  "orderNumber": "4"
+  "orderNumber": "5"
 }
 
 ### Update
-PUT http://localhost:8080/article_type/updateById/1
+PUT http://localhost:8080/category/updateById/1
 Content-Type: application/json
 Authorization: eyJhbGciOiJIUzUxMiJ9.eyJpYXQiOjE3MDYyNjE1NTMsImlkIjo0LCJyb2xlIjoiQURNSU4iLCJleHAiOjE3MDYzNDc5NTMsImlzcyI6Ikt1blV6VGVzdCJ9.uhqlCGTxscpXkU9s-V_fXUXjp9DYTI771uw0aJwWeD1Ugoz-Lue7RtEmVqbbry7jBA62kRwtDp5iOCy3B2bUdg
 
 {
-  "nameUz": "aaa",
-  "nameRu": "bbb",
-  "nameEn": "ccc"
+  "nameUz": "uz"
 }
 
 ### Delete
-DELETE http://localhost:8080/article_type/deleteById/2
+DELETE http://localhost:8080/category/deleteById/2
 Authorization: eyJhbGciOiJIUzUxMiJ9.eyJpYXQiOjE3MDYyNjE1NTMsImlkIjo0LCJyb2xlIjoiQURNSU4iLCJleHAiOjE3MDYzNDc5NTMsImlzcyI6Ikt1blV6VGVzdCJ9.uhqlCGTxscpXkU9s-V_fXUXjp9DYTI771uw0aJwWeD1Ugoz-Lue7RtEmVqbbry7jBA62kRwtDp5iOCy3B2bUdg
 
-### Get all by Pagination
-GET http://localhost:8080/article_type/allByPagination?page=1&size=3
+### Get all
+GET http://localhost:8080/category/all
 Authorization: eyJhbGciOiJIUzUxMiJ9.eyJpYXQiOjE3MDYyNjE1NTMsImlkIjo0LCJyb2xlIjoiQURNSU4iLCJleHAiOjE3MDYzNDc5NTMsImlzcyI6Ikt1blV6VGVzdCJ9.uhqlCGTxscpXkU9s-V_fXUXjp9DYTI771uw0aJwWeD1Ugoz-Lue7RtEmVqbbry7jBA62kRwtDp5iOCy3B2bUdg
 
 ### Get all by Language
-GET http://localhost:8080/article_type/getByLang?language=ru
-
-
-
-
+GET http://localhost:8080/category/getByLang?language=uz

@@ -1,6 +1,7 @@
 ### Post
 POST http://localhost:8080/region
 Content-Type: application/json
+Authorization: eyJhbGciOiJIUzUxMiJ9.eyJpYXQiOjE3MDYyNjE1NTMsImlkIjo0LCJyb2xlIjoiQURNSU4iLCJleHAiOjE3MDYzNDc5NTMsImlzcyI6Ikt1blV6VGVzdCJ9.uhqlCGTxscpXkU9s-V_fXUXjp9DYTI771uw0aJwWeD1Ugoz-Lue7RtEmVqbbry7jBA62kRwtDp5iOCy3B2bUdg
 
 {
   "nameUz": "bbb",
@@ -12,6 +13,7 @@ Content-Type: application/json
 ### Update
 PUT http://localhost:8080/region/updateById/5
 Content-Type: application/json
+Authorization: eyJhbGciOiJIUzUxMiJ9.eyJpYXQiOjE3MDYyNjE1NTMsImlkIjo0LCJyb2xlIjoiQURNSU4iLCJleHAiOjE3MDYzNDc5NTMsImlzcyI6Ikt1blV6VGVzdCJ9.uhqlCGTxscpXkU9s-V_fXUXjp9DYTI771uw0aJwWeD1Ugoz-Lue7RtEmVqbbry7jBA62kRwtDp5iOCy3B2bUdg
 
 {
   "nameUz": "ccc"
@@ -19,9 +21,11 @@ Content-Type: application/json
 
 ### Delete
 DELETE http://localhost:8080/region/deleteById/2
+Authorization: eyJhbGciOiJIUzUxMiJ9.eyJpYXQiOjE3MDYyNjE1NTMsImlkIjo0LCJyb2xlIjoiQURNSU4iLCJleHAiOjE3MDYzNDc5NTMsImlzcyI6Ikt1blV6VGVzdCJ9.uhqlCGTxscpXkU9s-V_fXUXjp9DYTI771uw0aJwWeD1Ugoz-Lue7RtEmVqbbry7jBA62kRwtDp5iOCy3B2bUdg
 
 ### Get all
 GET http://localhost:8080/region/all
+Authorization: eyJhbGciOiJIUzUxMiJ9.eyJpYXQiOjE3MDYyNjE1NTMsImlkIjo0LCJyb2xlIjoiQURNSU4iLCJleHAiOjE3MDYzNDc5NTMsImlzcyI6Ikt1blV6VGVzdCJ9.uhqlCGTxscpXkU9s-V_fXUXjp9DYTI771uw0aJwWeD1Ugoz-Lue7RtEmVqbbry7jBA62kRwtDp5iOCy3B2bUdg
 
 ### Get all by Language
 GET http://localhost:8080/region/getByLang?language=uz
