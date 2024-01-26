@@ -14,13 +14,11 @@ PUT http://localhost:8080/region/updateById/5
 Content-Type: application/json
 
 {
-  "nameUz": "aaa",
-  "nameRu": "bbb",
-  "nameEn": "ccc"
+  "nameUz": "ccc"
 }
 
 ### Delete
-DELETE http://localhost:8080/region/deleteById/4
+DELETE http://localhost:8080/region/deleteById/2
 
 ### Get all
 GET http://localhost:8080/region/all

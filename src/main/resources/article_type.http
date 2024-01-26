@@ -14,13 +14,13 @@ PUT http://localhost:8080/article_type/updateById/1
 Content-Type: application/json
 
 {
-  "nameUz": "bbb",
+  "nameUz": "aaa",
   "nameRu": "bbb",
   "nameEn": "ccc"
 }
 
 ### Delete
-DELETE http://localhost:8080/article_type/deleteById/4
+DELETE http://localhost:8080/article_type/deleteById/2
 
 ### Get all by Pagination
 GET http://localhost:8080/article_type/allByPagination?page=1&size=3

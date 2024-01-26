@@ -1,10 +1,14 @@
 package com.example.kun_uz_lesson1.service;
 
 import com.example.kun_uz_lesson1.dto.ArticleTypeDTO;
+import com.example.kun_uz_lesson1.dto.JwtDTO;
 import com.example.kun_uz_lesson1.dto.RegionDTO;
 import com.example.kun_uz_lesson1.entity.RegionEntity;
+import com.example.kun_uz_lesson1.enums.AppLanguage;
+import com.example.kun_uz_lesson1.enums.ProfileRole;
 import com.example.kun_uz_lesson1.exp.AppBadException;
 import com.example.kun_uz_lesson1.repository.RegionRepository;
+import com.example.kun_uz_lesson1.util.JWTUtil;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -18,9 +22,12 @@ public class RegionService {
     @Autowired
     private RegionRepository regionRepository;
 
-    public RegionDTO create(RegionDTO dto) {
+    public RegionDTO create(RegionDTO dto,String jwt) {
+        JwtDTO decode = JWTUtil.decode(jwt);
+        if (!decode.getRole().equals(ProfileRole.ADMIN)) {
+            throw new AppBadException("You can not");
+        }
         if (dto.getOrderNumber() == null
-                || all().size() + 1 < dto.getOrderNumber()
                 || dto.getOrderNumber() < 1) {
             throw new AppBadException("Wrong order number");
         }
@@ -48,7 +55,11 @@ public class RegionService {
         return dto;
     }
 
-    public RegionDTO update(Integer id, RegionDTO dto) {
+    public RegionDTO update(Integer id, RegionDTO dto,String jwt) {
+        JwtDTO decode = JWTUtil.decode(jwt);
+        if (!decode.getRole().equals(ProfileRole.ADMIN)) {
+            throw new AppBadException("You can not");
+        }
         Optional<RegionEntity> optional = regionRepository.findById(id);
         if (optional.isEmpty()) {
             throw new AppBadException("Region not found");
@@ -74,33 +85,42 @@ public class RegionService {
         } else {
             dto.setNameEn(entity.getNameEn());
         }
-        regionRepository.save(entity);
+        regionRepository.updateArticle(entity.getId(), entity.getNameUz(), entity.getNameRu(), entity.getNameEn(), entity.getOrderNumber());
         dto.setVisible(entity.getVisible());
         dto.setId(entity.getId());
         dto.setCreatedDate(entity.getCreatedDate());
         return dto;
     }
 
-    public String delete(Integer id) {
-        regionRepository.deleteById(id);
-        return "DONE";
+    public String delete(Integer id,String jwt) {
+        JwtDTO decode = JWTUtil.decode(jwt);
+        if (!decode.getRole().equals(ProfileRole.ADMIN)) {
+            throw new AppBadException("You can not");
+        }
+        if (regionRepository.makeDeleted(id) != 0) {
+            return "DONE";
+        }
+        throw new AppBadException("Region not found");
     }
 
-    public List<RegionDTO> all() {
-        return toDTOListFromIterable(regionRepository.findAll());
+    public List<RegionDTO> all(String jwt) {
+        JwtDTO decode = JWTUtil.decode(jwt);
+        if (!decode.getRole().equals(ProfileRole.ADMIN)) {
+            throw new AppBadException("You can not");
+        }
+        return toDTOListFromIterable(regionRepository.all());
     }
 
-    public List<RegionDTO> getByLang(String language) {
-        Iterable<RegionEntity> all = regionRepository.findAll();
+    public List<RegionDTO> getByLang(AppLanguage language) {
+        Iterable<RegionEntity> all = regionRepository.all();
         List<RegionDTO> dtoList = new LinkedList<>();
         for (RegionEntity entity : all) {
             RegionDTO dto = new RegionDTO();
             dto.setId(entity.getId());
             switch (language) {
-//                case "uz" -> dto.setNameUz(entity.getNameUz());
-                case "ru" -> dto.setNameRu(entity.getNameRu());
-                case "en" -> dto.setNameEn(entity.getNameEn());
-                default -> dto.setNameUz(entity.getNameUz());
+                case uz -> dto.setName(entity.getNameUz());
+                case ru -> dto.setName(entity.getNameRu());
+                default -> dto.setName(entity.getNameEn());
             }
             dtoList.add(dto);
         }
@@ -110,7 +130,9 @@ public class RegionService {
     private List<RegionDTO> toDTOListFromIterable(Iterable<RegionEntity> entities) {
         List<RegionDTO> dtoList = new LinkedList<>();
         for (RegionEntity entity : entities) {
-            dtoList.add(toDTO(entity));
+            if (entity.getVisible()) {
+                dtoList.add(toDTO(entity));
+            }
         }
         return dtoList;
     }

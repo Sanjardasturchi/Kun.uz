@@ -1,6 +1,7 @@
 package com.example.kun_uz_lesson1.controller;
 
 import com.example.kun_uz_lesson1.dto.ArticleTypeDTO;
+import com.example.kun_uz_lesson1.enums.AppLanguage;
 import com.example.kun_uz_lesson1.service.ArticleTypeService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.PageImpl;
@@ -46,7 +47,7 @@ public class ArticleTypeController {
         return ResponseEntity.ok(articleTypeService.allByPagination(page, size));
     }
     @GetMapping("/getByLang")
-    public ResponseEntity<List<ArticleTypeDTO>> getByLang(@RequestParam("language") String language) {
+    public ResponseEntity<List<ArticleTypeDTO>> getByLang(@RequestParam(value = "language",defaultValue = "uz") AppLanguage language) {
         return ResponseEntity.ok(articleTypeService.getByLang(language));
     }
 }

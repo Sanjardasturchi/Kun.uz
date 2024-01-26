@@ -2,6 +2,7 @@ package com.example.kun_uz_lesson1.service;
 
 import com.example.kun_uz_lesson1.dto.ArticleTypeDTO;
 import com.example.kun_uz_lesson1.entity.ArticleTypeEntity;
+import com.example.kun_uz_lesson1.enums.AppLanguage;
 import com.example.kun_uz_lesson1.exp.AppBadException;
 import com.example.kun_uz_lesson1.repository.ArticleTypeRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -75,43 +76,47 @@ public class ArticleTypeService {
         }else {
             dto.setNameEn(entity.getNameEn());
         }
-        articleTypeRepository.save(entity);
+        articleTypeRepository.updateArticle(entity.getId(),entity.getNameUz(),entity.getNameRu(),entity.getNameEn(),entity.getOrderNumber());
         dto.setVisible(entity.getVisible());
         dto.setId(entity.getId());
         dto.setCreatedDate(entity.getCreatedDate());
         return dto;
     }
     public String delete(Integer id) {
-        articleTypeRepository.deleteById(id);
+        if (articleTypeRepository.makeDeleted(id)!=0) {
         return "DONE";
+        }
+        throw new AppBadException("ArticleType not found");
     }
     public PageImpl<ArticleTypeDTO> allByPagination(Integer page, Integer size) {
         Page<ArticleTypeEntity> all = articleTypeRepository.findAll(PageRequest.of(page-1,size));
         return new PageImpl<>(toDTOListFromIterable(all.getContent()),PageRequest.of(page-1,size),all.getTotalElements());
     }
-    public List<ArticleTypeDTO> getByLang(String language) {
-        Iterable<ArticleTypeEntity> all = articleTypeRepository.findAll();
+    public List<ArticleTypeDTO> getByLang(AppLanguage language) {
+        Iterable<ArticleTypeEntity> all = articleTypeRepository.all();
         List<ArticleTypeDTO> dtoList=new LinkedList<>();
         for (ArticleTypeEntity entity : all) {
             ArticleTypeDTO dto=new ArticleTypeDTO();
             dto.setId(entity.getId());
             switch (language){
 //                case "uz" -> dto.setNameUz(entity.getNameUz());
-                case "ru" -> dto.setNameRu(entity.getNameRu());
-                case "en" -> dto.setNameEn(entity.getNameEn());
-                default -> dto.setNameUz(entity.getNameUz());
+                case uz -> dto.setName(entity.getNameUz());
+                case ru -> dto.setName(entity.getNameRu());
+                default -> dto.setName(entity.getNameEn());
             }
             dtoList.add(dto);
         }
         return dtoList;
     }
     public List<ArticleTypeDTO> getAll() {
-        return toDTOListFromIterable(articleTypeRepository.findAll());
+        return toDTOListFromIterable(articleTypeRepository.all());
     }
     private List<ArticleTypeDTO> toDTOListFromIterable(Iterable<ArticleTypeEntity> entities){
         List<ArticleTypeDTO> dtoList=new LinkedList<>();
         for (ArticleTypeEntity entity : entities) {
+            if (entity.getVisible()) {
             dtoList.add(toDTO(entity));
+            }
         }
         return dtoList;
     }

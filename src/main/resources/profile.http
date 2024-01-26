@@ -1,0 +1,54 @@
+### POST
+POST http://localhost:8080/profile
+Content-Type: application/json
+Authorization: eyJhbGciOiJIUzUxMiJ9.eyJpYXQiOjE3MDYyNjEyODUsImlkIjoyLCJyb2xlIjoiQURNSU4iLCJleHAiOjE3MDYzNDc2ODUsImlzcyI6Ikt1blV6VGVzdCJ9.yz0jSvl1aReJWrDPyfapkvcwH0Jo7DmlXTHzVHEX_pURgcOahjp2JqUinAOWi24UGS7kJEZIg-1DrePimA9mJw
+
+{
+  "name": "Sanjar",
+  "surname": "Sultanov",
+  "email": "1",
+  "phone": "+9999999999",
+  "password": "1",
+  "status": "ACTIVE",
+  "role": "ADMIN"
+}
+
+### Update
+PUT http://localhost:8080/profile/update/3
+Content-Type: application/json
+Authorization: eyJhbGciOiJIUzUxMiJ9.eyJpYXQiOjE3MDYyNjE1NTMsImlkIjo0LCJyb2xlIjoiQURNSU4iLCJleHAiOjE3MDYzNDc5NTMsImlzcyI6Ikt1blV6VGVzdCJ9.uhqlCGTxscpXkU9s-V_fXUXjp9DYTI771uw0aJwWeD1Ugoz-Lue7RtEmVqbbry7jBA62kRwtDp5iOCy3B2bUdg
+
+{
+  "name": "Sanjarbek",
+  "password": "0"
+}
+
+### Update own
+PUT http://localhost:8080/profile/update
+Content-Type: application/json
+Authorization: eyJhbGciOiJIUzUxMiJ9.eyJpYXQiOjE3MDYyNjE1NTMsImlkIjo0LCJyb2xlIjoiQURNSU4iLCJleHAiOjE3MDYzNDc5NTMsImlzcyI6Ikt1blV6VGVzdCJ9.uhqlCGTxscpXkU9s-V_fXUXjp9DYTI771uw0aJwWeD1Ugoz-Lue7RtEmVqbbry7jBA62kRwtDp5iOCy3B2bUdg
+
+{
+  "name": "One",
+  "password": "1"
+}
+
+### Get all
+GET http://localhost:8080/profile/all?page=1&size=10
+Authorization: eyJhbGciOiJIUzUxMiJ9.eyJpYXQiOjE3MDYyNjE1NTMsImlkIjo0LCJyb2xlIjoiQURNSU4iLCJleHAiOjE3MDYzNDc5NTMsImlzcyI6Ikt1blV6VGVzdCJ9.uhqlCGTxscpXkU9s-V_fXUXjp9DYTI771uw0aJwWeD1Ugoz-Lue7RtEmVqbbry7jBA62kRwtDp5iOCy3B2bUdg
+
+### Delete
+PUT http://localhost:8080/profile/delete/8
+Content-Type: application/json
+Authorization: eyJhbGciOiJIUzUxMiJ9.eyJpYXQiOjE3MDYyNjE1NTMsImlkIjo0LCJyb2xlIjoiQURNSU4iLCJleHAiOjE3MDYzNDc5NTMsImlzcyI6Ikt1blV6VGVzdCJ9.uhqlCGTxscpXkU9s-V_fXUXjp9DYTI771uw0aJwWeD1Ugoz-Lue7RtEmVqbbry7jBA62kRwtDp5iOCy3B2bUdg
+
+### Filter
+GET http://localhost:8080/profile/filter
+Content-Type: application/json
+Authorization: eyJhbGciOiJIUzUxMiJ9.eyJpYXQiOjE3MDYyNjE1NTMsImlkIjo0LCJyb2xlIjoiQURNSU4iLCJleHAiOjE3MDYzNDc5NTMsImlzcyI6Ikt1blV6VGVzdCJ9.uhqlCGTxscpXkU9s-V_fXUXjp9DYTI771uw0aJwWeD1Ugoz-Lue7RtEmVqbbry7jBA62kRwtDp5iOCy3B2bUdg
+
+{
+  "surname": "Sultanov",
+  "fromDate": "2024-01-26",
+  "toDate": "2024-02-26"
+}

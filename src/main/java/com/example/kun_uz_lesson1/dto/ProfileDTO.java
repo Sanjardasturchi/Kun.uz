@@ -23,4 +23,5 @@ public class ProfileDTO {
     protected LocalDateTime createdDate;
     protected LocalDateTime updatedDate;
     protected Boolean visible;
+    private String jwt;
 }
