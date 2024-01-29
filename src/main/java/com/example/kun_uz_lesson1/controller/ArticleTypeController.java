@@ -15,16 +15,6 @@ import java.util.List;
 public class ArticleTypeController {
     @Autowired
     private ArticleTypeService articleTypeService;
-    //3. ArticleType
-    //    1. Create  (ADMIN)
-    //        (order_number,name_uz, name_ru, name_en)
-    //    2. Update by id (ADMIN)
-    //        (order_number,name_uz, name_ru, name_en)
-    //    3. Delete by id (ADMIN)
-    //    4. Get List (ADMIN) (Pagination)
-    //        (id,key,name_uz, name_ru, name_en,visible,created_date)
-    //    5. Get By Lang (Language keladi shu language dagi name larini berib yuboramiz)
-    //        (id,key,name) (name ga tegishli name_.. dagi qiymat qo'yiladi.)
     @PostMapping("")
     public ResponseEntity<ArticleTypeDTO> creat(@RequestBody ArticleTypeDTO articleTypeDTO,
                                                 @RequestHeader("Authorization")String jwt) {

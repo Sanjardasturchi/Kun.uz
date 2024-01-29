@@ -22,11 +22,7 @@ public class RegionService {
     @Autowired
     private RegionRepository regionRepository;
 
-    public RegionDTO create(RegionDTO dto,String jwt) {
-        JwtDTO decode = JWTUtil.decode(jwt);
-        if (!decode.getRole().equals(ProfileRole.ADMIN)) {
-            throw new AppBadException("You can not");
-        }
+    public RegionDTO create(RegionDTO dto) {
         if (dto.getOrderNumber() == null
                 || dto.getOrderNumber() < 1) {
             throw new AppBadException("Wrong order number");

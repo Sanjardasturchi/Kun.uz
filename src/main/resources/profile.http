@@ -1,7 +1,7 @@
 ### POST
-POST http://localhost:8080/profile
+POST http://localhost:8080/profile/adm
 Content-Type: application/json
-Authorization: eyJhbGciOiJIUzUxMiJ9.eyJpYXQiOjE3MDYyNjEyODUsImlkIjoyLCJyb2xlIjoiQURNSU4iLCJleHAiOjE3MDYzNDc2ODUsImlzcyI6Ikt1blV6VGVzdCJ9.yz0jSvl1aReJWrDPyfapkvcwH0Jo7DmlXTHzVHEX_pURgcOahjp2JqUinAOWi24UGS7kJEZIg-1DrePimA9mJw
+Authorization: Bearer eyJhbGciOiJIUzUxMiJ9.eyJpYXQiOjE3MDY0MjUwMTIsImlkIjo0LCJyb2xlIjoiQURNSU4iLCJleHAiOjE3MDY1MTE0MTIsImlzcyI6Ikt1blV6VGVzdCJ9.C15tkdODTg8bRkghK983h0wFVO2pv0-xrZZ3W9ivMRuQQ-N2nmcJ-IDBohPrVF6PR9SbkWF8lKwwYeHgS01-ew
 
 {
   "name": "Sanjar",
