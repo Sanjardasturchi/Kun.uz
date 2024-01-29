@@ -21,4 +21,6 @@ public interface ProfileRepository extends CrudRepository<ProfileEntity,Integer>
     Integer makeDeleted(Integer id);
     @Query("from ProfileEntity where visible=true ")
     Page<ProfileEntity> all(Pageable pageable);
+
+    Optional<ProfileEntity> getByEmail(String email);
 }

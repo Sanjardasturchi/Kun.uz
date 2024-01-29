@@ -1,0 +1,11 @@
+### Post
+POST http://localhost:8080/register
+Content-Type: application/json
+
+{
+  "name": "S",
+  "surname": "S",
+  "email": "sanjardasturch@gmail.com",
+  "password": "123",
+  "validation": "123"
+}

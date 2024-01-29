@@ -6,6 +6,8 @@ import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
 
+import java.time.LocalDateTime;
+
 //id,name,surname,email,phone,password,status,role,visible,created_date,photo_id
 @Setter
 @Getter
@@ -28,5 +30,8 @@ public class ProfileEntity extends BaseEntity{
     @Enumerated(EnumType.STRING)
     @Column(name = "role")
     private ProfileRole role;
+    private String code;
+    @Column(name = "code_end_time")
+    private LocalDateTime codeEndTime;
 
 }
