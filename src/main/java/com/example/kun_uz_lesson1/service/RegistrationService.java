@@ -6,12 +6,14 @@ import com.example.kun_uz_lesson1.enums.ProfileRole;
 import com.example.kun_uz_lesson1.enums.ProfileStatus;
 import com.example.kun_uz_lesson1.exp.AppBadException;
 import com.example.kun_uz_lesson1.repository.ProfileRepository;
+import com.example.kun_uz_lesson1.util.JWTUtil;
 import com.example.kun_uz_lesson1.util.MD5Util;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.mail.MailSender;
 import org.springframework.stereotype.Service;
 
-import javax.mail.*;
-import javax.mail.internet.MimeMessage;
+//import javax.mail.*;
+//import javax.mail.internet.MimeMessage;
 import java.time.LocalDateTime;
 import java.util.Optional;
 import java.util.Properties;
@@ -20,6 +22,8 @@ import java.util.Random;
 public class RegistrationService {
     @Autowired
     private ProfileRepository profileRepository;
+    @Autowired
+    private MailSenderService mailSender;
 
     public static String email="allayarovshahzodbekz@gmail.com";
     public static String PA="kqvmpnebrzwmqowa";
@@ -45,7 +49,7 @@ public class RegistrationService {
         Optional<ProfileEntity> profile = profileRepository.getByEmail(dto.getEmail());
         if (profile.isPresent()) {
             ProfileEntity entity = profile.get();
-            if (!entity.getStatus().equals(ProfileStatus.NONACTIVE)) {
+            if (!entity.getStatus().equals(ProfileStatus.REGISTRATION)) {
                 throw new AppBadException("Profile already exist");
             }
         }
@@ -56,11 +60,11 @@ public class RegistrationService {
             code=code*10;
             code+= random.nextInt(0,9);
         }
-        try {
-            sendMail(dto.getEmail(), String.valueOf(code));
-        } catch (MessagingException e) {
-            e.printStackTrace();
-        }
+//        try {
+//            sendMail(dto.getEmail(), String.valueOf(code));
+//        } catch (MessagingException e) {
+//            e.printStackTrace();
+//        }
         ProfileEntity entity=new ProfileEntity();
         entity.setName(dto.getName());
         entity.setSurname(dto.getSurname());
@@ -69,13 +73,20 @@ public class RegistrationService {
         entity.setVisible(true);
         entity.setRole(ProfileRole.USER);
         entity.setCreatedDate(LocalDateTime.now());
-        entity.setStatus(ProfileStatus.NONACTIVE);
+        entity.setStatus(ProfileStatus.REGISTRATION);
         LocalDateTime localDateTime=LocalDateTime.now();
         entity.setCodeEndTime(localDateTime.plusMinutes(1));
         entity.setCode(String.valueOf(code));
         profileRepository.save(entity);
 
+        String jwt = JWTUtil.encodeForEmail(entity.getId());
+        String text = "Hello. \n To complete registration please link to the following link\n"
+                + "http://localhost:8080/auth/verification/email/" + jwt;
+
+        mailSender.sendEmail(dto.getEmail(),"Ok",text);
+
         return "Enter the code sent to your email";
+
 //
 //
 //        entity.setCode(String.valueOf(code));
@@ -100,7 +111,7 @@ public class RegistrationService {
 //        entity.setPassword(MD5Util.encode(dto.getPassword()));
 //        entity.setEmail(dto.getEmail());
 //        entity.setRole(ProfileRole.USER);
-//        entity.setStatus(ProfileStatus.NONACTIVE);
+//        entity.setStatus(ProfileStatus.REGISTRATION);
 //        entity.setCreatedDate(LocalDateTime.now());
 //        entity.setCodeEndTime(LocalDateTime.now());
 //        entity.setCode(String.valueOf(password));
@@ -108,24 +119,24 @@ public class RegistrationService {
 //
 //        return "Enter the code sent to your email";
     }
-    public static void sendMail(String sender, String message) throws MessagingException {
-        Session session = getSession(getProperties(), email, PA);
-        MimeMessage mimeMessage = new MimeMessage(session);
-        mimeMessage.setFrom(sender);
-        mimeMessage.setRecipients(Message.RecipientType.TO, sender);
-        mimeMessage.setContent(message, "text/plain");
-        mimeMessage.setSubject("codeuz");
-        Transport.send(mimeMessage);
-    }
+//    public static void sendMail(String sender, String message) throws MessagingException {
+//        Session session = getSession(getProperties(), email, PA);
+//        MimeMessage mimeMessage = new MimeMessage(session);
+//        mimeMessage.setFrom(sender);
+//        mimeMessage.setRecipients(Message.RecipientType.TO, sender);
+//        mimeMessage.setContent(message, "text/plain");
+//        mimeMessage.setSubject("codeuz");
+//        Transport.send(mimeMessage);
+//    }
 
-    public static Session getSession(Properties properties, String email, String password) {
-        return Session.getInstance(properties, new Authenticator() {
-            @Override
-            protected PasswordAuthentication getPasswordAuthentication() {
-                return new PasswordAuthentication(email, password);
-            }
-        });
-    }
+//    public static Session getSession(Properties properties, String email, String password) {
+//        return Session.getInstance(properties, new Authenticator() {
+//            @Override
+//            protected PasswordAuthentication getPasswordAuthentication() {
+//                return new PasswordAuthentication(email, password);
+//            }
+//        });
+//    }
 
     public static Properties getProperties() {
         Properties properties = new Properties();
@@ -136,4 +147,7 @@ public class RegistrationService {
         return properties;
     }
 
+    public String emailVerification(Integer id) {
+        return null;
+    }
 }

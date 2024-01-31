@@ -28,7 +28,11 @@ public class AuthService {
         if (entityOptional.isEmpty()) {
             throw new AppBadException("Email or Password s wrong!");
         }
+
         ProfileEntity entity=entityOptional.get();
+        if (!entity.getStatus().equals(ProfileStatus.ACTIVE)) {
+            throw new AppBadException("Profile not active");
+        }
         ProfileDTO profile=new ProfileDTO();
         profile.setName(entity.getName());
         profile.setSurname(entity.getSurname());

@@ -11,4 +11,8 @@ import lombok.Setter;
 public class JwtDTO {
     public Integer id;
     private ProfileRole role;
+
+    public JwtDTO(Integer id) {
+        this.id = id;
+    }
 }

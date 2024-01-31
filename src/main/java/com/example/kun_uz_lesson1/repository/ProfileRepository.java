@@ -1,6 +1,7 @@
 package com.example.kun_uz_lesson1.repository;
 
 import com.example.kun_uz_lesson1.entity.ProfileEntity;
+import com.example.kun_uz_lesson1.enums.ProfileStatus;
 import jakarta.transaction.Transactional;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
@@ -23,4 +24,9 @@ public interface ProfileRepository extends CrudRepository<ProfileEntity,Integer>
     Page<ProfileEntity> all(Pageable pageable);
 
     Optional<ProfileEntity> getByEmail(String email);
+    @Transactional
+    @Modifying
+    @Query("Update ProfileEntity  set status =?2 where id = ?1")
+    void updateStatus(Integer id, ProfileStatus active);
+
 }

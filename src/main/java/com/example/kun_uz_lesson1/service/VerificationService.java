@@ -1,5 +1,6 @@
 package com.example.kun_uz_lesson1.service;
 
+import com.example.kun_uz_lesson1.dto.JwtDTO;
 import com.example.kun_uz_lesson1.dto.ProfileDTO;
 import com.example.kun_uz_lesson1.dto.VerificationDTO;
 import com.example.kun_uz_lesson1.entity.ProfileEntity;
@@ -7,6 +8,7 @@ import com.example.kun_uz_lesson1.enums.ProfileStatus;
 import com.example.kun_uz_lesson1.exp.AppBadException;
 import com.example.kun_uz_lesson1.repository.ProfileRepository;
 import com.example.kun_uz_lesson1.util.JWTUtil;
+import io.jsonwebtoken.JwtException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -23,8 +25,8 @@ public class VerificationService {
             throw new AppBadException("Profile not found");
         }
         ProfileEntity entity = profile.get();
-        if (!entity.getStatus().equals(ProfileStatus.NONACTIVE)) {
-            throw  new AppBadException("!ProfileStatus.NONACTIVE");
+        if (!entity.getStatus().equals(ProfileStatus.REGISTRATION)) {
+            throw  new AppBadException("!ProfileStatus.REGISTRATION");
         }
         if (entity.getCodeEndTime().isBefore(LocalDateTime.now())) {
             throw new AppBadException("Verification time out");
@@ -35,6 +37,25 @@ public class VerificationService {
         entity.setStatus(ProfileStatus.ACTIVE);
         return toDTO(entity);
     }
+    public String emailVerification(String jwt) {
+        try {
+            JwtDTO jwtDTO = JWTUtil.decode(jwt);
+
+            Optional<ProfileEntity> optional = profileRepository.findById(jwtDTO.getId());
+            if (!optional.isPresent()) {
+                throw new AppBadException("Profile not found");
+            }
+            ProfileEntity entity = optional.get();
+            if (!entity.getStatus().equals(ProfileStatus.REGISTRATION)) {
+                throw new AppBadException("Profile in wrong status");
+            }
+            profileRepository.updateStatus(entity.getId(), ProfileStatus.ACTIVE);
+        } catch (JwtException e) {
+            throw new AppBadException("Please tyre again.");
+        }
+        return null;
+    }
+
     private ProfileDTO toDTO(ProfileEntity entity) {
         ProfileDTO dto = new ProfileDTO();
         dto.setId(entity.getId());
