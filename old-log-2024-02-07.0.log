@@ -1,0 +1,328 @@
+07 февр. 2024 - 19:56:48.130 INFO  c.e.k.KunUzLesson1Application - Starting KunUzLesson1Application using Java 17.0.7 with PID 22280 (C:\kun.uz\kun_uz_lesson1\target\classes started by HP in C:\kun.uz\kun_uz_lesson1)
+07 февр. 2024 - 19:56:48.139 DEBUG c.e.k.KunUzLesson1Application - Running with Spring Boot v3.2.2, Spring v6.1.3
+07 февр. 2024 - 19:56:48.140 INFO  c.e.k.KunUzLesson1Application - No active profile set, falling back to 1 default profile: "default"
+07 февр. 2024 - 19:56:48.983 DEBUG c.e.k.config.TokenFilter - Filter 'filterRegistrationBean' configured for use
+07 февр. 2024 - 19:56:50.964 INFO  c.e.k.KunUzLesson1Application - Started KunUzLesson1Application in 3.108 seconds (process running for 3.483)
+07 февр. 2024 - 19:57:35.691 DEBUG c.e.k.controller.AuthController - Login in Debug 
+07 февр. 2024 - 19:57:35.691 INFO  c.e.k.controller.AuthController - Login admin@mail.ru 
+07 февр. 2024 - 19:57:35.692 WARN  c.e.k.controller.AuthController - Login admin@mail.ru 
+07 февр. 2024 - 19:57:35.692 ERROR c.e.k.controller.AuthController - Login admin@mail.ru 
+07 февр. 2024 - 19:58:05.412 DEBUG c.e.k.controller.AuthController - Login in Debug 
+07 февр. 2024 - 19:58:05.413 INFO  c.e.k.controller.AuthController - Login admin@mail.ru 
+07 февр. 2024 - 19:58:05.413 WARN  c.e.k.controller.AuthController - Login admin@mail.ru 
+07 февр. 2024 - 19:58:05.413 ERROR c.e.k.controller.AuthController - Login admin@mail.ru 
+07 февр. 2024 - 19:58:08.476 DEBUG c.e.k.controller.AuthController - Login in Debug 
+07 февр. 2024 - 19:58:08.477 INFO  c.e.k.controller.AuthController - Login admin@mail.ru 
+07 февр. 2024 - 19:58:08.477 WARN  c.e.k.controller.AuthController - Login admin@mail.ru 
+07 февр. 2024 - 19:58:08.477 ERROR c.e.k.controller.AuthController - Login admin@mail.ru 
+07 февр. 2024 - 20:00:15.831 INFO  c.e.k.KunUzLesson1Application - Starting KunUzLesson1Application using Java 17.0.7 with PID 8228 (C:\kun.uz\kun_uz_lesson1\target\classes started by HP in C:\kun.uz\kun_uz_lesson1)
+07 февр. 2024 - 20:00:15.841 DEBUG c.e.k.KunUzLesson1Application - Running with Spring Boot v3.2.2, Spring v6.1.3
+07 февр. 2024 - 20:00:15.841 INFO  c.e.k.KunUzLesson1Application - No active profile set, falling back to 1 default profile: "default"
+07 февр. 2024 - 20:00:16.282 INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+07 февр. 2024 - 20:00:16.341 INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 53 ms. Found 8 JPA repository interfaces.
+07 февр. 2024 - 20:00:16.658 INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 8080 (http)
+07 февр. 2024 - 20:00:16.665 INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+07 февр. 2024 - 20:00:16.666 INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.18]
+07 февр. 2024 - 20:00:16.706 INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+07 февр. 2024 - 20:00:16.707 INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 836 ms
+07 февр. 2024 - 20:00:16.738 DEBUG c.e.k.config.TokenFilter - Filter 'filterRegistrationBean' configured for use
+07 февр. 2024 - 20:00:16.802 INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+07 февр. 2024 - 20:00:16.838 INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 6.4.1.Final
+07 февр. 2024 - 20:00:16.860 INFO  o.h.c.i.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+07 февр. 2024 - 20:00:17.017 INFO  o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+07 февр. 2024 - 20:00:17.035 INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+07 февр. 2024 - 20:00:17.153 INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@5f0677f3
+07 февр. 2024 - 20:00:17.154 INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+07 февр. 2024 - 20:00:17.933 INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+07 февр. 2024 - 20:00:18.015 INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+07 февр. 2024 - 20:00:18.180 INFO  o.s.d.j.r.query.QueryEnhancerFactory - Hibernate is in classpath; If applicable, HQL parser will be used.
+07 февр. 2024 - 20:00:18.583 WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+07 февр. 2024 - 20:00:18.839 INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port 8080 (http) with context path ''
+07 февр. 2024 - 20:00:18.846 INFO  c.e.k.KunUzLesson1Application - Started KunUzLesson1Application in 3.302 seconds (process running for 3.694)
+07 февр. 2024 - 20:00:20.886 INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+07 февр. 2024 - 20:00:20.886 INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+07 февр. 2024 - 20:00:20.887 INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 1 ms
+07 февр. 2024 - 20:00:20.956 DEBUG c.e.k.controller.AuthController - Login in Debug 
+07 февр. 2024 - 20:00:20.957 INFO  c.e.k.controller.AuthController - Login admin@mail.ru 
+07 февр. 2024 - 20:00:20.957 WARN  c.e.k.controller.AuthController - Login admin@mail.ru 
+07 февр. 2024 - 20:00:20.957 ERROR c.e.k.controller.AuthController - Login admin@mail.ru 
+07 февр. 2024 - 20:00:46.043 INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+07 февр. 2024 - 20:00:46.044 INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+07 февр. 2024 - 20:00:46.047 INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+07 февр. 2024 - 20:00:47.588 INFO  c.e.k.KunUzLesson1Application - Starting KunUzLesson1Application using Java 17.0.7 with PID 16012 (C:\kun.uz\kun_uz_lesson1\target\classes started by HP in C:\kun.uz\kun_uz_lesson1)
+07 февр. 2024 - 20:00:47.597 DEBUG c.e.k.KunUzLesson1Application - Running with Spring Boot v3.2.2, Spring v6.1.3
+07 февр. 2024 - 20:00:47.597 INFO  c.e.k.KunUzLesson1Application - No active profile set, falling back to 1 default profile: "default"
+07 февр. 2024 - 20:00:48.455 DEBUG c.e.k.config.TokenFilter - Filter 'filterRegistrationBean' configured for use
+07 февр. 2024 - 20:00:50.481 INFO  c.e.k.KunUzLesson1Application - Started KunUzLesson1Application in 3.173 seconds (process running for 3.559)
+07 февр. 2024 - 20:01:01.484 DEBUG c.e.k.controller.AuthController - Login in Debug 
+07 февр. 2024 - 20:01:01.484 INFO  c.e.k.controller.AuthController - Login admin@mail.ru 
+07 февр. 2024 - 20:01:01.485 WARN  c.e.k.controller.AuthController - Login admin@mail.ru 
+07 февр. 2024 - 20:01:01.485 ERROR c.e.k.controller.AuthController - Login admin@mail.ru 
+07 февр. 2024 - 20:24:19.500 INFO  c.e.k.KunUzLesson1Application - Starting KunUzLesson1Application using Java 17.0.7 with PID 16976 (C:\kun.uz\kun_uz_lesson1\target\classes started by HP in C:\kun.uz\kun_uz_lesson1)
+07 февр. 2024 - 20:24:19.510 DEBUG c.e.k.KunUzLesson1Application - Running with Spring Boot v3.2.2, Spring v6.1.3
+07 февр. 2024 - 20:24:19.511 INFO  c.e.k.KunUzLesson1Application - No active profile set, falling back to 1 default profile: "default"
+07 февр. 2024 - 20:24:20.443 DEBUG c.e.k.config.TokenFilter - Filter 'filterRegistrationBean' configured for use
+07 февр. 2024 - 20:24:22.781 INFO  c.e.k.KunUzLesson1Application - Started KunUzLesson1Application in 3.57 seconds (process running for 4.015)
+07 февр. 2024 - 20:55:33.217 INFO  c.e.k.KunUzLesson1Application - Starting KunUzLesson1Application using Java 17.0.7 with PID 10384 (C:\kun.uz\kun_uz_lesson1\target\classes started by HP in C:\kun.uz\kun_uz_lesson1)
+07 февр. 2024 - 20:55:33.227 DEBUG c.e.k.KunUzLesson1Application - Running with Spring Boot v3.2.2, Spring v6.1.3
+07 февр. 2024 - 20:55:33.228 INFO  c.e.k.KunUzLesson1Application - No active profile set, falling back to 1 default profile: "default"
+07 февр. 2024 - 20:55:33.724 ERROR o.s.boot.SpringApplication - Application run failed
+java.lang.IllegalStateException: Error processing condition on org.springdoc.core.configuration.SpringDocConfiguration.propertyCustomizingConverter
+	at org.springframework.boot.autoconfigure.condition.SpringBootCondition.matches(SpringBootCondition.java:60)
+	at org.springframework.context.annotation.ConditionEvaluator.shouldSkip(ConditionEvaluator.java:108)
+	at org.springframework.context.annotation.ConfigurationClassBeanDefinitionReader.loadBeanDefinitionsForBeanMethod(ConfigurationClassBeanDefinitionReader.java:183)
+	at org.springframework.context.annotation.ConfigurationClassBeanDefinitionReader.loadBeanDefinitionsForConfigurationClass(ConfigurationClassBeanDefinitionReader.java:144)
+	at org.springframework.context.annotation.ConfigurationClassBeanDefinitionReader.loadBeanDefinitions(ConfigurationClassBeanDefinitionReader.java:120)
+	at org.springframework.context.annotation.ConfigurationClassPostProcessor.processConfigBeanDefinitions(ConfigurationClassPostProcessor.java:428)
+	at org.springframework.context.annotation.ConfigurationClassPostProcessor.postProcessBeanDefinitionRegistry(ConfigurationClassPostProcessor.java:289)
+	at org.springframework.context.support.PostProcessorRegistrationDelegate.invokeBeanDefinitionRegistryPostProcessors(PostProcessorRegistrationDelegate.java:349)
+	at org.springframework.context.support.PostProcessorRegistrationDelegate.invokeBeanFactoryPostProcessors(PostProcessorRegistrationDelegate.java:118)
+	at org.springframework.context.support.AbstractApplicationContext.invokeBeanFactoryPostProcessors(AbstractApplicationContext.java:788)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:606)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:146)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:754)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:456)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:334)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1354)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1343)
+	at com.example.kun_uz_lesson1.KunUzLesson1Application.main(KunUzLesson1Application.java:10)
+Caused by: java.lang.IllegalStateException: Failed to introspect Class [org.springdoc.core.configuration.SpringDocConfiguration] from ClassLoader [jdk.internal.loader.ClassLoaders$AppClassLoader@6f94fa3e]
+	at org.springframework.util.ReflectionUtils.getDeclaredMethods(ReflectionUtils.java:483)
+	at org.springframework.util.ReflectionUtils.doWithMethods(ReflectionUtils.java:360)
+	at org.springframework.util.ReflectionUtils.getUniqueDeclaredMethods(ReflectionUtils.java:417)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.lambda$getTypeForFactoryMethod$1(AbstractAutowireCapableBeanFactory.java:749)
+	at java.base/java.util.concurrent.ConcurrentHashMap.computeIfAbsent(ConcurrentHashMap.java:1708)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.getTypeForFactoryMethod(AbstractAutowireCapableBeanFactory.java:748)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.determineTargetType(AbstractAutowireCapableBeanFactory.java:681)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.predictBeanType(AbstractAutowireCapableBeanFactory.java:652)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.isFactoryBean(AbstractBeanFactory.java:1644)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doGetBeanNamesForType(DefaultListableBeanFactory.java:562)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.getBeanNamesForType(DefaultListableBeanFactory.java:534)
+	at org.springframework.boot.autoconfigure.condition.OnBeanCondition.collectBeanNamesForType(OnBeanCondition.java:247)
+	at org.springframework.boot.autoconfigure.condition.OnBeanCondition.getBeanNamesForType(OnBeanCondition.java:240)
+	at org.springframework.boot.autoconfigure.condition.OnBeanCondition.getBeanNamesForType(OnBeanCondition.java:230)
+	at org.springframework.boot.autoconfigure.condition.OnBeanCondition.getMatchingBeans(OnBeanCondition.java:183)
+	at org.springframework.boot.autoconfigure.condition.OnBeanCondition.getMatchOutcome(OnBeanCondition.java:120)
+	at org.springframework.boot.autoconfigure.condition.SpringBootCondition.matches(SpringBootCondition.java:47)
+	... 17 common frames omitted
+Caused by: java.lang.NoClassDefFoundError: io/swagger/v3/oas/models/media/Schema
+	at java.base/java.lang.Class.getDeclaredMethods0(Native Method)
+	at java.base/java.lang.Class.privateGetDeclaredMethods(Class.java:3402)
+	at java.base/java.lang.Class.getDeclaredMethods(Class.java:2504)
+	at org.springframework.util.ReflectionUtils.getDeclaredMethods(ReflectionUtils.java:465)
+	... 33 common frames omitted
+Caused by: java.lang.ClassNotFoundException: io.swagger.v3.oas.models.media.Schema
+	at java.base/jdk.internal.loader.BuiltinClassLoader.loadClass(BuiltinClassLoader.java:641)
+	at java.base/jdk.internal.loader.ClassLoaders$AppClassLoader.loadClass(ClassLoaders.java:188)
+	at java.base/java.lang.ClassLoader.loadClass(ClassLoader.java:520)
+	... 37 common frames omitted
+07 ����. 2024 - 20:56:26.373 INFO  c.e.k.KunUzLesson1ApplicationTests - Starting KunUzLesson1ApplicationTests using Java 17.0.7 with PID 20780 (started by HP in C:\kun.uz\kun_uz_lesson1)
+07 ����. 2024 - 20:56:26.384 DEBUG c.e.k.KunUzLesson1ApplicationTests - Running with Spring Boot v3.2.2, Spring v6.1.3
+07 ����. 2024 - 20:56:26.385 INFO  c.e.k.KunUzLesson1ApplicationTests - No active profile set, falling back to 1 default profile: "default"
+07 ����. 2024 - 20:56:31.246 ERROR o.s.boot.SpringApplication - Application run failed
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'org.springdoc.core.configuration.SpringDocKotlinConfiguration': Failed to instantiate [org.springdoc.core.configuration.SpringDocKotlinConfiguration]: Constructor threw exception
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiate(ConstructorResolver.java:318)
+	at org.springframework.beans.factory.support.ConstructorResolver.autowireConstructor(ConstructorResolver.java:306)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.autowireConstructor(AbstractAutowireCapableBeanFactory.java:1354)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1191)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:561)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:521)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:325)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:323)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:199)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:975)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:959)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:624)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:754)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:456)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:334)
+	at org.springframework.boot.test.context.SpringBootContextLoader.lambda$loadContext$3(SpringBootContextLoader.java:137)
+	at org.springframework.util.function.ThrowingSupplier.get(ThrowingSupplier.java:58)
+	at org.springframework.util.function.ThrowingSupplier.get(ThrowingSupplier.java:46)
+	at org.springframework.boot.SpringApplication.withHook(SpringApplication.java:1454)
+	at org.springframework.boot.test.context.SpringBootContextLoader$ContextLoaderHook.run(SpringBootContextLoader.java:552)
+	at org.springframework.boot.test.context.SpringBootContextLoader.loadContext(SpringBootContextLoader.java:137)
+	at org.springframework.boot.test.context.SpringBootContextLoader.loadContext(SpringBootContextLoader.java:108)
+	at org.springframework.test.context.cache.DefaultCacheAwareContextLoaderDelegate.loadContextInternal(DefaultCacheAwareContextLoaderDelegate.java:225)
+	at org.springframework.test.context.cache.DefaultCacheAwareContextLoaderDelegate.loadContext(DefaultCacheAwareContextLoaderDelegate.java:152)
+	at org.springframework.test.context.support.DefaultTestContext.getApplicationContext(DefaultTestContext.java:130)
+	at org.springframework.test.context.web.ServletTestExecutionListener.setUpRequestContextIfNecessary(ServletTestExecutionListener.java:191)
+	at org.springframework.test.context.web.ServletTestExecutionListener.prepareTestInstance(ServletTestExecutionListener.java:130)
+	at org.springframework.test.context.TestContextManager.prepareTestInstance(TestContextManager.java:260)
+	at org.springframework.test.context.junit.jupiter.SpringExtension.postProcessTestInstance(SpringExtension.java:163)
+	at org.junit.jupiter.engine.descriptor.ClassBasedTestDescriptor.lambda$invokeTestInstancePostProcessors$10(ClassBasedTestDescriptor.java:378)
+	at org.junit.jupiter.engine.descriptor.ClassBasedTestDescriptor.executeAndMaskThrowable(ClassBasedTestDescriptor.java:383)
+	at org.junit.jupiter.engine.descriptor.ClassBasedTestDescriptor.lambda$invokeTestInstancePostProcessors$11(ClassBasedTestDescriptor.java:378)
+	at java.base/java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:197)
+	at java.base/java.util.stream.ReferencePipeline$2$1.accept(ReferencePipeline.java:179)
+	at java.base/java.util.ArrayList$ArrayListSpliterator.forEachRemaining(ArrayList.java:1625)
+	at java.base/java.util.stream.AbstractPipeline.copyInto(AbstractPipeline.java:509)
+	at java.base/java.util.stream.AbstractPipeline.wrapAndCopyInto(AbstractPipeline.java:499)
+	at java.base/java.util.stream.StreamSpliterators$WrappingSpliterator.forEachRemaining(StreamSpliterators.java:310)
+	at java.base/java.util.stream.Streams$ConcatSpliterator.forEachRemaining(Streams.java:735)
+	at java.base/java.util.stream.Streams$ConcatSpliterator.forEachRemaining(Streams.java:734)
+	at java.base/java.util.stream.ReferencePipeline$Head.forEach(ReferencePipeline.java:762)
+	at org.junit.jupiter.engine.descriptor.ClassBasedTestDescriptor.invokeTestInstancePostProcessors(ClassBasedTestDescriptor.java:377)
+	at org.junit.jupiter.engine.descriptor.ClassBasedTestDescriptor.lambda$instantiateAndPostProcessTestInstance$6(ClassBasedTestDescriptor.java:290)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.jupiter.engine.descriptor.ClassBasedTestDescriptor.instantiateAndPostProcessTestInstance(ClassBasedTestDescriptor.java:289)
+	at org.junit.jupiter.engine.descriptor.ClassBasedTestDescriptor.lambda$testInstancesProvider$4(ClassBasedTestDescriptor.java:279)
+	at java.base/java.util.Optional.orElseGet(Optional.java:364)
+	at org.junit.jupiter.engine.descriptor.ClassBasedTestDescriptor.lambda$testInstancesProvider$5(ClassBasedTestDescriptor.java:278)
+	at org.junit.jupiter.engine.execution.TestInstancesProvider.getTestInstances(TestInstancesProvider.java:31)
+	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.lambda$prepare$0(TestMethodTestDescriptor.java:106)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.prepare(TestMethodTestDescriptor.java:105)
+	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.prepare(TestMethodTestDescriptor.java:69)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$prepare$2(NodeTestTask.java:123)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.prepare(NodeTestTask.java:123)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:90)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.invokeAll(SameThreadHierarchicalTestExecutorService.java:41)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$6(NodeTestTask.java:155)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$8(NodeTestTask.java:141)
+	at org.junit.platform.engine.support.hierarchical.Node.around(Node.java:137)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$9(NodeTestTask.java:139)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.executeRecursively(NodeTestTask.java:138)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:95)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.invokeAll(SameThreadHierarchicalTestExecutorService.java:41)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$6(NodeTestTask.java:155)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$8(NodeTestTask.java:141)
+	at org.junit.platform.engine.support.hierarchical.Node.around(Node.java:137)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$9(NodeTestTask.java:139)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.executeRecursively(NodeTestTask.java:138)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:95)
+	at org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.submit(SameThreadHierarchicalTestExecutorService.java:35)
+	at org.junit.platform.engine.support.hierarchical.HierarchicalTestExecutor.execute(HierarchicalTestExecutor.java:57)
+	at org.junit.platform.engine.support.hierarchical.HierarchicalTestEngine.execute(HierarchicalTestEngine.java:54)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:198)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:169)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:93)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.lambda$execute$0(EngineExecutionOrchestrator.java:58)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.withInterceptedStreams(EngineExecutionOrchestrator.java:141)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:57)
+	at org.junit.platform.launcher.core.DefaultLauncher.execute(DefaultLauncher.java:103)
+	at org.junit.platform.launcher.core.DefaultLauncher.execute(DefaultLauncher.java:85)
+	at org.junit.platform.launcher.core.DelegatingLauncher.execute(DelegatingLauncher.java:47)
+	at org.apache.maven.surefire.junitplatform.LazyLauncher.execute(LazyLauncher.java:56)
+	at org.apache.maven.surefire.junitplatform.JUnitPlatformProvider.execute(JUnitPlatformProvider.java:184)
+	at org.apache.maven.surefire.junitplatform.JUnitPlatformProvider.invokeAllTests(JUnitPlatformProvider.java:148)
+	at org.apache.maven.surefire.junitplatform.JUnitPlatformProvider.invoke(JUnitPlatformProvider.java:122)
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:385)
+	at org.apache.maven.surefire.booter.ForkedBooter.execute(ForkedBooter.java:162)
+	at org.apache.maven.surefire.booter.ForkedBooter.run(ForkedBooter.java:507)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:495)
+Caused by: org.springframework.beans.BeanInstantiationException: Failed to instantiate [org.springdoc.core.configuration.SpringDocKotlinConfiguration]: Constructor threw exception
+	at org.springframework.beans.BeanUtils.instantiateClass(BeanUtils.java:223)
+	at org.springframework.beans.factory.support.SimpleInstantiationStrategy.instantiate(SimpleInstantiationStrategy.java:111)
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiate(ConstructorResolver.java:315)
+	... 97 common frames omitted
+Caused by: java.lang.NoClassDefFoundError: com/fasterxml/jackson/module/kotlin/KotlinModule$Builder
+	at org.springdoc.core.configuration.SpringDocKotlinConfiguration.<init>(SpringDocKotlinConfiguration.kt:47)
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:499)
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:480)
+	at org.springframework.beans.BeanUtils.instantiateClass(BeanUtils.java:210)
+	... 99 common frames omitted
+Caused by: java.lang.ClassNotFoundException: com.fasterxml.jackson.module.kotlin.KotlinModule$Builder
+	at java.base/jdk.internal.loader.BuiltinClassLoader.loadClass(BuiltinClassLoader.java:641)
+	at java.base/jdk.internal.loader.ClassLoaders$AppClassLoader.loadClass(ClassLoaders.java:188)
+	at java.base/java.lang.ClassLoader.loadClass(ClassLoader.java:520)
+	... 106 common frames omitted
+07 февр. 2024 - 20:56:45.114 INFO  c.e.k.KunUzLesson1Application - Starting KunUzLesson1Application using Java 17.0.7 with PID 22332 (C:\kun.uz\kun_uz_lesson1\target\classes started by HP in C:\kun.uz\kun_uz_lesson1)
+07 февр. 2024 - 20:56:45.122 DEBUG c.e.k.KunUzLesson1Application - Running with Spring Boot v3.2.2, Spring v6.1.3
+07 февр. 2024 - 20:56:45.122 INFO  c.e.k.KunUzLesson1Application - No active profile set, falling back to 1 default profile: "default"
+07 февр. 2024 - 20:56:46.095 DEBUG c.e.k.config.TokenFilter - Filter 'filterRegistrationBean' configured for use
+07 февр. 2024 - 20:56:48.330 ERROR o.s.boot.SpringApplication - Application run failed
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'org.springdoc.core.configuration.SpringDocKotlinConfiguration': Failed to instantiate [org.springdoc.core.configuration.SpringDocKotlinConfiguration]: Constructor threw exception
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiate(ConstructorResolver.java:318)
+	at org.springframework.beans.factory.support.ConstructorResolver.autowireConstructor(ConstructorResolver.java:306)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.autowireConstructor(AbstractAutowireCapableBeanFactory.java:1354)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1191)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:561)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:521)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:325)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:323)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:199)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:975)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:959)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:624)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:146)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:754)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:456)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:334)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1354)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1343)
+	at com.example.kun_uz_lesson1.KunUzLesson1Application.main(KunUzLesson1Application.java:10)
+Caused by: org.springframework.beans.BeanInstantiationException: Failed to instantiate [org.springdoc.core.configuration.SpringDocKotlinConfiguration]: Constructor threw exception
+	at org.springframework.beans.BeanUtils.instantiateClass(BeanUtils.java:223)
+	at org.springframework.beans.factory.support.SimpleInstantiationStrategy.instantiate(SimpleInstantiationStrategy.java:111)
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiate(ConstructorResolver.java:315)
+	... 19 common frames omitted
+Caused by: java.lang.NoClassDefFoundError: com/fasterxml/jackson/module/kotlin/KotlinModule$Builder
+	at org.springdoc.core.configuration.SpringDocKotlinConfiguration.<init>(SpringDocKotlinConfiguration.kt:47)
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:499)
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:480)
+	at org.springframework.beans.BeanUtils.instantiateClass(BeanUtils.java:210)
+	... 21 common frames omitted
+Caused by: java.lang.ClassNotFoundException: com.fasterxml.jackson.module.kotlin.KotlinModule$Builder
+	at java.base/jdk.internal.loader.BuiltinClassLoader.loadClass(BuiltinClassLoader.java:641)
+	at java.base/jdk.internal.loader.ClassLoaders$AppClassLoader.loadClass(ClassLoaders.java:188)
+	at java.base/java.lang.ClassLoader.loadClass(ClassLoader.java:520)
+	... 28 common frames omitted
+07 февр. 2024 - 20:58:36.713 INFO  c.e.k.KunUzLesson1Application - Starting KunUzLesson1Application using Java 17.0.7 with PID 13136 (C:\kun.uz\kun_uz_lesson1\target\classes started by HP in C:\kun.uz\kun_uz_lesson1)
+07 февр. 2024 - 20:58:36.723 DEBUG c.e.k.KunUzLesson1Application - Running with Spring Boot v3.2.2, Spring v6.1.3
+07 февр. 2024 - 20:58:36.723 INFO  c.e.k.KunUzLesson1Application - No active profile set, falling back to 1 default profile: "default"
+07 февр. 2024 - 20:58:37.762 DEBUG c.e.k.config.TokenFilter - Filter 'filterRegistrationBean' configured for use
+07 февр. 2024 - 20:58:40.097 INFO  c.e.k.KunUzLesson1Application - Started KunUzLesson1Application in 3.707 seconds (process running for 4.171)
+07 февр. 2024 - 21:06:07.427 DEBUG c.e.k.controller.AuthController - Login in Debug 
+07 февр. 2024 - 21:06:07.427 INFO  c.e.k.controller.AuthController - Login string 
+07 февр. 2024 - 21:06:07.427 WARN  c.e.k.controller.AuthController - Login string 
+07 февр. 2024 - 21:06:07.427 ERROR c.e.k.controller.AuthController - Login string 
+07 февр. 2024 - 21:06:07.451 ERROR c.e.k.c.ExceptionHandlerController - com.example.kun_uz_lesson1.exp.AppBadException: Email or Password s wrong!
+07 февр. 2024 - 21:06:14.217 DEBUG c.e.k.controller.AuthController - Login in Debug 
+07 февр. 2024 - 21:06:14.217 INFO  c.e.k.controller.AuthController - Login string 
+07 февр. 2024 - 21:06:14.217 WARN  c.e.k.controller.AuthController - Login string 
+07 февр. 2024 - 21:06:14.217 ERROR c.e.k.controller.AuthController - Login string 
+07 февр. 2024 - 21:06:14.221 ERROR c.e.k.c.ExceptionHandlerController - com.example.kun_uz_lesson1.exp.AppBadException: Email or Password s wrong!
+07 февр. 2024 - 21:06:15.356 DEBUG c.e.k.controller.AuthController - Login in Debug 
+07 февр. 2024 - 21:06:15.356 INFO  c.e.k.controller.AuthController - Login string 
+07 февр. 2024 - 21:06:15.356 WARN  c.e.k.controller.AuthController - Login string 
+07 февр. 2024 - 21:06:15.356 ERROR c.e.k.controller.AuthController - Login string 
+07 февр. 2024 - 21:06:15.359 ERROR c.e.k.c.ExceptionHandlerController - com.example.kun_uz_lesson1.exp.AppBadException: Email or Password s wrong!
+07 февр. 2024 - 21:07:12.791 DEBUG c.e.k.controller.AuthController - Login in Debug 
+07 февр. 2024 - 21:07:12.791 INFO  c.e.k.controller.AuthController - Login admin@mail.ru 
+07 февр. 2024 - 21:07:12.791 WARN  c.e.k.controller.AuthController - Login admin@mail.ru 
+07 февр. 2024 - 21:07:12.791 ERROR c.e.k.controller.AuthController - Login admin@mail.ru 
+07 февр. 2024 - 21:08:39.399 DEBUG c.e.k.controller.AuthController - Login in Debug 
+07 февр. 2024 - 21:08:39.400 INFO  c.e.k.controller.AuthController - Login admin@mail.ru 
+07 февр. 2024 - 21:08:39.400 WARN  c.e.k.controller.AuthController - Login admin@mail.ru 
+07 февр. 2024 - 21:08:39.400 ERROR c.e.k.controller.AuthController - Login admin@mail.ru 
+07 февр. 2024 - 21:17:38.303 INFO  c.e.k.KunUzLesson1Application - Starting KunUzLesson1Application using Java 17.0.7 with PID 21328 (C:\kun.uz\kun_uz_lesson1\target\classes started by HP in C:\kun.uz\kun_uz_lesson1)
+07 февр. 2024 - 21:17:38.314 DEBUG c.e.k.KunUzLesson1Application - Running with Spring Boot v3.2.2, Spring v6.1.3
+07 февр. 2024 - 21:17:38.315 INFO  c.e.k.KunUzLesson1Application - No active profile set, falling back to 1 default profile: "default"
+07 февр. 2024 - 21:17:39.512 DEBUG c.e.k.config.TokenFilter - Filter 'filterRegistrationBean' configured for use
+07 февр. 2024 - 21:17:42.194 INFO  c.e.k.KunUzLesson1Application - Started KunUzLesson1Application in 4.224 seconds (process running for 4.822)
+07 февр. 2024 - 21:24:38.270 INFO  c.e.k.KunUzLesson1Application - Starting KunUzLesson1Application using Java 17.0.7 with PID 16916 (C:\kun.uz\kun_uz_lesson1\target\classes started by HP in C:\kun.uz\kun_uz_lesson1)
+07 февр. 2024 - 21:24:38.279 DEBUG c.e.k.KunUzLesson1Application - Running with Spring Boot v3.2.2, Spring v6.1.3
+07 февр. 2024 - 21:24:38.280 INFO  c.e.k.KunUzLesson1Application - No active profile set, falling back to 1 default profile: "default"
+07 февр. 2024 - 21:24:39.314 DEBUG c.e.k.config.TokenFilter - Filter 'filterRegistrationBean' configured for use
+07 февр. 2024 - 21:24:41.697 INFO  c.e.k.KunUzLesson1Application - Started KunUzLesson1Application in 3.723 seconds (process running for 4.173)
+07 февр. 2024 - 21:27:44.487 INFO  c.e.k.KunUzLesson1Application - Starting KunUzLesson1Application using Java 17.0.7 with PID 13172 (C:\kun.uz\kun_uz_lesson1\target\classes started by HP in C:\kun.uz\kun_uz_lesson1)
+07 февр. 2024 - 21:27:44.496 DEBUG c.e.k.KunUzLesson1Application - Running with Spring Boot v3.2.2, Spring v6.1.3
+07 февр. 2024 - 21:27:44.497 INFO  c.e.k.KunUzLesson1Application - No active profile set, falling back to 1 default profile: "default"
+07 февр. 2024 - 21:27:45.469 DEBUG c.e.k.config.TokenFilter - Filter 'filterRegistrationBean' configured for use
+07 февр. 2024 - 21:27:47.590 INFO  c.e.k.KunUzLesson1Application - Started KunUzLesson1Application in 3.388 seconds (process running for 3.774)

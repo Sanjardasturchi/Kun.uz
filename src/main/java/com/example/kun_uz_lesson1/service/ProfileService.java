@@ -183,4 +183,12 @@ public class ProfileService {
 //        }
 //        throw new AppBadException("You can not get");
     }
+
+    public ProfileEntity get(Integer id) {
+        Optional<ProfileEntity> byId = profileRepository.findById(id);
+        if (byId.isEmpty()) {
+            throw new AppBadException("Profile not found");
+        }
+        return byId.get();
+    }
 }

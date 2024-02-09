@@ -10,6 +10,7 @@ public class HttpRequestUtil {
         Integer id = (Integer) request.getAttribute("id");
         ProfileRole role = (ProfileRole) request.getAttribute("role");
 
+
         if (requiredRoleList.length==0)return id;
 
 

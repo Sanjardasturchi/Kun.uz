@@ -11,6 +11,7 @@ import com.example.kun_uz_lesson1.repository.ProfileRepository;
 import com.example.kun_uz_lesson1.util.JWTUtil;
 import com.example.kun_uz_lesson1.util.MD5Util;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 
 import java.time.LocalDateTime;
@@ -23,6 +24,7 @@ public class AuthService {
     private ProfileRepository profileRepository;
 
 
+
     public ProfileDTO auth(AuthDTO authDTO) {
         Optional<ProfileEntity> entityOptional = profileRepository.findByEmailAndPassword(authDTO.getEmail(), MD5Util.encode(authDTO.getPassword()));
         if (entityOptional.isEmpty()) {
@@ -33,6 +35,8 @@ public class AuthService {
         if (!entity.getStatus().equals(ProfileStatus.ACTIVE)) {
             throw new AppBadException("Profile not active");
         }
+
+
         ProfileDTO profile=new ProfileDTO();
         profile.setName(entity.getName());
         profile.setSurname(entity.getSurname());

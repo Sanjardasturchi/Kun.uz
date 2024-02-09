@@ -53,7 +53,7 @@ public class VerificationService {
         } catch (JwtException e) {
             throw new AppBadException("Please tyre again.");
         }
-        return null;
+        return "Active";
     }
 
     private ProfileDTO toDTO(ProfileEntity entity) {

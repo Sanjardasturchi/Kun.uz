@@ -9,9 +9,7 @@ import java.time.LocalDateTime;
 @Getter
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class ArticleTypeDTO {
-//       id,order_number,name_uz, name_ru, name_en,visible,created_date
-//     (Asosiy,Muharrir tanlovi,Dolzarb, Maqola,
-//        Foto yangilik,Interview,Biznes,Surushturuv,Video Yangilik)
+
     private Integer id;
     private Integer orderNumber;
     private String nameUz;

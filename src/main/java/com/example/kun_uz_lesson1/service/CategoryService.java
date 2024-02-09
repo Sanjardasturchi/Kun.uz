@@ -3,6 +3,8 @@ package com.example.kun_uz_lesson1.service;
 import com.example.kun_uz_lesson1.dto.CategoryDTO;
 import com.example.kun_uz_lesson1.dto.JwtDTO;
 import com.example.kun_uz_lesson1.entity.CategoryEntity;
+import com.example.kun_uz_lesson1.entity.ProfileEntity;
+import com.example.kun_uz_lesson1.entity.RegionEntity;
 import com.example.kun_uz_lesson1.enums.AppLanguage;
 import com.example.kun_uz_lesson1.enums.ProfileRole;
 import com.example.kun_uz_lesson1.exp.AppBadException;
@@ -146,5 +148,17 @@ public class CategoryService {
         dto.setOrderNumber(entity.getOrderNumber());
         dto.setCreatedDate(entity.getCreatedDate());
         return dto;
+    }
+
+    public CategoryEntity fingById(Integer categoryId) {
+        return categoryRepository.findById(categoryId).orElse(null);
+    }
+
+    public CategoryEntity get(Integer id) {
+        Optional<CategoryEntity> byId = categoryRepository.findById(id);
+        if (byId.isEmpty()) {
+            throw new AppBadException("Category not found");
+        }
+        return byId.get();
     }
 }

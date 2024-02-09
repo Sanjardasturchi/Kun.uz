@@ -3,6 +3,12 @@ POST http://localhost:8080/verification
 Content-Type: application/json
 
 {
-  "email": "husenteshayiv@gmail.com",
-  "code": "218374"
+  "email": "sanjarsultanov2023@gmail.com",
+  "code": "870140"
 }
+
+### PUT http://localhost:8080/verification/email/
+GET http://localhost:8080/verification/email/eyJhbGciOiJIUzUxMiJ9.eyJpYXQiOjE3MDY4Nzc3MTEsImlkIjo3OCwiZXhwIjoxNzA2ODgxMzExLCJpc3MiOiJLdW5VelRlc3QifQ.yNlBhY6qRLgcdDLq7OAgh069_LtcEY7fRI5SCNsbEU9eJhlWaBBP-55alaqFjDc-y9CzpNOdo9qJ3_Rtqnua_w
+
+
+

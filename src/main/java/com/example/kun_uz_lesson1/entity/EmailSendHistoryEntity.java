@@ -5,6 +5,7 @@ import jakarta.persistence.Table;
 
 @Entity
 @Table(name = "email_send_history")
-public class EmailSendHistoryEntity {
-
+public class EmailSendHistoryEntity extends BaseEntity{
+    private String email;
+    private String message;
 }

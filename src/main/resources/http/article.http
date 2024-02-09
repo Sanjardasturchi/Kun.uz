@@ -1,0 +1,58 @@
+### Creat
+POST http://localhost:8080/article/mod
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzUxMiJ9.eyJpYXQiOjE3MDcyODYzODgsImlkIjo4Miwicm9sZSI6Ik1PREVSQVRPUiIsImV4cCI6MTcwNzM3Mjc4OCwiaXNzIjoiS3VuVXpUZXN0In0.AdnalS5RHMnGg5v7XbFrNPgIwbdc7E2Wv-JhQdZ0HdPNT4B0g5q-czk4NK6EYzYhdNNUJ2tEHYQTEjQLm-VaKg
+
+{
+  "regionId": 1,
+  "title": "bbb",
+  "description": "ccc",
+  "content": "ddd",
+  "categoryId": 1,
+  "photoId": "d0d9ec2e-a9a1-4397-87c2-836365032f60",
+  "articleType": [5,6]
+}
+
+### Update
+PUT http://localhost:8080/article/mod/updateById/1
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzUxMiJ9.eyJpYXQiOjE3MDcyODYzODgsImlkIjo4Miwicm9sZSI6Ik1PREVSQVRPUiIsImV4cCI6MTcwNzM3Mjc4OCwiaXNzIjoiS3VuVXpUZXN0In0.AdnalS5RHMnGg5v7XbFrNPgIwbdc7E2Wv-JhQdZ0HdPNT4B0g5q-czk4NK6EYzYhdNNUJ2tEHYQTEjQLm-VaKg
+
+{
+  "imageId": "d0d9ec2e-a9a1-4397-87c2-836365032f60.jpg"
+}
+
+
+### Update
+PUT http://localhost:8080/article/mod/update/4a0a8556-389e-48f3-bcd7-8ecaa1f5895b
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzUxMiJ9.eyJpYXQiOjE3MDcyODYzODgsImlkIjo4Miwicm9sZSI6Ik1PREVSQVRPUiIsImV4cCI6MTcwNzM3Mjc4OCwiaXNzIjoiS3VuVXpUZXN0In0.AdnalS5RHMnGg5v7XbFrNPgIwbdc7E2Wv-JhQdZ0HdPNT4B0g5q-czk4NK6EYzYhdNNUJ2tEHYQTEjQLm-VaKg
+
+{
+  "regionId": 1,
+  "title": "bbb",
+  "description": "ccc",
+  "content": "ddd",
+  "categoryId": 1,
+  "photoId": "d0d9ec2e-a9a1-4397-87c2-836365032f60",
+  "articleType": [5,7]
+}
+
+
+### Get last 5
+GET http://localhost:8080/article/getLastFive/8
+
+
+### Get last 8 with id included in given list
+GET http://localhost:8080/article/getLastEightIdNotIncludedInGivenList
+Content-Type: application/json
+
+{
+  "list": ["4a0a8556-389e-48f3-bcd7-8ecaa1f5895b "]
+}
+
+### Put increaseArticleViewCount
+PUT http://localhost:8080/article/increaseArticleViewCount/4a0a8556-389e-48f3-bcd7-8ecaa1f5895b
+
+### Put increaseArticleSharedCount
+PUT http://localhost:8080/article/increaseArticleSharedCount/4a0a8556-389e-48f3-bcd7-8ecaa1f5895b

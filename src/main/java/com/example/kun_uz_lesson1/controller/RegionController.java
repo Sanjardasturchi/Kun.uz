@@ -6,19 +6,20 @@ import com.example.kun_uz_lesson1.enums.ProfileRole;
 import com.example.kun_uz_lesson1.service.RegionService;
 import com.example.kun_uz_lesson1.util.HttpRequestUtil;
 import jakarta.servlet.http.HttpServletRequest;
+import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
-
+//@Valid
 @RestController
 @RequestMapping("/region")
 public class RegionController {
     @Autowired
     private RegionService regionService;
     @PostMapping("/adm")
-    public ResponseEntity<RegionDTO> creat(@RequestBody RegionDTO regionDTO,
+    public ResponseEntity<RegionDTO> creat(@Valid @RequestBody RegionDTO regionDTO,
                                            HttpServletRequest request) {
         Integer id = HttpRequestUtil.getProfileId(request, ProfileRole.ADMIN);
         return ResponseEntity.ok(regionService.create(regionDTO));

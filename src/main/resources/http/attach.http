@@ -1,0 +1,21 @@
+### Create
+POST http://localhost:8080/attach/upload
+Content-Type: multipart/form-data; boundary=WebAppBoundary
+
+--WebAppBoundary
+Content-Disposition: form-data; name="file"; filename="blog.jpg"
+
+< C:\Users\HP\Desktop\First\lesson11\images\blog-picture-2.jpg
+
+####
+GET http://localhost:8080/attach/open/blog-picture-2.jpg
+
+###
+GET http://localhost:8080/attach/open/19eb85e4-bea4-4af8-9b9b-5558559ce28a.jpg
+
+###
+GET http://localhost:8080/attach/open_general/s.mp4
+
+### Download
+GET http://localhost:8080/attach/download/blog-picture-2.jpg
+

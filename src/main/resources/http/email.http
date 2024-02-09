@@ -1,0 +1,9 @@
+### Get
+GET http://localhost:8080/email/getByEmail/sanjjjarsultanov2023@gmail.com
+
+### Get
+GET http://localhost:8080/email/getByGivenDate/2024-01-31
+
+### Get
+GET localhost:8080/email/adm/getByPagination?page=1
+Authorization: Bearer eyJhbGciOiJIUzUxMiJ9.eyJpYXQiOjE3MDY3MDkwODMsImlkIjozMCwicm9sZSI6IkFETUlOIiwiZXhwIjoxNzA2Nzk1NDgzLCJpc3MiOiJLdW5VelRlc3QifQ.LARLlN43PFPHed1x0qFvZhAo3ev7mS6mzRSTSxNpDo-7EmKVtKlylKYavblYqsIjkPrSDx3Cn-N2Mytk3K_FCQ

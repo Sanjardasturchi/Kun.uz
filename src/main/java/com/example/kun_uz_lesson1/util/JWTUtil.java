@@ -53,7 +53,7 @@ public class JWTUtil
 
         Integer id = (Integer) claims.get("id");
         String role = (String) claims.get("role");
-        if (role == null) {
+        if (role != null) {
             ProfileRole profileRole = ProfileRole.valueOf(role);
             return new JwtDTO(id, profileRole);
         }
