@@ -1,5 +1,6 @@
 package com.example.kun_uz_lesson1.service;
 
+import com.example.kun_uz_lesson1.config.CustomUserDetails;
 import com.example.kun_uz_lesson1.dto.ArticleTypeDTO;
 import com.example.kun_uz_lesson1.dto.JwtDTO;
 import com.example.kun_uz_lesson1.entity.ArticleTypeEntity;
@@ -12,6 +13,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageImpl;
 import org.springframework.data.domain.PageRequest;
+import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Service;
 
 import java.time.LocalDateTime;
@@ -23,11 +25,7 @@ import java.util.Optional;
 public class ArticleTypeService {
     @Autowired
     private ArticleTypeRepository articleTypeRepository;
-    public ArticleTypeDTO create(ArticleTypeDTO dto, String jwt) {
-        JwtDTO decode = JWTUtil.decode(jwt);
-        if (!decode.getRole().equals(ProfileRole.ADMIN)) {
-            throw new AppBadException("You can not");
-        }
+    public ArticleTypeDTO create(ArticleTypeDTO dto) {
         if (dto.getOrderNumber() == null
                 || getAll().size() + 1 < dto.getOrderNumber()
                 || dto.getOrderNumber() < 1) {
@@ -56,11 +54,7 @@ public class ArticleTypeService {
         dto.setCreatedDate(entity.getCreatedDate());
         return dto;
     }
-    public ArticleTypeDTO updateById(Integer id, ArticleTypeDTO dto, String jwt) {
-        JwtDTO decode = JWTUtil.decode(jwt);
-        if (!decode.getRole().equals(ProfileRole.ADMIN)) {
-            throw new AppBadException("You can not");
-        }
+    public ArticleTypeDTO updateById(Integer id, ArticleTypeDTO dto) {
         Optional<ArticleTypeEntity> optional = articleTypeRepository.findById(id);
         if (optional.isEmpty()) {
             throw new AppBadException("ArticleType not found");
@@ -92,21 +86,13 @@ public class ArticleTypeService {
         dto.setCreatedDate(entity.getCreatedDate());
         return dto;
     }
-    public String delete(Integer id, String jwt) {
-        JwtDTO decode = JWTUtil.decode(jwt);
-        if (!decode.getRole().equals(ProfileRole.ADMIN)) {
-            throw new AppBadException("You can not");
-        }
+    public String delete(Integer id) {
         if (articleTypeRepository.makeDeleted(id)!=0) {
         return "DONE";
         }
         throw new AppBadException("ArticleType not found");
     }
-    public PageImpl<ArticleTypeDTO> allByPagination(Integer page, Integer size, String jwt) {
-        JwtDTO decode = JWTUtil.decode(jwt);
-        if (!decode.getRole().equals(ProfileRole.ADMIN)) {
-            throw new AppBadException("You can not");
-        }
+    public PageImpl<ArticleTypeDTO> allByPagination(Integer page, Integer size) {
         Page<ArticleTypeEntity> all = articleTypeRepository.findAll(PageRequest.of(page-1,size));
         return new PageImpl<>(toDTOListFromIterable(all.getContent()),PageRequest.of(page-1,size),all.getTotalElements());
     }

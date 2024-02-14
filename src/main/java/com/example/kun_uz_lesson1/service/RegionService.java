@@ -1,9 +1,7 @@
 package com.example.kun_uz_lesson1.service;
 
-import com.example.kun_uz_lesson1.dto.ArticleTypeDTO;
 import com.example.kun_uz_lesson1.dto.JwtDTO;
 import com.example.kun_uz_lesson1.dto.RegionDTO;
-import com.example.kun_uz_lesson1.entity.ProfileEntity;
 import com.example.kun_uz_lesson1.entity.RegionEntity;
 import com.example.kun_uz_lesson1.enums.AppLanguage;
 import com.example.kun_uz_lesson1.enums.ProfileRole;
@@ -52,11 +50,7 @@ public class RegionService {
         return dto;
     }
 
-    public RegionDTO update(Integer id, RegionDTO dto, String jwt) {
-        JwtDTO decode = JWTUtil.decode(jwt);
-        if (!decode.getRole().equals(ProfileRole.ADMIN)) {
-            throw new AppBadException("You can not");
-        }
+    public RegionDTO update(Integer id, RegionDTO dto) {
         Optional<RegionEntity> optional = regionRepository.findById(id);
         if (optional.isEmpty()) {
             throw new AppBadException("Region not found");
@@ -89,22 +83,14 @@ public class RegionService {
         return dto;
     }
 
-    public String delete(Integer id, String jwt) {
-        JwtDTO decode = JWTUtil.decode(jwt);
-        if (!decode.getRole().equals(ProfileRole.ADMIN)) {
-            throw new AppBadException("You can not");
-        }
+    public String delete(Integer id) {
         if (regionRepository.makeDeleted(id) != 0) {
             return "DONE";
         }
         throw new AppBadException("Region not found");
     }
 
-    public List<RegionDTO> all(String jwt) {
-        JwtDTO decode = JWTUtil.decode(jwt);
-        if (!decode.getRole().equals(ProfileRole.ADMIN)) {
-            throw new AppBadException("You can not");
-        }
+    public List<RegionDTO> all() {
         return toDTOListFromIterable(regionRepository.all());
     }
 

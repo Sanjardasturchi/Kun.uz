@@ -2,7 +2,6 @@ package com.example.kun_uz_lesson1.service;
 
 import com.example.kun_uz_lesson1.dto.EmailHistoryDTO;
 import com.example.kun_uz_lesson1.dto.RegistrationDTO;
-import com.example.kun_uz_lesson1.entity.EmailHistoryEntity;
 import com.example.kun_uz_lesson1.entity.ProfileEntity;
 import com.example.kun_uz_lesson1.enums.ProfileRole;
 import com.example.kun_uz_lesson1.enums.ProfileStatus;
@@ -11,9 +10,7 @@ import com.example.kun_uz_lesson1.repository.EmailHistoryRepository;
 import com.example.kun_uz_lesson1.repository.ProfileRepository;
 import com.example.kun_uz_lesson1.util.JWTUtil;
 import com.example.kun_uz_lesson1.util.MD5Util;
-import com.example.kun_uz_lesson1.util.RandomUtil;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.mail.MailSender;
 import org.springframework.stereotype.Service;
 
 //import javax.mail.*;
@@ -21,7 +18,7 @@ import org.springframework.stereotype.Service;
 import java.time.LocalDateTime;
 import java.util.Optional;
 import java.util.Properties;
-import java.util.Random;
+
 @Service
 public class RegistrationService {
     @Autowired
@@ -83,7 +80,7 @@ public class RegistrationService {
         entity.setPassword(MD5Util.encode(dto.getPassword()));
         entity.setEmail(dto.getEmail());
         entity.setVisible(true);
-        entity.setRole(ProfileRole.USER);
+        entity.setRole(ProfileRole.ROLE_USER);
         entity.setCreatedDate(LocalDateTime.now());
         entity.setStatus(ProfileStatus.REGISTRATION);
         LocalDateTime localDateTime=LocalDateTime.now();

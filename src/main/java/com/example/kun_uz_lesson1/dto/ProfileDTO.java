@@ -30,4 +30,13 @@ public class ProfileDTO {
     protected LocalDateTime updatedDate;
     protected Boolean visible;
     private String jwt;
+
+    public ProfileDTO() {
+    }
+
+    public ProfileDTO(Integer id, String name, String surname) {
+        this.id = id;
+        this.name = name;
+        this.surname = surname;
+    }
 }

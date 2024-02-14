@@ -27,7 +27,7 @@ public class AuthService {
 
     public ProfileDTO auth(AuthDTO authDTO) {
         Optional<ProfileEntity> entityOptional = profileRepository.findByEmailAndPassword(authDTO.getEmail(), MD5Util.encode(authDTO.getPassword()));
-        if (entityOptional.isEmpty()) {
+        if (entityOptional.isEmpty()||!entityOptional.get().getVisible()) {
             throw new AppBadException("Email or Password s wrong!");
         }
 
@@ -41,7 +41,7 @@ public class AuthService {
         profile.setName(entity.getName());
         profile.setSurname(entity.getSurname());
         profile.setRole(entity.getRole());
-        profile.setJwt(JWTUtil.encode(entity.getId(),entity.getRole()));
+        profile.setJwt(JWTUtil.encode(entity.getEmail(),entity.getRole()));
         return profile;
     }
 

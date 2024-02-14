@@ -11,6 +11,7 @@ import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.domain.Sort;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
 
 import java.time.LocalDate;
@@ -41,11 +42,10 @@ public class EmailController {
     public ResponseEntity<List<EmailHistoryDTO>> getByGivenDate(@PathVariable("date") LocalDate date){
         return ResponseEntity.ok(emailHistoryService.getByGivenDate(date));
     }
+    @PreAuthorize("hasRole('ADMIN')")
     @GetMapping("/adm/getByPagination")
     public ResponseEntity<PageImpl<EmailHistoryDTO>> getByPagination(@RequestParam(value = "page",defaultValue = "1") Integer page,
-                                                                     @RequestParam(value = "size",defaultValue = "10") Integer size,
-                                                                     HttpServletRequest request){
-        HttpRequestUtil.getProfileId(request, ProfileRole.ADMIN);
+                                                                     @RequestParam(value = "size",defaultValue = "10") Integer size){
         Pageable pageable = PageRequest.of(page - 1, size, Sort.Direction.DESC, "createdDate");
         return ResponseEntity.ok(emailHistoryService.getByPagination(pageable));
     }

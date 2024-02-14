@@ -1,12 +1,13 @@
 ### Post
 POST http://localhost:8080/region/adm
 Content-Type: application/json
-Authorization: Bearer eyJhbGciOiJIUzUxMiJ9.eyJpYXQiOjE3MDY0MjU2MzMsImlkIjo0LCJyb2xlIjoiQURNSU4iLCJleHAiOjE3MDY1MTIwMzMsImlzcyI6Ikt1blV6VGVzdCJ9.vExSUWRCyrv_JHcBsre1R09ut58GEmPklG5CQJbhQzbHPvfIVKOm8yEImwESXYw7ch8YGK4TfIWC4JevwYln8A
+Authorization: Bearer eyJhbGciOiJIUzUxMiJ9.eyJpYXQiOjE3MDc3NTA4ODYsImVtYWlsIjoiYWRtaW5AbWFpbC5ydSIsInJvbGUiOiJST0xFX0FETUlOIiwiZXhwIjoxNzA3ODM3Mjg2LCJpc3MiOiJLdW5VelRlc3QifQ.sKkImGNwiWHMATgj2XKSWZYSXwYt1BGeGoCkjTSjVjZ9r3xzBp0gAlCau86ZWCrfvP7TipshsF-vK2e92lo5Wg
+#Authorization: Basic YWRtaW5AbWFpbC5ydToxMjM0NQ==
 
 {
-  "nameUz": "bbb",
-  "nameRu": "bbb",
-  "nameEn": "ccc",
+  "nameUz": "bbfffffffffffffffffb",
+  "nameRu": "bfffffffffffffffbb",
+  "nameEn": "ccffffffffffffffffc",
   "orderNumber": "5"
 }
 

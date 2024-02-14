@@ -3,8 +3,6 @@ package com.example.kun_uz_lesson1.service;
 import com.example.kun_uz_lesson1.dto.CategoryDTO;
 import com.example.kun_uz_lesson1.dto.JwtDTO;
 import com.example.kun_uz_lesson1.entity.CategoryEntity;
-import com.example.kun_uz_lesson1.entity.ProfileEntity;
-import com.example.kun_uz_lesson1.entity.RegionEntity;
 import com.example.kun_uz_lesson1.enums.AppLanguage;
 import com.example.kun_uz_lesson1.enums.ProfileRole;
 import com.example.kun_uz_lesson1.exp.AppBadException;
@@ -22,11 +20,7 @@ import java.util.Optional;
 public class CategoryService {
     @Autowired
     private CategoryRepository categoryRepository;
-    public CategoryDTO create(CategoryDTO dto, String jwt) {
-        JwtDTO decode = JWTUtil.decode(jwt);
-        if (!decode.getRole().equals(ProfileRole.ADMIN)) {
-            throw new AppBadException("You can not");
-        }
+    public CategoryDTO create(CategoryDTO dto) {
         if (dto.getOrderNumber() == null
 //                || all(jwt).size() + 1 < dto.getOrderNumber()
                 || dto.getOrderNumber() < 1) {
@@ -56,11 +50,7 @@ public class CategoryService {
         return dto;
     }
 
-    public CategoryDTO update(Integer id, CategoryDTO dto, String jwt) {
-        JwtDTO decode = JWTUtil.decode(jwt);
-        if (!decode.getRole().equals(ProfileRole.ADMIN)) {
-            throw new AppBadException("You can not");
-        }
+    public CategoryDTO update(Integer id, CategoryDTO dto) {
         Optional<CategoryEntity> optional = categoryRepository.findById(id);
         if (optional.isEmpty()) {
             throw new AppBadException("Region not found");
@@ -93,22 +83,14 @@ public class CategoryService {
         return dto;
     }
 
-    public String delete(Integer id, String jwt) {
-        JwtDTO decode = JWTUtil.decode(jwt);
-        if (!decode.getRole().equals(ProfileRole.ADMIN)) {
-            throw new AppBadException("You can not");
-        }
+    public String delete(Integer id) {
         if (categoryRepository.makeDeleted(id) != 0) {
             return "DONE";
         }
         throw new AppBadException("Region not found");
     }
 
-    public List<CategoryDTO> all(String jwt) {
-        JwtDTO decode = JWTUtil.decode(jwt);
-        if (!decode.getRole().equals(ProfileRole.ADMIN)) {
-            throw new AppBadException("You can not");
-        }
+    public List<CategoryDTO> all() {
         return toDTOListFromIterable(categoryRepository.all());
     }
 

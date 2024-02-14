@@ -1,5 +1,6 @@
 package com.example.kun_uz_lesson1.service;
 
+import com.example.kun_uz_lesson1.config.CustomUserDetails;
 import com.example.kun_uz_lesson1.dto.*;
 import com.example.kun_uz_lesson1.entity.*;
 import com.example.kun_uz_lesson1.enums.AppLanguage;
@@ -15,6 +16,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageImpl;
 import org.springframework.data.domain.PageRequest;
+import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Service;
 
 import java.time.LocalDateTime;
@@ -27,96 +29,17 @@ public class ArticleService {
     @Autowired
     private ArticleRepository articleRepository;
     @Autowired
-    private RegionService regionService;
-    @Autowired
-    private CategoryService categoryService;
-    @Autowired
-    private AttachRepository attachRepository;
-    @Autowired
-    private ArticleTypeRepository articleTypeRepository;
-    @Autowired
     private AttachService attachService;
-    @Autowired
-    private ProfileService profileService;
     @Autowired
     private ArticleTypesService articleTypesService;
     @Autowired
     private ArticleTagService articleTagService;
 
-    //    public ArticleDTO create(ArticleCreateDTO dto, Integer id) {
-//
-//        if (dto.getDescription() == null || dto.getDescription().length() < 1) {
-//            throw new AppBadException("Description is null");
-//        }
-//        if (dto.getContent() == null || dto.getContent().length() < 1) {
-//            throw new AppBadException("Content is null");
-//        }
-////
-////        if (dto.getRegionId() == null) {
-////            throw new AppBadException("Wrong order name_en");
-////        }
-////        if (dto.getCategoryId() == null) {
-////            throw new AppBadException("Wrong order name_en");
-////        }
-////        if (dto.getArticleTypeId() != null) {
-////            throw new AppBadException("ArticleType empty");
-////        }
-//        ArticleEntity entity = new ArticleEntity();
-//
-//        RegionEntity reginEntity = regionService.get(dto.getRegionId());
-//        RegionEntity region = new RegionEntity();
-//        region.setId(reginEntity.getId());
-//
-//        CategoryEntity categoryEntity = categoryService.get(dto.getCategoryId());
-//        CategoryEntity category = new CategoryEntity();
-//        category.setId(categoryEntity.getId());
-//
-//        ProfileEntity profileEntity = profileService.get(id);
-//        ProfileEntity profile = new ProfileEntity();
-//        profile.setId(profileEntity.getId());
-//
-//        AttachEntity attachEntity = attachService.get(dto.getPhotoId());
-//        AttachEntity attach = new AttachEntity();
-//        attach.setId(attachEntity.getId());
-//
-//        entity.setRegion(region);
-//        entity.setCategory(category);
-//        entity.setModerator(profile);
-//        entity.setPhotoId(dto.getPhotoId());
-//
-//        entity.setTitle(dto.getTitle());
-//        entity.setDescription(dto.getDescription());
-//        entity.setContent(dto.getContent());
-////        entity.setRegion(dto.getRegionId());
-//        entity.setVisible(true);
-//        entity.setCreatedDate(LocalDateTime.now());
-//        Integer[] articleTypeId = dto.getArticleTypeId();
-//        ArticleTypeEntity[] articleTypeEntities = new ArticleTypeEntity[articleTypeId.length];
-//        for (int i = 0; i < articleTypeId.length; i++) {
-//            Optional<ArticleTypeEntity> optional = articleTypeRepository.findById(articleTypeId[i]);
-//            if (optional.isEmpty()) {
-//                throw new AppBadException("ArticleType not found "+articleTypeId[i]);
-//            }
-//            articleTypeEntities[i]= optional.get();
-//        }
-////        entity.setArticleType(rticleTypeEntities);   todo ---------------------------/////////////////////////
-//        articleRepository.save(entity);
-//        dto.setId(entity.getId());
-//        dto.setVisible(entity.getVisible());
-//        dto.setCreatedDate(entity.getCreatedDate());
-//
-//        return dto;
-//    }
-    public void create(ArticleCreateDTO dto, Integer profileId) {
-        // check
-        //private String title;
-        //    private String description;
-        //    private String content;
-        //    private String photoId;
-        //    private List<Integer> articleType;
-        //    private Integer regionId;
-        //    private Integer categoryId;
-        //    private List<ArticleTypeDTO> articleTypeList;
+
+    public void create(ArticleCreateDTO dto) {
+        CustomUserDetails userDetails =(CustomUserDetails) SecurityContextHolder.getContext().getAuthentication().getPrincipal();
+        Integer profileId = userDetails.getId();
+
         ArticleEntity article = new ArticleEntity();
         article.setTitleUz(dto.getTitleUz());
         article.setTitleRu(dto.getTitleRu());
@@ -128,87 +51,36 @@ public class ArticleService {
         article.setContentRu(dto.getContentRu());
         article.setContentEn(dto.getContentEn());
 
-        /*RegionEntity region = new RegionEntity();
-        region.setId(dto.getRegionId());
-        article.setRegion(region);*/
-
         article.setRegionId(dto.getRegionId());
         article.setModeratorId(profileId);
         article.setPhotoId(dto.getPhotoId());
         article.setCreatedDate(LocalDateTime.now());
-        // category ..
         articleRepository.save(article);
 
         articleTypesService.merge(article.getId(), dto.getArticleType());
 
-        // article.setModerator(null); //  profileId
+    }
+    public ArticleDTO update(String articleId, ArticleCreateDTO dto) {
+        CustomUserDetails userDetails =(CustomUserDetails) SecurityContextHolder.getContext().getAuthentication().getPrincipal();
+        Integer profileId = userDetails.getId();
+        Optional<ArticleEntity> optional = articleRepository.findById(articleId);
+        // check
+        ArticleEntity article = optional.get();
+        article.setTitle(dto.getTitleUz());
+        article.setDescription(dto.getDescriptionUz());
+        article.setContent(dto.getContentUz());
+
+        article.setRegionId(dto.getRegionId());
+        article.setModeratorId(profileId);
+        article.setCategoryId(dto.getCategoryId());
+        article.setPhotoId(dto.getPhotoId());
+        articleRepository.save(article);
+
+        articleTypesService.merge(article.getId(), dto.getArticleType());
+        Optional<ArticleEntity> entity = articleRepository.findById(articleId);
+        return toDTO(entity.get());
     }
 
-//    public ArticleDTO updateById(String id, ArticleDTO dto) {
-//        //title,description,content,shared_count,image_id, region_id,category_id
-////        JwtDTO decode = JWTUtil.decode(jwt);
-////        if (!decode.getRole().equals(ProfileRole.ADMIN)) {
-////            throw new AppBadException("You can not");
-////        }
-//        Optional<ArticleEntity> optional = articleRepository.findById(id);
-//        if (optional.isEmpty()) {
-//            throw new AppBadException("ArticleType not found");
-//        }
-//        ArticleEntity entity = optional.get();
-//        if (dto.getTitle() != null) {
-//            entity.setTitle(dto.getTitle());
-//        } else {
-//            dto.setTitle(entity.getTitle());
-//        }
-//        if (dto.getDescription() != null) {
-//            entity.setDescription(dto.getDescription());
-//        } else {
-//            dto.setDescription(entity.getDescription());
-//        }
-//        if (dto.getContent() != null) {
-//            entity.setContent(dto.getContent());
-//        } else {
-//            dto.setContent(entity.getContent());
-//        }
-//        if (dto.getSharedCount() != null) {
-//            entity.setSharedCount(dto.getSharedCount());
-//        } else {
-//            dto.setSharedCount(entity.getSharedCount());
-//        }
-//        if (dto.getPhotoId() != null) {
-//            if (entity.getPhotoId() != null) {
-//                attachRepository.deleteById(entity.getPhotoId());
-//            }
-//            entity.setPhotoId(dto.getPhotoId());
-//        } else {
-//            dto.setPhotoId(entity.getPhotoId());
-//        }
-//        if (dto.getRegionId() != null) {
-//            entity.setRegion(regionService.fingById(dto.getRegionId()));
-//        } else {
-//            dto.setRegionId(entity.getRegion().getId());
-//        }
-//        if (dto.getCategoryId() != null) {
-//            entity.setCategory(categoryService.fingById(dto.getCategoryId()));
-//        } else {
-//            dto.setCategoryId(entity.getCategory().getId());
-//        }
-////        if (dto.getArticleType() != null) { todo ---------------------------------------//////////////////////////
-////            entity.setArticleType(articleTypeToEntityArray(dto.getArticleType()));
-////        } else {
-////            dto.setArticleType(articleTypeToDTOArray(entity.getArticleType()));
-////        }
-//        entity.setStatus(ArticleStatus.NOT_PUBLISHED);
-//        dto.setStatus(ArticleStatus.NOT_PUBLISHED);
-//        articleRepository.save(entity);
-//
-//
-////        articleRepository.updateArticle(entity.getId(),entity.getNameUz(),entity.getNameRu(),entity.getNameEn(),entity.getOrderNumber());
-//        dto.setVisible(entity.getVisible());
-//        dto.setId(entity.getId());
-//        dto.setCreatedDate(entity.getCreatedDate());
-//        return dto;
-//    }
 
     public String delete(String id) {
 
@@ -220,7 +92,7 @@ public class ArticleService {
 
     public PageImpl<ArticleDTO> allByPagination(Integer page, Integer size, String jwt) {
         JwtDTO decode = JWTUtil.decode(jwt);
-        if (!decode.getRole().equals(ProfileRole.ADMIN)) {
+        if (!decode.getRole().equals(ProfileRole.ROLE_ADMIN)) {
             throw new AppBadException("You can not");
         }
         Page<ArticleEntity> all = articleRepository.findAll(PageRequest.of(page - 1, size));
@@ -335,30 +207,7 @@ public class ArticleService {
         return dtoList;
     }
 
-    public ArticleDTO update(String articleId, ArticleCreateDTO dto, Integer profileId) {
-        Optional<ArticleEntity> optional = articleRepository.findById(articleId);
-        // check
-        ArticleEntity article = optional.get();
-        article.setTitle(dto.getTitleUz());
-        article.setDescription(dto.getDescriptionUz());
-        article.setContent(dto.getContentUz());
 
-        /*RegionEntity region = new RegionEntity();
-        region.setId(dto.getRegionId());
-        article.setRegion(region);*/
-
-        article.setRegionId(dto.getRegionId());
-        article.setModeratorId(profileId);
-        article.setCategoryId(dto.getCategoryId());
-        article.setPhotoId(dto.getPhotoId());
-        // category ..
-        articleRepository.save(article);
-
-        articleTypesService.merge(article.getId(), dto.getArticleType());
-        Optional<ArticleEntity> entity = articleRepository.findById(articleId);
-        return toDTO(entity.get());
-        // article.setModerator(null); //  profileId
-    }
 
     public List<ArticleShortInfo> getLastEightIdNotIncludedInGivenList( ArticleIdListDTO list) {
         List<String> idList = list.getList();

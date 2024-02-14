@@ -1,0 +1,53 @@
+### Creat
+POST http://localhost:8080/comment
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzUxMiJ9.eyJpYXQiOjE3MDc5MDEwMDYsImVtYWlsIjoiYWRtaW5AbWFpbC5ydSIsInJvbGUiOiJST0xFX0FETUlOIiwiZXhwIjoxNzA3OTg3NDA2LCJpc3MiOiJLdW5VelRlc3QifQ.A5OrRytYNuvL95W8pfC9FkDW7ZPWCFne8PwzYLtuY-VKJyYYMMbsIlHPNFDZS32SKlIfg2zbXZ_FFmsH49rFaA
+
+
+{
+  "content": "Alik hursandman😂",
+  "articleId": "4a0a8556-389e-48f3-bcd7-8ecaa1f5895b",
+  "replyId": 2
+}
+
+### Update
+PUT http://localhost:8080/comment/update
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzUxMiJ9.eyJpYXQiOjE3MDc5MDEwMDYsImVtYWlsIjoiYWRtaW5AbWFpbC5ydSIsInJvbGUiOiJST0xFX0FETUlOIiwiZXhwIjoxNzA3OTg3NDA2LCJpc3MiOiJLdW5VelRlc3QifQ.A5OrRytYNuvL95W8pfC9FkDW7ZPWCFne8PwzYLtuY-VKJyYYMMbsIlHPNFDZS32SKlIfg2zbXZ_FFmsH49rFaA
+
+{
+  "commentId": 2,
+  "content": "Alik shooox hursandman😂",
+  "articleId": "4a0a8556-389e-48f3-bcd7-8ecaa1f5895b"
+}
+
+### Delete
+DELETE http://localhost:8080/comment/delete
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzUxMiJ9.eyJpYXQiOjE3MDc5MDEwMDYsImVtYWlsIjoiYWRtaW5AbWFpbC5ydSIsInJvbGUiOiJST0xFX0FETUlOIiwiZXhwIjoxNzA3OTg3NDA2LCJpc3MiOiJLdW5VelRlc3QifQ.A5OrRytYNuvL95W8pfC9FkDW7ZPWCFne8PwzYLtuY-VKJyYYMMbsIlHPNFDZS32SKlIfg2zbXZ_FFmsH49rFaA
+
+{
+  "articleId": "4a0a8556-389e-48f3-bcd7-8ecaa1f5895b",
+  "commentId": 3
+}
+
+### Get comment by article Id
+GET http://localhost:8080/comment/getCommentsByArticleId/4a0a8556-389e-48f3-bcd7-8ecaa1f5895b
+Authorization: Bearer eyJhbGciOiJIUzUxMiJ9.eyJpYXQiOjE3MDc5MDEwMDYsImVtYWlsIjoiYWRtaW5AbWFpbC5ydSIsInJvbGUiOiJST0xFX0FETUlOIiwiZXhwIjoxNzA3OTg3NDA2LCJpc3MiOiJLdW5VelRlc3QifQ.A5OrRytYNuvL95W8pfC9FkDW7ZPWCFne8PwzYLtuY-VKJyYYMMbsIlHPNFDZS32SKlIfg2zbXZ_FFmsH49rFaA
+
+### Get comment by article Id By Pagination
+GET http://localhost:8080/comment/getCommentsByPagination/4a0a8556-389e-48f3-bcd7-8ecaa1f5895b
+Authorization: Bearer eyJhbGciOiJIUzUxMiJ9.eyJpYXQiOjE3MDc5MDEwMDYsImVtYWlsIjoiYWRtaW5AbWFpbC5ydSIsInJvbGUiOiJST0xFX0FETUlOIiwiZXhwIjoxNzA3OTg3NDA2LCJpc3MiOiJLdW5VelRlc3QifQ.A5OrRytYNuvL95W8pfC9FkDW7ZPWCFne8PwzYLtuY-VKJyYYMMbsIlHPNFDZS32SKlIfg2zbXZ_FFmsH49rFaA
+
+### Get comment by Filter Id By Pagination
+GET http://localhost:8080/comment/getCommentsByFilterWithPagination
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzUxMiJ9.eyJpYXQiOjE3MDc5MDEwMDYsImVtYWlsIjoiYWRtaW5AbWFpbC5ydSIsInJvbGUiOiJST0xFX0FETUlOIiwiZXhwIjoxNzA3OTg3NDA2LCJpc3MiOiJLdW5VelRlc3QifQ.A5OrRytYNuvL95W8pfC9FkDW7ZPWCFne8PwzYLtuY-VKJyYYMMbsIlHPNFDZS32SKlIfg2zbXZ_FFmsH49rFaA
+
+{
+
+}
+
+### Get comment by article Id By Pagination
+GET http://localhost:8080/comment/getRepliedCommentListByCommentId/1
+Authorization: Bearer eyJhbGciOiJIUzUxMiJ9.eyJpYXQiOjE3MDc5MDEwMDYsImVtYWlsIjoiYWRtaW5AbWFpbC5ydSIsInJvbGUiOiJST0xFX0FETUlOIiwiZXhwIjoxNzA3OTg3NDA2LCJpc3MiOiJLdW5VelRlc3QifQ.A5OrRytYNuvL95W8pfC9FkDW7ZPWCFne8PwzYLtuY-VKJyYYMMbsIlHPNFDZS32SKlIfg2zbXZ_FFmsH49rFaA

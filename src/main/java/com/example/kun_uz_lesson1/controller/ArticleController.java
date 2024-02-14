@@ -57,6 +57,7 @@ import com.example.kun_uz_lesson1.util.HttpRequestUtil;
 import jakarta.servlet.http.HttpServletRequest;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -67,73 +68,71 @@ import java.util.List;
 public class ArticleController {
     @Autowired
     private ArticleService articleService;
+
+    @PreAuthorize("hasRole('MODERATOR')")
     @PostMapping("/mod")
-    public void creat(@RequestBody ArticleCreateDTO articleCreateDTO,
-                                            HttpServletRequest request) {
-        Integer id = HttpRequestUtil.getProfileId(request, ProfileRole.MODERATOR);
-        articleService.create(articleCreateDTO,id);
+    public void creat(@RequestBody ArticleCreateDTO articleCreateDTO) {
+        articleService.create(articleCreateDTO);
     }
 
-//    @PutMapping("/mod/updateById/{id}")
-//    public ResponseEntity<ArticleDTO> updateById(@PathVariable("id") String id,
-//                                                     @RequestBody ArticleDTO articleTypeDTO,
-//                                                 HttpServletRequest request) {
-//        HttpRequestUtil.getProfileId(request, ProfileRole.MODERATOR);
-//        return ResponseEntity.ok(articleService.updateById(id, articleTypeDTO));
-//    }
+    @PreAuthorize("hasRole('MODERATOR')")
     @PutMapping("/mod/update/{id}")
     public ResponseEntity<ArticleDTO> update(@PathVariable("id") String id,
-                                                 @RequestBody ArticleCreateDTO articleCreateDTO,
-                                                 HttpServletRequest request) {
-        Integer profileId = HttpRequestUtil.getProfileId(request, ProfileRole.MODERATOR);
-        return ResponseEntity.ok(articleService.update(id, articleCreateDTO,profileId));
+                                             @RequestBody ArticleCreateDTO articleCreateDTO) {
+        return ResponseEntity.ok(articleService.update(id, articleCreateDTO));
     }
 
+    @PreAuthorize("hasRole('MODERATOR')")
     @DeleteMapping("/deleteById/{id}")
-    public ResponseEntity<String> delete(@PathVariable("id") String id,
-                                         HttpServletRequest request) {
-        HttpRequestUtil.getProfileId(request, ProfileRole.MODERATOR);
+    public ResponseEntity<String> delete(@PathVariable("id") String id) {
         return ResponseEntity.ok(articleService.delete(id));
     }
+
+    @PreAuthorize("hasRole('PUBLISHER')")
     @PutMapping("/pub/changeStatusById/{id}")
     public ResponseEntity<ArticleDTO> changeStatusById(@PathVariable("id") String id,
-                                                       @RequestParam("status")ArticleStatus status,
-                                                       HttpServletRequest request) {
-        HttpRequestUtil.getProfileId(request, ProfileRole.PUBLISHER);
+                                                       @RequestParam("status") ArticleStatus status) {
         return ResponseEntity.ok(articleService.changeStatusById(id, status));
     }
+
     @GetMapping("/getLastFive")
-    public ResponseEntity<List<ArticleShortInfo>> getLastFive(@RequestParam("article_type")Integer id) {
+    public ResponseEntity<List<ArticleShortInfo>> getLastFive(@RequestParam("article_type") Integer id) {
         return ResponseEntity.ok(articleService.getLastFive(id));
     }
+
     @GetMapping("/getLastThree")
-    public ResponseEntity<List<ArticleShortInfo>> getLastThree(@RequestParam("article_type")Integer id) {
+    public ResponseEntity<List<ArticleShortInfo>> getLastThree(@RequestParam("article_type") Integer id) {
         return ResponseEntity.ok(articleService.getLastThree(id));
     }
+
     @GetMapping("/getLastEightIdNotIncludedInGivenList")
     public ResponseEntity<List<ArticleShortInfo>> getLastEightIdNotIncludedInGivenList(@RequestBody ArticleIdListDTO idList) {
         return ResponseEntity.ok(articleService.getLastEightIdNotIncludedInGivenList(idList));
     }
+
     @GetMapping("/getLastFourByTypesAndExceptGivenArticleId")
-    public ResponseEntity<List<ArticleShortInfo>> getLastFourByTypesAndExceptGivenArticleId(@RequestParam("article_type")Integer id,
-                                                                                      @RequestParam("article_id")String article_Id) {
-        return ResponseEntity.ok(articleService.getLastFourByTypesAndExceptGivenArticleId(id,article_Id));
+    public ResponseEntity<List<ArticleShortInfo>> getLastFourByTypesAndExceptGivenArticleId(@RequestParam("article_type") Integer id,
+                                                                                            @RequestParam("article_id") String article_Id) {
+        return ResponseEntity.ok(articleService.getLastFourByTypesAndExceptGivenArticleId(id, article_Id));
     }
 
     @PutMapping("/increaseArticleViewCount/{id}")
     public ResponseEntity<String> increaseArticleViewCount(@PathVariable("id") String id) {
         return ResponseEntity.ok(articleService.increaseArticleViewCount(id));
     }
+
     @PutMapping("/increaseArticleSharedCount/{id}")
     public ResponseEntity<String> increaseArticleSharedCount(@PathVariable("id") String id) {
         return ResponseEntity.ok(articleService.increaseArticleSharedCount(id));
     }
+
     @PutMapping("/getFourMostReadArticles")
-    public ResponseEntity<List<ArticleShortInfo>> getFourMostReadArticles(){
+    public ResponseEntity<List<ArticleShortInfo>> getFourMostReadArticles() {
         return ResponseEntity.ok(articleService.getFourMostReadArticles());
     }
+
     @PutMapping("/getFourArticlesByTagName")
-    public ResponseEntity<List<ArticleShortInfo>> getFourArticlesByTagName(@PathVariable("tag_name") String tagName){
+    public ResponseEntity<List<ArticleShortInfo>> getFourArticlesByTagName(@PathVariable("tag_name") String tagName) {
         return ResponseEntity.ok(articleService.getFourArticlesByTagName(tagName));
     }
 //    @PutMapping("/getFiveArticlesByTypeAndRegionKey")

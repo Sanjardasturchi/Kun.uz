@@ -1,5 +1,6 @@
 package com.example.kun_uz_lesson1.service;
 
+import com.example.kun_uz_lesson1.config.CustomUserDetails;
 import com.example.kun_uz_lesson1.dto.JwtDTO;
 import com.example.kun_uz_lesson1.dto.ProfileDTO;
 import com.example.kun_uz_lesson1.dto.ProfileFilterDTO;
@@ -15,6 +16,7 @@ import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageImpl;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
+import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Service;
 
 import java.time.LocalDateTime;
@@ -29,61 +31,53 @@ public class ProfileService {
     @Autowired
     private ProfileCustomRepository customRepository;
 
-    public ProfileDTO creat(ProfileDTO dto, String jwt) {
-        JwtDTO decode = JWTUtil.decode(jwt);
-        if (decode.getRole().equals(ProfileRole.ADMIN)) {
-            ProfileEntity entity = new ProfileEntity();
-            if (dto.getName() != null) {
-                entity.setName(dto.getName());
-            } else {
-                throw new AppBadException("Profile name is null!");
-            }
-            if (dto.getSurname() != null) {
-                entity.setSurname(dto.getSurname());
-            } else {
-                throw new AppBadException("Profile surname is null!");
-            }
-            if (dto.getEmail() != null) {
-                entity.setEmail(dto.getEmail());
-            } else {
-                throw new AppBadException("Profile email is null!");
-            }
-            if (dto.getPassword() != null) {
-                entity.setPassword(MD5Util.encode(dto.getPassword()));
-            } else {
-                throw new AppBadException("Profile password is null!");
-            }
-            if (dto.getStatus() != null) {
-                entity.setStatus(dto.getStatus());
-            } else {
-                throw new AppBadException("Profile status is null!");
-            }
-            if (dto.getRole() != null) {
-                entity.setRole(dto.getRole());
-            } else {
-                throw new AppBadException("Profile role is null!");
-            }
-            entity.setCreatedDate(LocalDateTime.now());
-            entity.setVisible(true);
-            profileRepository.save(entity);
-            dto.setId(entity.getId());
-            dto.setCreatedDate(entity.getCreatedDate());
-            dto.setVisible(entity.getVisible());
-            return dto;
+    public ProfileDTO creat(ProfileDTO dto) {
+        ProfileEntity entity = new ProfileEntity();
+        if (dto.getName() != null) {
+            entity.setName(dto.getName());
+        } else {
+            throw new AppBadException("Profile name is null!");
         }
-        throw new AppBadException("You can not creat");
+        if (dto.getSurname() != null) {
+            entity.setSurname(dto.getSurname());
+        } else {
+            throw new AppBadException("Profile surname is null!");
+        }
+        if (dto.getEmail() != null) {
+            entity.setEmail(dto.getEmail());
+        } else {
+            throw new AppBadException("Profile email is null!");
+        }
+        if (dto.getPassword() != null) {
+            entity.setPassword(MD5Util.encode(dto.getPassword()));
+        } else {
+            throw new AppBadException("Profile password is null!");
+        }
+        if (dto.getStatus() != null) {
+            entity.setStatus(dto.getStatus());
+        } else {
+            throw new AppBadException("Profile status is null!");
+        }
+        if (dto.getRole() != null) {
+            entity.setRole(dto.getRole());
+        } else {
+            throw new AppBadException("Profile role is null!");
+        }
+        entity.setCreatedDate(LocalDateTime.now());
+        entity.setVisible(true);
+        profileRepository.save(entity);
+        dto.setId(entity.getId());
+        dto.setCreatedDate(entity.getCreatedDate());
+        dto.setVisible(entity.getVisible());
+        return dto;
     }
 
-    public ProfileDTO update(Integer id, ProfileDTO dto, String jwt) {
-        JwtDTO decode = JWTUtil.decode(jwt);
-        if (decode.getRole().equals(ProfileRole.ADMIN)) {
-            Optional<ProfileEntity> byId = profileRepository.findById(id);
-            if (byId.isEmpty()) {
-                throw new AppBadException("Profile not found");
-            }
-            return updateAndSave(dto, byId.get(), ProfileRole.ADMIN);
+    public ProfileDTO update(Integer id, ProfileDTO dto) {
+        Optional<ProfileEntity> byId = profileRepository.findById(id);
+        if (byId.isEmpty()) {
+            throw new AppBadException("Profile not found");
         }
-        return null;
+        return updateAndSave(dto, byId.get(), ProfileRole.ROLE_ADMIN);
     }
 
     private ProfileDTO updateAndSave(ProfileDTO dto, ProfileEntity entity, ProfileRole role) {
@@ -102,7 +96,7 @@ public class ProfileService {
         } else {
             dto.setPassword(entity.getPassword());
         }
-        if (role.equals(ProfileRole.ADMIN)) {
+        if (role.equals(ProfileRole.ROLE_ADMIN)) {
             if (dto.getRole() != null) {
                 entity.setRole(dto.getRole());
             }
@@ -123,23 +117,19 @@ public class ProfileService {
         return dto;
     }
 
-    public ProfileDTO updateOwn(ProfileDTO dto, String jwt) {
-        JwtDTO decode = JWTUtil.decode(jwt);
-        Optional<ProfileEntity> byId = profileRepository.findById(decode.getId());
+    public ProfileDTO updateOwn(ProfileDTO dto) {
+        CustomUserDetails userDetails = (CustomUserDetails) SecurityContextHolder.getContext().getAuthentication().getPrincipal();
+        Optional<ProfileEntity> byId = profileRepository.findById(userDetails.getId());
         if (byId.isEmpty()) {
             throw new AppBadException("Profile not found");
         }
-        return updateAndSave(dto, byId.get(), ProfileRole.USER);
+        return updateAndSave(dto, byId.get(), ProfileRole.ROLE_USER);
     }
 
-    public PageImpl<ProfileDTO> getAll(Integer page, Integer size, String jwt) {
-        JwtDTO decode = JWTUtil.decode(jwt);
-        if (decode.getRole().equals(ProfileRole.ADMIN)) {
-            Pageable pageable = PageRequest.of(page - 1, size);
-            Page<ProfileEntity> all = profileRepository.all(pageable);
-            return new PageImpl<>(toDTOList(all.getContent()), PageRequest.of(page - 1, size), all.getTotalElements());
-        }
-        throw new AppBadException("You can not get");
+    public PageImpl<ProfileDTO> getAll(Integer page, Integer size) {
+        Pageable pageable = PageRequest.of(page - 1, size);
+        Page<ProfileEntity> all = profileRepository.all(pageable);
+        return new PageImpl<>(toDTOList(all.getContent()), PageRequest.of(page - 1, size), all.getTotalElements());
     }
 
     private List<ProfileDTO> toDTOList(List<ProfileEntity> entities) {
@@ -163,25 +153,17 @@ public class ProfileService {
         return dto;
     }
 
-    public String delete(Integer id, String jwt) {
-        JwtDTO decode = JWTUtil.decode(jwt);
-        if (decode.getRole().equals(ProfileRole.ADMIN)) {
-            Optional<ProfileEntity> byId = profileRepository.findById(id);
-            if (byId.isEmpty() || (!byId.get().getVisible())) {
-                throw new AppBadException("Profile not found");
-            }
-            profileRepository.makeDeleted(id);
-            return "DONE";
+    public String delete(Integer id) {
+        Optional<ProfileEntity> byId = profileRepository.findById(id);
+        if (byId.isEmpty() || (!byId.get().getVisible())) {
+            throw new AppBadException("Profile not found");
         }
-        throw new AppBadException("You can not delete");
+        profileRepository.makeDeleted(id);
+        return "DONE";
     }
 
-    public List<ProfileDTO> filter(ProfileFilterDTO filterDTO, String jwt) {
-//        JwtDTO decode = JWTUtil.decode(jwt);
-//        if (decode.getRole().equals(ProfileRole.ADMIN)) {
+    public List<ProfileDTO> filter(ProfileFilterDTO filterDTO) {
         return toDTOList(customRepository.filter(filterDTO));
-//        }
-//        throw new AppBadException("You can not get");
     }
 
     public ProfileEntity get(Integer id) {

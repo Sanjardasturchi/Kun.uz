@@ -41,11 +41,13 @@ Authorization: Bearer eyJhbGciOiJIUzUxMiJ9.eyJpYXQiOjE3MDcyODYzODgsImlkIjo4Miwic
 
 ### Get last 5
 GET http://localhost:8080/article/getLastFive/8
-
+Authorization: Bearer eyJhbGciOiJIUzUxMiJ9.eyJpYXQiOjE3MDc5MDEwMDYsImVtYWlsIjoiYWRtaW5AbWFpbC5ydSIsInJvbGUiOiJST0xFX0FETUlOIiwiZXhwIjoxNzA3OTg3NDA2LCJpc3MiOiJLdW5VelRlc3QifQ.A5OrRytYNuvL95W8pfC9FkDW7ZPWCFne8PwzYLtuY-VKJyYYMMbsIlHPNFDZS32SKlIfg2zbXZ_FFmsH49rFaA
 
 ### Get last 8 with id included in given list
 GET http://localhost:8080/article/getLastEightIdNotIncludedInGivenList
 Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzUxMiJ9.eyJpYXQiOjE3MDc5MDEwMDYsImVtYWlsIjoiYWRtaW5AbWFpbC5ydSIsInJvbGUiOiJST0xFX0FETUlOIiwiZXhwIjoxNzA3OTg3NDA2LCJpc3MiOiJLdW5VelRlc3QifQ.A5OrRytYNuvL95W8pfC9FkDW7ZPWCFne8PwzYLtuY-VKJyYYMMbsIlHPNFDZS32SKlIfg2zbXZ_FFmsH49rFaA
+
 
 {
   "list": ["4a0a8556-389e-48f3-bcd7-8ecaa1f5895b "]

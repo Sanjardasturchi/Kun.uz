@@ -35,4 +35,12 @@ public class ArticleDTO {
     private Integer categoryId;
     private Integer moderatorId;
     private Integer publisherId;
+
+    public ArticleDTO() {
+    }
+
+    public ArticleDTO(String id, String title) {
+        this.id = id;
+        this.title = title;
+    }
 }
