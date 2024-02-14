@@ -33,5 +33,7 @@ public class ProfileEntity extends BaseEntity{
     private String code;
     @Column(name = "code_end_time")
     private LocalDateTime codeEndTime;
+//    @Column(name = "age")
+//    private Integer age;
 
 }

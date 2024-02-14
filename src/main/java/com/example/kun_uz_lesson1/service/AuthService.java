@@ -4,6 +4,7 @@ import com.example.kun_uz_lesson1.dto.AuthDTO;
 import com.example.kun_uz_lesson1.dto.ProfileDTO;
 import com.example.kun_uz_lesson1.dto.RegistrationDTO;
 import com.example.kun_uz_lesson1.entity.ProfileEntity;
+import com.example.kun_uz_lesson1.enums.AppLanguage;
 import com.example.kun_uz_lesson1.enums.ProfileRole;
 import com.example.kun_uz_lesson1.enums.ProfileStatus;
 import com.example.kun_uz_lesson1.exp.AppBadException;
@@ -12,9 +13,11 @@ import com.example.kun_uz_lesson1.util.JWTUtil;
 import com.example.kun_uz_lesson1.util.MD5Util;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.context.support.ResourceBundleMessageSource;
 import org.springframework.stereotype.Service;
 
 import java.time.LocalDateTime;
+import java.util.Locale;
 import java.util.Optional;
 import java.util.Random;
 
@@ -22,13 +25,17 @@ import java.util.Random;
 public class AuthService {
     @Autowired
     private ProfileRepository profileRepository;
+    @Autowired
+    private ResourceBundleMessageSource resourceBundleMessageSource;
+    @Autowired
+    private ResourceBundleService resourceBundleService;
 
 
-
-    public ProfileDTO auth(AuthDTO authDTO) {
+    public ProfileDTO auth(AuthDTO authDTO, AppLanguage language) {
         Optional<ProfileEntity> entityOptional = profileRepository.findByEmailAndPassword(authDTO.getEmail(), MD5Util.encode(authDTO.getPassword()));
         if (entityOptional.isEmpty()||!entityOptional.get().getVisible()) {
-            throw new AppBadException("Email or Password s wrong!");
+//            String msg=resourceBundleMessageSource.getMessage("email.password.wrong",null,new Locale(language.name()));
+            throw new AppBadException(resourceBundleService.getMessage("email.password.wrong",language));
         }
 
         ProfileEntity entity=entityOptional.get();

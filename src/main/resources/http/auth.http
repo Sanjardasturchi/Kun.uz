@@ -1,9 +1,10 @@
 ### Post
 POST http://localhost:8080/auth/login
 Content-Type: application/json
+Accept-Language: ru
 
 {
-  "email": "admin@mail.ru",
+  "email": "aadmin@mail.ru",
   "password": "12345"
 }
 

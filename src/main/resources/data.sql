@@ -1,0 +1,1 @@
+-- alter table profile alter column age
