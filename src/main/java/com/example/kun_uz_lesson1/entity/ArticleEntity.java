@@ -47,7 +47,7 @@ public class ArticleEntity{
     @Column(name = "content_en",columnDefinition = "TEXT")
     private String contentEn;
     @Column(name = "shared_count")
-    private Integer sharedCount;
+    private Integer sharedCount=0;
     @Column(name = "photo_id")
     private String photoId;
     @Column(name = "created_date")
@@ -56,7 +56,7 @@ public class ArticleEntity{
     private LocalDateTime publishedDate;
     private Boolean visible;
     @Column(name = "view_count")
-    private Integer viewCount;
+    private Integer viewCount=0;
     @Column(name = "status")
     private ArticleStatus status;
 
@@ -71,6 +71,12 @@ public class ArticleEntity{
     private Integer moderatorId;
     @Column(name = "publisher_id")
     private Integer publisherId;
+    @Column(name = "like_count")
+    private Integer likeCount;
+    @Column(name = "dislike_count")
+    private Integer dislikeCount;
+
+
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "photo_id",insertable = false,updatable = false)

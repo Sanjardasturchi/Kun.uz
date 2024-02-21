@@ -32,6 +32,7 @@ public class SpringSecurityConfig {
             "/init/admin",
             "/init/**",
             "/region/getByLang",
+            "/category/getByLang",
             "/v2/api-docs",
             "/configuration/ui",
             "/configuration/security",
@@ -41,6 +42,16 @@ public class SpringSecurityConfig {
             "/swagger-ui/**",
             "/swagger-resources",
             "/swagger-resources/**",
+            "/attach/upload",
+            "/article_type/getByLang",
+            "/article/getLastFourByTypesAndExceptGivenArticleId",
+            "/article/getFourMostReadArticles",
+            "/article/getFourArticlesByTagName",
+            "/article/getLastFiveArticlesByTypeAndRegionKey",
+            "/article/getLastFiveArticlesByCategoryKey",
+            "/article/allByCategoryKeyByPagination",
+            "/article/allByFilterWithPagination",
+            "/article/getByLang/{id}"
 
     };
 

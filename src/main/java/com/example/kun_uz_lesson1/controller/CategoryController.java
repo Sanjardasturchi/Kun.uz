@@ -3,13 +3,14 @@ package com.example.kun_uz_lesson1.controller;
 import com.example.kun_uz_lesson1.dto.CategoryDTO;
 import com.example.kun_uz_lesson1.enums.AppLanguage;
 import com.example.kun_uz_lesson1.service.CategoryService;
+import io.swagger.v3.oas.annotations.tags.Tag;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
-
+@Tag(name = "Category API list", description = "API list for Category")
 @RestController
 @RequestMapping("/category")
 public class CategoryController {

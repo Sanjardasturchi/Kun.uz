@@ -1,13 +1,13 @@
 ### Post
 POST http://localhost:8080/article_type
 Content-Type: application/json
-Authorization: eyJhbGciOiJIUzUxMiJ9.eyJpYXQiOjE3MDcyODk3MzAsImlkIjozMCwicm9sZSI6IkFETUlOIiwiZXhwIjoxNzA3Mzc2MTMwLCJpc3MiOiJLdW5VelRlc3QifQ.LfDMDTWnXbTQHipgdz9UIh-5LFqPRqpWnOShxDW-avU65f-E8QpFoJN4c5MyONi4OV-2ZOgyiEbCXYDItaJ86Q
+Authorization: Bearer eyJhbGciOiJIUzUxMiJ9.eyJpYXQiOjE3MDg0NDYwNzksImVtYWlsIjoic2FuamFyYmVrc3VsdGFub3YyMDIzQGdtYWlsLmNvbSIsInJvbGUiOiJST0xFX0FETUlOIiwiZXhwIjoxNzA4NTMyNDc5LCJpc3MiOiJLdW5VelRlc3QifQ.AGZroqnbGg18__iM_dVYzGR6y4QuUoNODVD5PE3BetSMJF8CggMxeoK8NIcrv3o07QRsswLchqMOLGrKST-mQA
 
 {
   "nameUz": "Yangi_uz",
   "nameRu": "Yangi_ru",
   "nameEn": "Yangi_en",
-  "orderNumber": "3"
+  "orderNumber": "2"
 }
 
 ### Update
@@ -30,7 +30,7 @@ GET http://localhost:8080/article_type/allByPagination
 Authorization: eyJhbGciOiJIUzUxMiJ9.eyJpYXQiOjE3MDcyODk3MzAsImlkIjozMCwicm9sZSI6IkFETUlOIiwiZXhwIjoxNzA3Mzc2MTMwLCJpc3MiOiJLdW5VelRlc3QifQ.LfDMDTWnXbTQHipgdz9UIh-5LFqPRqpWnOShxDW-avU65f-E8QpFoJN4c5MyONi4OV-2ZOgyiEbCXYDItaJ86Q
 
 ### Get all by Language
-GET http://localhost:8080/article_type/getByLang?language=ru
+GET http://localhost:8080/article_type/getByLang?language=uz
 
 
 

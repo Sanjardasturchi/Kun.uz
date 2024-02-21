@@ -3,10 +3,12 @@ package com.example.kun_uz_lesson1.controller;
 import com.example.kun_uz_lesson1.dto.ProfileDTO;
 import com.example.kun_uz_lesson1.dto.VerificationDTO;
 import com.example.kun_uz_lesson1.service.VerificationService;
+import io.swagger.v3.oas.annotations.tags.Tag;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
+@Tag(name = "Verification API list", description = "API list for Verification")
 @Slf4j
 @RestController
 @RequestMapping("/verification")

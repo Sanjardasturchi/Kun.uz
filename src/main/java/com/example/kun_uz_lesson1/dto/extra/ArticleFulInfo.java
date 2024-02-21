@@ -1,5 +1,7 @@
-package com.example.kun_uz_lesson1.dto;
+package com.example.kun_uz_lesson1.dto.extra;
 
+import com.example.kun_uz_lesson1.dto.CategoryDTO;
+import com.example.kun_uz_lesson1.dto.RegionDTO;
 import lombok.Getter;
 import lombok.Setter;
 

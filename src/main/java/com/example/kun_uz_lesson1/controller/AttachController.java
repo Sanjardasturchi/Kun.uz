@@ -2,13 +2,14 @@ package com.example.kun_uz_lesson1.controller;
 
 import com.example.kun_uz_lesson1.dto.AttachDTO;
 import com.example.kun_uz_lesson1.service.AttachService;
+import io.swagger.v3.oas.annotations.tags.Tag;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.core.io.Resource;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
-
+@Tag(name = "Attach API list", description = "API list for Attach")
 @RestController
 @RequestMapping("attach")
 public class AttachController {

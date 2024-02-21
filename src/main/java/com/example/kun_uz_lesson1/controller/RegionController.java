@@ -7,6 +7,7 @@ import com.example.kun_uz_lesson1.enums.ProfileRole;
 import com.example.kun_uz_lesson1.service.RegionService;
 import com.example.kun_uz_lesson1.util.HttpRequestUtil;
 import com.example.kun_uz_lesson1.util.SpringSecurityUtil;
+import io.swagger.v3.oas.annotations.tags.Tag;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -15,7 +16,7 @@ import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
-//@Valid
+@Tag(name = "Region API list", description = "API list for Region")
 @RestController
 @RequestMapping("/region")
 public class RegionController {

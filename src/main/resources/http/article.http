@@ -1,32 +1,37 @@
 ### Creat
 POST http://localhost:8080/article/mod
 Content-Type: application/json
-Authorization: Bearer eyJhbGciOiJIUzUxMiJ9.eyJpYXQiOjE3MDcyODYzODgsImlkIjo4Miwicm9sZSI6Ik1PREVSQVRPUiIsImV4cCI6MTcwNzM3Mjc4OCwiaXNzIjoiS3VuVXpUZXN0In0.AdnalS5RHMnGg5v7XbFrNPgIwbdc7E2Wv-JhQdZ0HdPNT4B0g5q-czk4NK6EYzYhdNNUJ2tEHYQTEjQLm-VaKg
+Authorization: Bearer eyJhbGciOiJIUzUxMiJ9.eyJpYXQiOjE3MDg0NDU3NzQsImVtYWlsIjoic2FuamFyc3VsdGFub3YyMDIzQGdtYWlsLmNvbSIsInJvbGUiOiJST0xFX01PREVSQVRPUiIsImV4cCI6MTcwODUzMjE3NCwiaXNzIjoiS3VuVXpUZXN0In0.533FHTZ2fjnOD-hF9nKxxUaF6SZbDJ2nfK6TsNfXbcZEc0-_wr-AA9PnXb6Z-1Tb7rEZNF3ApOEI5TRAL18R6Q
 
 {
   "regionId": 1,
-  "title": "bbb",
-  "description": "ccc",
-  "content": "ddd",
+  "titleUz": "bbb",
+  "titleRu": "bbb",
+  "titleEn": "bbb",
+  "descriptionUz": "ccc",
+  "descriptionRu": "ccc",
+  "descriptionEn": "ccc",
+  "contentUz": "ddd",
+  "contentRu": "ddd",
+  "contentEn": "ddd",
   "categoryId": 1,
-  "photoId": "d0d9ec2e-a9a1-4397-87c2-836365032f60",
-  "articleType": [5,6]
+  "articleType": [4]
 }
 
-### Update
+### Update Image By Id
 PUT http://localhost:8080/article/mod/updateById/1
 Content-Type: application/json
-Authorization: Bearer eyJhbGciOiJIUzUxMiJ9.eyJpYXQiOjE3MDcyODYzODgsImlkIjo4Miwicm9sZSI6Ik1PREVSQVRPUiIsImV4cCI6MTcwNzM3Mjc4OCwiaXNzIjoiS3VuVXpUZXN0In0.AdnalS5RHMnGg5v7XbFrNPgIwbdc7E2Wv-JhQdZ0HdPNT4B0g5q-czk4NK6EYzYhdNNUJ2tEHYQTEjQLm-VaKg
+Authorization: Bearer eyJhbGciOiJIUzUxMiJ9.eyJpYXQiOjE3MDgwOTA5NzAsImVtYWlsIjoic2FuamFyYmVrc3VsdGFub3YyMDIzQGdtYWlsLmNvbSIsInJvbGUiOiJST0xFX0FETUlOIiwiZXhwIjoxNzA4MTc3MzcwLCJpc3MiOiJLdW5VelRlc3QifQ.xgH1jHD9dqop0KMBEQmsHgQ4TZ_4UsrO3EEsFzFxRXhW12bOubcFGFMVuA9tnO32rvOtqjFgvAtkDLr0zg6X9Q
 
 {
   "imageId": "d0d9ec2e-a9a1-4397-87c2-836365032f60.jpg"
 }
 
 
-### Update
+### Update Details By Id
 PUT http://localhost:8080/article/mod/update/4a0a8556-389e-48f3-bcd7-8ecaa1f5895b
 Content-Type: application/json
-Authorization: Bearer eyJhbGciOiJIUzUxMiJ9.eyJpYXQiOjE3MDcyODYzODgsImlkIjo4Miwicm9sZSI6Ik1PREVSQVRPUiIsImV4cCI6MTcwNzM3Mjc4OCwiaXNzIjoiS3VuVXpUZXN0In0.AdnalS5RHMnGg5v7XbFrNPgIwbdc7E2Wv-JhQdZ0HdPNT4B0g5q-czk4NK6EYzYhdNNUJ2tEHYQTEjQLm-VaKg
+Authorization: Bearer eyJhbGciOiJIUzUxMiJ9.eyJpYXQiOjE3MDgwOTEyMzQsImVtYWlsIjoic2FuamFyc3VsdGFub3YyMDIzQGdtYWlsLmNvbSIsInJvbGUiOiJST0xFX01PREVSQVRPUiIsImV4cCI6MTcwODE3NzYzNCwiaXNzIjoiS3VuVXpUZXN0In0.DFVWb_Ihp3JnSeLPuQpAxM0yHB89gUvJJyVwnY3kiom_x5tA7hxzQ0D41wXn3RlMQK_aZ-I8Fnfo4BbecnVZYQ
 
 {
   "regionId": 1,
@@ -35,7 +40,7 @@ Authorization: Bearer eyJhbGciOiJIUzUxMiJ9.eyJpYXQiOjE3MDcyODYzODgsImlkIjo4Miwic
   "content": "ddd",
   "categoryId": 1,
   "photoId": "d0d9ec2e-a9a1-4397-87c2-836365032f60",
-  "articleType": [5,7]
+  "articleType": [1,2]
 }
 
 
@@ -53,8 +58,44 @@ Authorization: Bearer eyJhbGciOiJIUzUxMiJ9.eyJpYXQiOjE3MDc5MDEwMDYsImVtYWlsIjoiY
   "list": ["4a0a8556-389e-48f3-bcd7-8ecaa1f5895b "]
 }
 
+### getLastFourByTypesAndExceptGivenArticleId
+GET http://localhost:8080/article/getLastFourByTypesAndExceptGivenArticleId?article_type=2&article_id=44392476-6af6-4215-95ff-029e54db5991
+
+### getFourMostReadArticles
+GET http://localhost:8080/article/getFourMostReadArticles
+
+### Get by tag name
+GET http://localhost:8080/article/getFourArticlesByTagName?tag_name=c
+
+### getLastFiveArticlesByTypeAndRegionKey
+GET http://localhost:8080/article/getLastFiveArticlesByTypeAndRegionKey?type_id=1&region_id=1
+
+
+### allByRegionKeyByPagination
+GET http://localhost:8080/article/allByRegionKeyByPagination?region_id=1
+Authorization: Bearer eyJhbGciOiJIUzUxMiJ9.eyJpYXQiOjE3MDg1MDU4NTUsImVtYWlsIjoic2FuamFyYmVrc3VsdGFub3YyMDIzQGdtYWlsLmNvbSIsInJvbGUiOiJST0xFX0FETUlOIiwiZXhwIjoxNzA4NTkyMjU1LCJpc3MiOiJLdW5VelRlc3QifQ.DIpiNOzTfNyJKyGPtvN0Ym-tABYo7k1xKSE1X4vOm0gwyvqDaBpHcmXB8QOzhSvGT3G43k4so7kQKL1IdbQwbQ
+
+### getLastFiveArticlesByCategoryKey
+GET http://localhost:8080/article/getLastFiveArticlesByCategoryKey?type_id=1&category_id=1
+
+### allByCategoryKeyByPagination
+GET http://localhost:8080/article/allByCategoryKeyByPagination?category_id=1
+
+### allByFilterWithPagination
+GET http://localhost:8080/article/allByFilterWithPagination
+
+Content-Type: application/json
+
+{
+  "regionId": 1
+}
+
+### getByLang
+GET http://localhost:8080/article/getByLang/c2675756-b0bf-4141-a4e0-3c673db1dcab?language=en
+
 ### Put increaseArticleViewCount
 PUT http://localhost:8080/article/increaseArticleViewCount/4a0a8556-389e-48f3-bcd7-8ecaa1f5895b
 
 ### Put increaseArticleSharedCount
 PUT http://localhost:8080/article/increaseArticleSharedCount/4a0a8556-389e-48f3-bcd7-8ecaa1f5895b
+

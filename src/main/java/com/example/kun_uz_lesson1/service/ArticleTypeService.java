@@ -135,4 +135,12 @@ public class ArticleTypeService {
         dto.setCreatedDate(entity.getCreatedDate());
         return dto;
     }
+
+    public ArticleTypeEntity findById(Integer typeId) {
+        Optional<ArticleTypeEntity> optional = articleTypeRepository.findById(typeId);
+        if (optional.isEmpty()) {
+            throw new AppBadException("Article type not found!");
+        }
+        return optional.get();
+    }
 }

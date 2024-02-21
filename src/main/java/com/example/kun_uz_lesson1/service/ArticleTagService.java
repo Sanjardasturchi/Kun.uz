@@ -4,6 +4,7 @@ import com.example.kun_uz_lesson1.dto.ArticleTagDTO;
 import com.example.kun_uz_lesson1.entity.ArticleTagEntity;
 import com.example.kun_uz_lesson1.repository.ArticleTagRepository;
 import com.example.kun_uz_lesson1.repository.ArticleTypeRepository;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.LinkedList;
@@ -11,6 +12,7 @@ import java.util.List;
 
 @Service
 public class ArticleTagService {
+    @Autowired
     private ArticleTagRepository articleTagRepository;
     public List<ArticleTagDTO> getAllByTag(String tag){
         return toDTOList(articleTagRepository.findByTag(tag));

@@ -2,15 +2,15 @@ package com.example.kun_uz_lesson1.service;
 
 import com.example.kun_uz_lesson1.config.CustomUserDetails;
 import com.example.kun_uz_lesson1.dto.*;
+import com.example.kun_uz_lesson1.dto.extra.ArticleCreateDTO;
+import com.example.kun_uz_lesson1.dto.extra.ArticleFilterDTO;
+import com.example.kun_uz_lesson1.dto.extra.ArticleIdListDTO;
 import com.example.kun_uz_lesson1.entity.*;
 import com.example.kun_uz_lesson1.enums.AppLanguage;
 import com.example.kun_uz_lesson1.enums.ArticleStatus;
-import com.example.kun_uz_lesson1.enums.ProfileRole;
 import com.example.kun_uz_lesson1.exp.AppBadException;
+import com.example.kun_uz_lesson1.repository.ArticleCustomRepository;
 import com.example.kun_uz_lesson1.repository.ArticleRepository;
-import com.example.kun_uz_lesson1.repository.ArticleTypeRepository;
-import com.example.kun_uz_lesson1.repository.AttachRepository;
-import com.example.kun_uz_lesson1.util.JWTUtil;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
@@ -23,21 +23,26 @@ import java.time.LocalDateTime;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Optional;
+
 @Slf4j
 @Service
 public class ArticleService {
     @Autowired
     private ArticleRepository articleRepository;
     @Autowired
+    private ArticleCustomRepository articleCustomRepository;
+    @Autowired
     private AttachService attachService;
     @Autowired
     private ArticleTypesService articleTypesService;
+    @Autowired
+    private ArticleTypeService articleTypeService;
     @Autowired
     private ArticleTagService articleTagService;
 
 
     public void create(ArticleCreateDTO dto) {
-        CustomUserDetails userDetails =(CustomUserDetails) SecurityContextHolder.getContext().getAuthentication().getPrincipal();
+        CustomUserDetails userDetails = (CustomUserDetails) SecurityContextHolder.getContext().getAuthentication().getPrincipal();
         Integer profileId = userDetails.getId();
 
         ArticleEntity article = new ArticleEntity();
@@ -60,8 +65,9 @@ public class ArticleService {
         articleTypesService.merge(article.getId(), dto.getArticleType());
 
     }
+
     public ArticleDTO update(String articleId, ArticleCreateDTO dto) {
-        CustomUserDetails userDetails =(CustomUserDetails) SecurityContextHolder.getContext().getAuthentication().getPrincipal();
+        CustomUserDetails userDetails = (CustomUserDetails) SecurityContextHolder.getContext().getAuthentication().getPrincipal();
         Integer profileId = userDetails.getId();
         Optional<ArticleEntity> optional = articleRepository.findById(articleId);
         // check
@@ -90,12 +96,8 @@ public class ArticleService {
         throw new AppBadException("ArticleType not found");
     }
 
-    public PageImpl<ArticleDTO> allByPagination(Integer page, Integer size, String jwt) {
-        JwtDTO decode = JWTUtil.decode(jwt);
-        if (!decode.getRole().equals(ProfileRole.ROLE_ADMIN)) {
-            throw new AppBadException("You can not");
-        }
-        Page<ArticleEntity> all = articleRepository.findAll(PageRequest.of(page - 1, size));
+    public PageImpl<ArticleDTO> allByRegionKeyByPagination(Integer regionId, Integer page, Integer size) {
+        Page<ArticleEntity> all = articleRepository.findByRegionId(regionId, PageRequest.of(page - 1, size));
         return new PageImpl<>(toDTOListFromIterable(all.getContent()), PageRequest.of(page - 1, size), all.getTotalElements());
     }
 
@@ -112,6 +114,7 @@ public class ArticleService {
         }
         return dtoList;
     }
+
     private ArticleDTO toDTOByLanguage(ArticleEntity entity, AppLanguage language) {
         ArticleDTO dto = new ArticleDTO();
         dto.setId(entity.getId());
@@ -119,11 +122,11 @@ public class ArticleService {
             dto.setContent(entity.getContentUz());
             dto.setTitle(entity.getTitleUz());
             dto.setDescription(entity.getDescriptionUz());
-        }else if (language.equals(AppLanguage.ru)) {
+        } else if (language.equals(AppLanguage.ru)) {
             dto.setContent(entity.getContentRu());
             dto.setTitle(entity.getTitleRu());
             dto.setDescription(entity.getDescriptionRu());
-        }else {
+        } else {
             dto.setContent(entity.getContentEn());
             dto.setTitle(entity.getTitleEn());
             dto.setDescription(entity.getDescriptionEn());
@@ -179,20 +182,21 @@ public class ArticleService {
     }
 
     public List<ArticleShortInfo> getLastFive(Integer id) {
-        return getArticleDTOLastByTypeIdOrderByCreatedDateLimitN(id,5);
-    }
-    public List<ArticleShortInfo> getLastThree(Integer id) {
-        return getArticleDTOLastByTypeIdOrderByCreatedDateLimitN(id,3);
+        return getArticleDTOLastByTypeIdOrderByCreatedDateLimitN(id, 5);
     }
 
-    private List<ArticleShortInfo> getArticleDTOLastByTypeIdOrderByCreatedDateLimitN(Integer id,Integer limit) {
+    public List<ArticleShortInfo> getLastThree(Integer id) {
+        return getArticleDTOLastByTypeIdOrderByCreatedDateLimitN(id, 3);
+    }
+
+    private List<ArticleShortInfo> getArticleDTOLastByTypeIdOrderByCreatedDateLimitN(Integer id, Integer limit) {
         List<ArticleTypesEntity> articleTypesEntities = articleTypesService.findByArticleTypeId(id);
-        if (articleTypesEntities == null||articleTypesEntities.size()==0) {
+        if (articleTypesEntities == null || articleTypesEntities.size() == 0) {
             log.warn("Article Types not found method :: getArticleDTOLastByTypeIdOrderByCreatedDateLimitN");
             throw new AppBadException("Article Types not found");
         }
-        List<ArticleShortInfo> dtoList=new LinkedList<>();
-        int count =0;
+        List<ArticleShortInfo> dtoList = new LinkedList<>();
+        int count = 0;
         for (ArticleTypesEntity articleTypesEntity : articleTypesEntities) {
             Optional<ArticleEntity> optional = articleRepository.findById(articleTypesEntity.getArticleId());
             if (optional.isEmpty()) {
@@ -200,7 +204,7 @@ public class ArticleService {
             }
             dtoList.add(toShortDTO(optional.get()));
             count++;
-            if (count==limit) {
+            if (count == limit) {
                 break;
             }
         }
@@ -208,15 +212,14 @@ public class ArticleService {
     }
 
 
-
-    public List<ArticleShortInfo> getLastEightIdNotIncludedInGivenList( ArticleIdListDTO list) {
+    public List<ArticleShortInfo> getLastEightIdNotIncludedInGivenList(ArticleIdListDTO list) {
         List<String> idList = list.getList();
         Iterable<ArticleEntity> byOrderByCreatedDateDesc = articleRepository.findByOrderByCreatedDateDesc();
-        List<ArticleShortInfo>dtoList=new LinkedList<>();
+        List<ArticleShortInfo> dtoList = new LinkedList<>();
         for (ArticleEntity article : byOrderByCreatedDateDesc) {
             if (!idList.contains(article.getId())) {
                 dtoList.add(toShortDTO(article));
-                if (dtoList.size()==8){
+                if (dtoList.size() == 8) {
                     break;
                 }
             }
@@ -231,10 +234,10 @@ public class ArticleService {
             throw new AppBadException("Article not found");
         }
         if (entity.get().getViewCount() == null) {
-            articleRepository.increaseArticleViewCount(id,1);
+            articleRepository.increaseArticleViewCount(id, 1);
             return "DONE";
         }
-        articleRepository.increaseArticleViewCount(id,entity.get().getViewCount()+1);
+        articleRepository.increaseArticleViewCount(id, entity.get().getViewCount() + 1);
         return "DONE";
     }
 
@@ -245,10 +248,10 @@ public class ArticleService {
             throw new AppBadException("Article not found");
         }
         if (entity.get().getSharedCount() == null) {
-             articleRepository.increaseArticleSharedCount(id,1);
-             return "DONE";
+            articleRepository.increaseArticleSharedCount(id, 1);
+            return "DONE";
         }
-        articleRepository.increaseArticleSharedCount(id,entity.get().getSharedCount()+1);
+        articleRepository.increaseArticleSharedCount(id, entity.get().getSharedCount() + 1);
         return "DONE";
     }
 
@@ -260,7 +263,7 @@ public class ArticleService {
                 break;
             }
         }
-        if (lastFive.size()==5) {
+        if (lastFive.size() == 5) {
             lastFive.remove(4);
         }
         return lastFive;
@@ -272,7 +275,7 @@ public class ArticleService {
         dto.setContent(entity.getContent());
         dto.setDescription(entity.getDescription());
         dto.setPhotoId(entity.getPhotoId());
-        dto.setTitle(entity.getTitle());
+//        dto.setTitle(entity.getTitle());
         dto.setCategoryId(entity.getCategory().getId());
         dto.setModeratorId(entity.getModerator().getId());
         dto.setRegionId(entity.getRegion().getId());
@@ -284,7 +287,7 @@ public class ArticleService {
         return dto;
     }
 
-    private ArticleShortInfo toShortDTO(ArticleEntity entity) {
+    public ArticleShortInfo toShortDTO(ArticleEntity entity) {
         AttachEntity attachEntity = attachService.get(entity.getPhotoId());
 
         ArticleShortInfo dto = new ArticleShortInfo();
@@ -297,20 +300,80 @@ public class ArticleService {
     }
 
     public List<ArticleShortInfo> getFourMostReadArticles() {
-        return articleRepository.findByOrderByViewCountDesc().stream().limit(4).toList();
+        List<ArticleEntity> list = articleRepository.findByOrderByViewCountDesc().stream().limit(4).toList();
+        List<ArticleShortInfo> shortInfos=new LinkedList<>();
+        for (ArticleEntity article : list) {
+            shortInfos.add(toShortDTO(article));
+        }
+        return shortInfos;
     }
 
     public List<ArticleShortInfo> getFourArticlesByTagName(String tagName) {
         List<ArticleTagDTO> allByTag = articleTagService.getAllByTag(tagName);
-        List<ArticleShortInfo> list=new LinkedList<>();
-        int count=0;
+        List<ArticleShortInfo> list = new LinkedList<>();
+        int count = 0;
         for (ArticleTagDTO dto : allByTag) {
-            if (count==4) {
+            if (count == 4) {
                 break;
             }
             list.add(toShortDTO(articleRepository.findById(dto.getArticleId()).get()));
             count++;
         }
         return list;
+    }
+
+    public List<ArticleShortInfo> getFiveArticlesByTypeAndRegionKey(Integer typeId, Integer regionId) {
+        List<ArticleTypesEntity> articleTypesEntities = articleTypesService.findByArticleTypeId(typeId);
+        List<ArticleShortInfo> shortInfos = new LinkedList<>();
+        for (ArticleTypesEntity articleTypesEntity : articleTypesEntities) {
+            Optional<ArticleEntity> optional = articleRepository.findByIdAndRegionId(articleTypesEntity.getArticleId(), regionId);
+            optional.ifPresent(entity -> shortInfos.add(toShortDTO(entity)));
+        }
+        return shortInfos;
+    }
+
+    public ArticleDTO getByLang(String id, AppLanguage language) {
+        Optional<ArticleEntity> optional = articleRepository.findById(id);
+        if (optional.isEmpty()) {
+            throw new AppBadException("Article not found!");
+        }
+        ArticleEntity entity = optional.get();
+        ArticleDTO articleDTO = toDTO(entity);
+        switch (language) {
+            case uz -> {
+                articleDTO.setTitle(entity.getTitleUz());
+                break;
+            }
+            case ru -> {
+                articleDTO.setTitle(entity.getTitleRu());
+                break;
+            }
+            default -> articleDTO.setTitle(entity.getTitleEn());
+        }
+        return articleDTO;
+    }
+
+    public List<ArticleShortInfo> getLastFiveArticlesByCategoryKey(Integer categoryId) {
+        List<ArticleShortInfo> shortInfos = new LinkedList<>();
+        Iterable<ArticleEntity> iterable = articleRepository.findByCategoryId(categoryId);
+        for (ArticleEntity article : iterable) {
+            shortInfos.add(toShortDTO(article));
+            if (shortInfos.size() == 5) break;
+        }
+        return shortInfos;
+    }
+
+    public PageImpl<ArticleDTO> allByCategoryKeyByPagination(Integer categoryId, Integer page, Integer size) {
+        Page<ArticleEntity> all = articleRepository.findByCategoryId(categoryId, PageRequest.of(page - 1, size));
+        return new PageImpl<>(toDTOListFromIterable(all.getContent()), PageRequest.of(page - 1, size), all.getTotalElements());
+    }
+
+    public PageImpl<ArticleShortInfo> allByFilterWithPagination(ArticleFilterDTO filterDTO, Integer page, Integer size) {
+        PageImpl<ArticleEntity> filter = articleCustomRepository.filter(filterDTO, page, size);
+        List<ArticleShortInfo> shortInfos = new LinkedList<>();
+        for (ArticleEntity article : filter) {
+            shortInfos.add(toShortDTO(article));
+        }
+        return new PageImpl<>(shortInfos, filter.getPageable(), filter.getTotalElements());
     }
 }

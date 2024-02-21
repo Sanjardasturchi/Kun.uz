@@ -2,14 +2,19 @@ package com.example.kun_uz_lesson1.repository;
 
 import com.example.kun_uz_lesson1.dto.ArticleShortInfo;
 import com.example.kun_uz_lesson1.entity.ArticleEntity;
+import com.example.kun_uz_lesson1.entity.ArticleTypeEntity;
 import com.example.kun_uz_lesson1.enums.ArticleStatus;
 import jakarta.transaction.Transactional;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
+import org.springframework.data.domain.Pageable;
 import org.springframework.data.jpa.repository.Modifying;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.data.repository.PagingAndSortingRepository;
 
 import java.util.List;
+import java.util.Optional;
 
 public interface ArticleRepository extends CrudRepository<ArticleEntity, String>, PagingAndSortingRepository<ArticleEntity, String> {
     @Transactional
@@ -38,7 +43,15 @@ public interface ArticleRepository extends CrudRepository<ArticleEntity, String>
     @Query("update ArticleEntity set sharedCount=?2 where id=?1")
     void increaseArticleSharedCount(String id, int i);
 
-    List<ArticleShortInfo> findByOrderByViewCountDesc();
+    List<ArticleEntity> findByOrderByViewCountDesc();
+
+
+    Optional<ArticleEntity> findByIdAndRegionId(String articleId, Integer regionId);
+
+    Page<ArticleEntity> findByRegionId(Integer regionId, PageRequest pageRequest);
+
+    Iterable<ArticleEntity>  findByCategoryId(Integer categoryId);
+    Page<ArticleEntity>  findByCategoryId(Integer categoryId, Pageable pageable);
 
 //    @Transactional
 //    @Modifying

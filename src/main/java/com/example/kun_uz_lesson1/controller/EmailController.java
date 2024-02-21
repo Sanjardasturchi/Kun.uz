@@ -4,6 +4,7 @@ import com.example.kun_uz_lesson1.dto.EmailHistoryDTO;
 import com.example.kun_uz_lesson1.enums.ProfileRole;
 import com.example.kun_uz_lesson1.service.EmailHistoryService;
 import com.example.kun_uz_lesson1.util.HttpRequestUtil;
+import io.swagger.v3.oas.annotations.tags.Tag;
 import jakarta.servlet.http.HttpServletRequest;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.PageImpl;
@@ -17,17 +18,7 @@ import org.springframework.web.bind.annotation.*;
 import java.time.LocalDate;
 import java.util.List;
 
-//13. EmailHistory
-//    id, message, email, created_data
-//    1. Create EmailHistory when email is send using application. (No need create api)
-//    2. Get EmailHistory by email
-//            (id, email,message,created_date)
-//    3. Get EmailHistory  by given date
-//            (id, email,message,created_date)
-//    4. Pagination (ADMIN)
-//            (id, email,message,created_date)
-//
-//       (!Should be limit for email sending. For 1 email 4 sms allowed during 1 minut. )
+@Tag(name = "Email API list", description = "API list for Email")
 @RestController
 @RequestMapping("/email")
 public class EmailController {

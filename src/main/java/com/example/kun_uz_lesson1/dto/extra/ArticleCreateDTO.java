@@ -1,5 +1,6 @@
-package com.example.kun_uz_lesson1.dto;
+package com.example.kun_uz_lesson1.dto.extra;
 
+import com.example.kun_uz_lesson1.dto.ArticleTypeDTO;
 import jakarta.validation.constraints.NotBlank;
 import lombok.Getter;
 import lombok.Setter;

@@ -8,6 +8,7 @@ import com.example.kun_uz_lesson1.dto.extra.CreatCommentDTO;
 import com.example.kun_uz_lesson1.enums.ProfileRole;
 import com.example.kun_uz_lesson1.service.CommentService;
 import com.example.kun_uz_lesson1.util.HttpRequestUtil;
+import io.swagger.v3.oas.annotations.tags.Tag;
 import jakarta.servlet.http.HttpServletRequest;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.PageImpl;
@@ -17,20 +18,7 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
-//      8. Comment
-//    1. CREATE (ANY)
-//        (content,article_id,reply_id)
-//    2. UPDATE (ANY and owner)
-//         (content,article_id)
-//    3. DELETE (ADMIN,ANY(only owner))
-//    4. Get Article Comment List By Article Id
-//        id,created_date,update_date,profile(id,name,surname)
-//    5. Comment List (pagination) (ADMIN)
-//        (id,created_date,update_date,profile(id,name,surname),content,article(id,title),reply_id,)
-//    6. Comment Filter(id,created_date_from,created_date_to,profile_id,article_id) with Pagination (ADMIN)
-//        id,created_date,update_date,profile_id,content,article_id,reply_id,visible
-//    7. Get Replied Comment List by Comment Id
-//        id,created_date,update_date,profile(id,name,surname)
+@Tag(name = "Comment API list", description = "API list for Comment")
 @RestController
 @RequestMapping("/comment")
 public class CommentController {

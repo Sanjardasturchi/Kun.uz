@@ -3,15 +3,12 @@ package com.example.kun_uz_lesson1.controller;
 import com.example.kun_uz_lesson1.dto.extra.CommentLikeDislikeCountDTO;
 import com.example.kun_uz_lesson1.enums.LikeStatus;
 import com.example.kun_uz_lesson1.service.CommentLikeService;
+import io.swagger.v3.oas.annotations.tags.Tag;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
 
-//      9. CommentLike
-//    1. Like (ANY)
-//        (comment_id)
-//    2. Dislike (ANY
-//    3. Remove (ANY
+@Tag(name = "CommentLike API list", description = "API list for CommentLike")
 @RestController
 @RequestMapping("/comment_like")
 public class CommentLikeController {

@@ -1,0 +1,976 @@
+16 февр. 2024 - 15:13:31.082 INFO  c.e.k.KunUzLesson1Application - Starting KunUzLesson1Application using Java 17.0.7 with PID 3880 (C:\kun.uz\kun_uz_lesson1\target\classes started by HP in C:\kun.uz\kun_uz_lesson1)
+16 февр. 2024 - 15:13:31.101 INFO  c.e.k.KunUzLesson1Application - No active profile set, falling back to 1 default profile: "default"
+16 февр. 2024 - 15:13:32.182 INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+16 февр. 2024 - 15:13:32.278 INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 87 ms. Found 12 JPA repository interfaces.
+16 февр. 2024 - 15:13:32.986 INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 8080 (http)
+16 февр. 2024 - 15:13:32.999 INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+16 февр. 2024 - 15:13:32.999 INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.18]
+16 февр. 2024 - 15:13:33.095 INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+16 февр. 2024 - 15:13:33.095 INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 1945 ms
+16 февр. 2024 - 15:13:33.165 INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+16 февр. 2024 - 15:13:33.396 INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@78d92eef
+16 февр. 2024 - 15:13:33.398 INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+16 февр. 2024 - 15:13:33.509 INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+16 февр. 2024 - 15:13:33.597 INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 6.4.1.Final
+16 февр. 2024 - 15:13:33.648 INFO  o.h.c.i.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+16 февр. 2024 - 15:13:33.934 INFO  o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+16 февр. 2024 - 15:13:35.408 INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+16 февр. 2024 - 15:13:35.699 INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+16 февр. 2024 - 15:13:35.962 INFO  o.s.d.j.r.query.QueryEnhancerFactory - Hibernate is in classpath; If applicable, HQL parser will be used.
+16 февр. 2024 - 15:13:37.097 WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+16 февр. 2024 - 15:13:37.438 INFO  o.s.s.web.DefaultSecurityFilterChain - Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@2927d781, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@1fae279e, org.springframework.security.web.context.SecurityContextHolderFilter@14ab3e22, org.springframework.security.web.header.HeaderWriterFilter@5cb9ef8a, org.springframework.security.web.authentication.logout.LogoutFilter@162bc9e8, com.example.kun_uz_lesson1.config.JwtTokenFilter@e7529ac, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@3057a923, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@681f5a1e, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@411db18d, org.springframework.security.web.access.ExceptionTranslationFilter@4f72e38c, org.springframework.security.web.access.intercept.AuthorizationFilter@12a9889e]
+16 февр. 2024 - 15:13:37.799 INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port 8080 (http) with context path ''
+16 февр. 2024 - 15:13:37.809 INFO  c.e.k.KunUzLesson1Application - Started KunUzLesson1Application in 7.259 seconds (process running for 8.073)
+16 февр. 2024 - 15:13:37.869 INFO  o.f.c.i.license.VersionPrinter - Flyway Community Edition 9.22.3 by Redgate
+16 февр. 2024 - 15:13:37.870 INFO  o.f.c.i.license.VersionPrinter - See release notes here: https://rd.gt/416ObMi
+16 февр. 2024 - 15:13:37.870 INFO  o.f.c.i.license.VersionPrinter - 
+16 февр. 2024 - 15:13:37.878 INFO  o.f.c.i.r.ResourceNameValidator - 1 SQL migrations were detected but not run because they did not follow the filename convention.
+16 февр. 2024 - 15:13:37.878 INFO  o.f.c.i.r.ResourceNameValidator - Set 'validateMigrationNaming' to true to fail fast and see a list of the invalid file names.
+16 февр. 2024 - 15:13:37.883 INFO  org.flywaydb.core.FlywayExecutor - Database: jdbc:postgresql://localhost:5432/kun_uz (PostgreSQL 16.0)
+16 февр. 2024 - 15:13:37.889 WARN  o.f.c.i.database.base.Database - Flyway upgrade recommended: PostgreSQL 16.0 is newer than this version of Flyway and support has not been tested. The latest supported version of PostgreSQL is 15.
+16 февр. 2024 - 15:13:37.918 INFO  o.f.core.internal.command.DbValidate - Successfully validated 4 migrations (execution time 00:00.021s)
+16 февр. 2024 - 15:13:37.927 INFO  o.f.core.internal.command.DbMigrate - Current version of schema "public": 2
+16 февр. 2024 - 15:13:37.937 INFO  o.f.core.internal.command.DbMigrate - Migrating schema "public" to version "3 - init region"
+16 февр. 2024 - 15:13:37.949 INFO  o.f.core.internal.command.DbMigrate - Successfully applied 1 migration to schema "public", now at version v3 (execution time 00:00.006s)
+16 февр. 2024 - 15:15:48.179 INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+16 февр. 2024 - 15:15:48.181 INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+16 февр. 2024 - 15:15:48.186 INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+16 февр. 2024 - 15:15:51.206 INFO  c.e.k.KunUzLesson1Application - Starting KunUzLesson1Application using Java 17.0.7 with PID 16320 (C:\kun.uz\kun_uz_lesson1\target\classes started by HP in C:\kun.uz\kun_uz_lesson1)
+16 февр. 2024 - 15:15:51.220 INFO  c.e.k.KunUzLesson1Application - No active profile set, falling back to 1 default profile: "default"
+16 февр. 2024 - 15:15:52.153 INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+16 февр. 2024 - 15:15:52.246 INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 79 ms. Found 12 JPA repository interfaces.
+16 февр. 2024 - 15:15:52.856 INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 8080 (http)
+16 февр. 2024 - 15:15:52.868 INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+16 февр. 2024 - 15:15:52.868 INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.18]
+16 февр. 2024 - 15:15:52.943 INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+16 февр. 2024 - 15:15:52.943 INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 1681 ms
+16 февр. 2024 - 15:15:53.006 INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+16 февр. 2024 - 15:15:53.215 INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@61d60e38
+16 февр. 2024 - 15:15:53.217 INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+16 февр. 2024 - 15:15:53.304 INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+16 февр. 2024 - 15:15:53.369 INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 6.4.1.Final
+16 февр. 2024 - 15:15:53.406 INFO  o.h.c.i.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+16 февр. 2024 - 15:15:53.661 INFO  o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+16 февр. 2024 - 15:15:55.051 INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+16 февр. 2024 - 15:15:55.301 INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+16 февр. 2024 - 15:15:55.549 INFO  o.s.d.j.r.query.QueryEnhancerFactory - Hibernate is in classpath; If applicable, HQL parser will be used.
+16 февр. 2024 - 15:15:56.577 WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+16 февр. 2024 - 15:15:56.944 INFO  o.s.s.web.DefaultSecurityFilterChain - Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@411db18d, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@7d24bd80, org.springframework.security.web.context.SecurityContextHolderFilter@3057a923, org.springframework.security.web.header.HeaderWriterFilter@bba6542, org.springframework.security.web.authentication.logout.LogoutFilter@5d81bc79, com.example.kun_uz_lesson1.config.JwtTokenFilter@6770a229, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@25082311, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@48acb864, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@6a28f67a, org.springframework.security.web.access.ExceptionTranslationFilter@5cb9ef8a, org.springframework.security.web.access.intercept.AuthorizationFilter@2927d781]
+16 февр. 2024 - 15:15:57.354 INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port 8080 (http) with context path ''
+16 февр. 2024 - 15:15:57.367 INFO  c.e.k.KunUzLesson1Application - Started KunUzLesson1Application in 6.644 seconds (process running for 7.295)
+16 февр. 2024 - 15:15:57.429 INFO  o.f.c.i.license.VersionPrinter - Flyway Community Edition 9.22.3 by Redgate
+16 февр. 2024 - 15:15:57.430 INFO  o.f.c.i.license.VersionPrinter - See release notes here: https://rd.gt/416ObMi
+16 февр. 2024 - 15:15:57.430 INFO  o.f.c.i.license.VersionPrinter - 
+16 февр. 2024 - 15:15:57.445 INFO  org.flywaydb.core.FlywayExecutor - Database: jdbc:postgresql://localhost:5432/kun_uz (PostgreSQL 16.0)
+16 февр. 2024 - 15:15:57.462 WARN  o.f.c.i.database.base.Database - Flyway upgrade recommended: PostgreSQL 16.0 is newer than this version of Flyway and support has not been tested. The latest supported version of PostgreSQL is 15.
+16 февр. 2024 - 15:15:57.498 INFO  o.f.core.internal.command.DbValidate - Successfully validated 5 migrations (execution time 00:00.027s)
+16 февр. 2024 - 15:15:57.510 INFO  o.f.core.internal.command.DbMigrate - Current version of schema "public": 3
+16 февр. 2024 - 15:15:57.521 INFO  o.f.core.internal.command.DbMigrate - Migrating schema "public" to version "5 - init category"
+16 февр. 2024 - 15:15:57.535 INFO  o.f.core.internal.command.DbMigrate - Successfully applied 1 migration to schema "public", now at version v5 (execution time 00:00.006s)
+16 февр. 2024 - 15:17:01.344 INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+16 февр. 2024 - 15:17:01.346 INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+16 февр. 2024 - 15:17:01.350 INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+16 февр. 2024 - 15:17:05.760 INFO  c.e.k.KunUzLesson1Application - Starting KunUzLesson1Application using Java 17.0.7 with PID 6900 (C:\kun.uz\kun_uz_lesson1\target\classes started by HP in C:\kun.uz\kun_uz_lesson1)
+16 февр. 2024 - 15:17:05.777 INFO  c.e.k.KunUzLesson1Application - No active profile set, falling back to 1 default profile: "default"
+16 февр. 2024 - 15:17:06.774 INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+16 февр. 2024 - 15:17:06.859 INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 76 ms. Found 12 JPA repository interfaces.
+16 февр. 2024 - 15:17:07.544 INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 8080 (http)
+16 февр. 2024 - 15:17:07.557 INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+16 февр. 2024 - 15:17:07.558 INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.18]
+16 февр. 2024 - 15:17:07.633 INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+16 февр. 2024 - 15:17:07.634 INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 1792 ms
+16 февр. 2024 - 15:17:07.697 INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+16 февр. 2024 - 15:17:07.947 INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@1c84d80a
+16 февр. 2024 - 15:17:07.950 INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+16 февр. 2024 - 15:17:08.058 INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+16 февр. 2024 - 15:17:08.137 INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 6.4.1.Final
+16 февр. 2024 - 15:17:08.177 INFO  o.h.c.i.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+16 февр. 2024 - 15:17:08.414 INFO  o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+16 февр. 2024 - 15:17:09.831 INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+16 февр. 2024 - 15:17:10.076 INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+16 февр. 2024 - 15:17:10.347 INFO  o.s.d.j.r.query.QueryEnhancerFactory - Hibernate is in classpath; If applicable, HQL parser will be used.
+16 февр. 2024 - 15:17:11.408 WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+16 февр. 2024 - 15:17:11.824 INFO  o.s.s.web.DefaultSecurityFilterChain - Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@5ec2462, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@5d81bc79, org.springframework.security.web.context.SecurityContextHolderFilter@5cbdc23b, org.springframework.security.web.header.HeaderWriterFilter@7f55e1b9, org.springframework.security.web.authentication.logout.LogoutFilter@251e00a0, com.example.kun_uz_lesson1.config.JwtTokenFilter@3287cf03, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@4299b47d, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@4f72e38c, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@c9dcfcd, org.springframework.security.web.access.ExceptionTranslationFilter@abce494, org.springframework.security.web.access.intercept.AuthorizationFilter@54a0ada1]
+16 февр. 2024 - 15:17:12.207 INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port 8080 (http) with context path ''
+16 февр. 2024 - 15:17:12.218 INFO  c.e.k.KunUzLesson1Application - Started KunUzLesson1Application in 7.028 seconds (process running for 7.642)
+16 февр. 2024 - 15:17:12.269 INFO  o.f.c.i.license.VersionPrinter - Flyway Community Edition 9.22.3 by Redgate
+16 февр. 2024 - 15:17:12.269 INFO  o.f.c.i.license.VersionPrinter - See release notes here: https://rd.gt/416ObMi
+16 февр. 2024 - 15:17:12.269 INFO  o.f.c.i.license.VersionPrinter - 
+16 февр. 2024 - 15:17:12.283 INFO  org.flywaydb.core.FlywayExecutor - Database: jdbc:postgresql://localhost:5432/kun_uz (PostgreSQL 16.0)
+16 февр. 2024 - 15:17:12.288 WARN  o.f.c.i.database.base.Database - Flyway upgrade recommended: PostgreSQL 16.0 is newer than this version of Flyway and support has not been tested. The latest supported version of PostgreSQL is 15.
+16 февр. 2024 - 15:17:12.320 INFO  o.s.b.a.l.ConditionEvaluationReportLogger - 
+
+Error starting ApplicationContext. To display the condition evaluation report re-run your application with 'debug' enabled.
+16 февр. 2024 - 15:17:12.350 ERROR o.s.boot.SpringApplication - Application run failed
+org.flywaydb.core.api.exception.FlywayValidateException: Validate failed: Migrations have failed validation
+Detected applied migration not resolved locally: 3.
+If you removed this migration intentionally, run repair to mark the migration as deleted.
+Detected applied migration not resolved locally: 5.
+If you removed this migration intentionally, run repair to mark the migration as deleted.
+Detected resolved migration not applied to database: 4.
+To ignore this migration, set -ignoreMigrationPatterns='*:ignored'. To allow executing this migration, set -outOfOrder=true.
+Need more flexibility with validation rules? Learn more: https://rd.gt/3AbJUZE
+	at org.flywaydb.core.Flyway.lambda$migrate$0(Flyway.java:146)
+	at org.flywaydb.core.FlywayExecutor.execute(FlywayExecutor.java:213)
+	at org.flywaydb.core.Flyway.migrate(Flyway.java:140)
+	at com.example.kun_uz_lesson1.service.CommandLineAppStartupRunner.run(CommandLineAppStartupRunner.java:19)
+	at org.springframework.boot.SpringApplication.lambda$callRunner$5(SpringApplication.java:790)
+	at org.springframework.util.function.ThrowingConsumer$1.acceptWithException(ThrowingConsumer.java:83)
+	at org.springframework.util.function.ThrowingConsumer.accept(ThrowingConsumer.java:60)
+	at org.springframework.util.function.ThrowingConsumer$1.accept(ThrowingConsumer.java:88)
+	at org.springframework.boot.SpringApplication.callRunner(SpringApplication.java:798)
+	at org.springframework.boot.SpringApplication.callRunner(SpringApplication.java:789)
+	at org.springframework.boot.SpringApplication.lambda$callRunners$3(SpringApplication.java:774)
+	at java.base/java.util.stream.ForEachOps$ForEachOp$OfRef.accept(ForEachOps.java:183)
+	at java.base/java.util.stream.SortedOps$SizedRefSortingSink.end(SortedOps.java:357)
+	at java.base/java.util.stream.AbstractPipeline.copyInto(AbstractPipeline.java:510)
+	at java.base/java.util.stream.AbstractPipeline.wrapAndCopyInto(AbstractPipeline.java:499)
+	at java.base/java.util.stream.ForEachOps$ForEachOp.evaluateSequential(ForEachOps.java:150)
+	at java.base/java.util.stream.ForEachOps$ForEachOp$OfRef.evaluateSequential(ForEachOps.java:173)
+	at java.base/java.util.stream.AbstractPipeline.evaluate(AbstractPipeline.java:234)
+	at java.base/java.util.stream.ReferencePipeline.forEach(ReferencePipeline.java:596)
+	at org.springframework.boot.SpringApplication.callRunners(SpringApplication.java:774)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:341)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1354)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1343)
+	at com.example.kun_uz_lesson1.KunUzLesson1Application.main(KunUzLesson1Application.java:10)
+16 февр. 2024 - 15:17:12.371 INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+16 февр. 2024 - 15:17:12.372 INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+16 февр. 2024 - 15:17:12.379 INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+16 февр. 2024 - 15:17:53.058 INFO  c.e.k.KunUzLesson1Application - Starting KunUzLesson1Application using Java 17.0.7 with PID 1988 (C:\kun.uz\kun_uz_lesson1\target\classes started by HP in C:\kun.uz\kun_uz_lesson1)
+16 февр. 2024 - 15:17:53.071 INFO  c.e.k.KunUzLesson1Application - No active profile set, falling back to 1 default profile: "default"
+16 февр. 2024 - 15:17:54.002 INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+16 февр. 2024 - 15:17:54.098 INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 81 ms. Found 12 JPA repository interfaces.
+16 февр. 2024 - 15:17:54.774 INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 8080 (http)
+16 февр. 2024 - 15:17:54.786 INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+16 февр. 2024 - 15:17:54.787 INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.18]
+16 февр. 2024 - 15:17:54.869 INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+16 февр. 2024 - 15:17:54.869 INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 1755 ms
+16 февр. 2024 - 15:17:54.956 INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+16 февр. 2024 - 15:17:55.173 INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@61d60e38
+16 февр. 2024 - 15:17:55.175 INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+16 февр. 2024 - 15:17:55.269 INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+16 февр. 2024 - 15:17:55.334 INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 6.4.1.Final
+16 февр. 2024 - 15:17:55.374 INFO  o.h.c.i.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+16 февр. 2024 - 15:17:55.636 INFO  o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+16 февр. 2024 - 15:17:57.032 INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+16 февр. 2024 - 15:17:57.207 INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+16 февр. 2024 - 15:17:57.442 INFO  o.s.d.j.r.query.QueryEnhancerFactory - Hibernate is in classpath; If applicable, HQL parser will be used.
+16 февр. 2024 - 15:17:58.481 WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+16 февр. 2024 - 15:17:58.846 INFO  o.s.s.web.DefaultSecurityFilterChain - Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@35f011cf, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@4f5c55a8, org.springframework.security.web.context.SecurityContextHolderFilter@dcdf733, org.springframework.security.web.header.HeaderWriterFilter@2919976e, org.springframework.security.web.authentication.logout.LogoutFilter@7e32261f, com.example.kun_uz_lesson1.config.JwtTokenFilter@2005d3e0, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@60319a00, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@43493a5d, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@2d198533, org.springframework.security.web.access.ExceptionTranslationFilter@6740b169, org.springframework.security.web.access.intercept.AuthorizationFilter@7ad31e9e]
+16 февр. 2024 - 15:17:59.265 INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port 8080 (http) with context path ''
+16 февр. 2024 - 15:17:59.278 INFO  c.e.k.KunUzLesson1Application - Started KunUzLesson1Application in 6.694 seconds (process running for 7.311)
+16 февр. 2024 - 15:17:59.344 INFO  o.f.c.i.license.VersionPrinter - Flyway Community Edition 9.22.3 by Redgate
+16 февр. 2024 - 15:17:59.344 INFO  o.f.c.i.license.VersionPrinter - See release notes here: https://rd.gt/416ObMi
+16 февр. 2024 - 15:17:59.344 INFO  o.f.c.i.license.VersionPrinter - 
+16 февр. 2024 - 15:17:59.361 INFO  org.flywaydb.core.FlywayExecutor - Database: jdbc:postgresql://localhost:5432/kun_uz (PostgreSQL 16.0)
+16 февр. 2024 - 15:17:59.368 WARN  o.f.c.i.database.base.Database - Flyway upgrade recommended: PostgreSQL 16.0 is newer than this version of Flyway and support has not been tested. The latest supported version of PostgreSQL is 15.
+16 февр. 2024 - 15:17:59.415 INFO  o.s.b.a.l.ConditionEvaluationReportLogger - 
+
+Error starting ApplicationContext. To display the condition evaluation report re-run your application with 'debug' enabled.
+16 февр. 2024 - 15:17:59.431 ERROR o.s.boot.SpringApplication - Application run failed
+org.flywaydb.core.api.exception.FlywayValidateException: Validate failed: Migrations have failed validation
+Detected applied migration not resolved locally: 3.
+If you removed this migration intentionally, run repair to mark the migration as deleted.
+Detected applied migration not resolved locally: 5.
+If you removed this migration intentionally, run repair to mark the migration as deleted.
+Need more flexibility with validation rules? Learn more: https://rd.gt/3AbJUZE
+	at org.flywaydb.core.Flyway.lambda$migrate$0(Flyway.java:146)
+	at org.flywaydb.core.FlywayExecutor.execute(FlywayExecutor.java:213)
+	at org.flywaydb.core.Flyway.migrate(Flyway.java:140)
+	at com.example.kun_uz_lesson1.service.CommandLineAppStartupRunner.run(CommandLineAppStartupRunner.java:19)
+	at org.springframework.boot.SpringApplication.lambda$callRunner$5(SpringApplication.java:790)
+	at org.springframework.util.function.ThrowingConsumer$1.acceptWithException(ThrowingConsumer.java:83)
+	at org.springframework.util.function.ThrowingConsumer.accept(ThrowingConsumer.java:60)
+	at org.springframework.util.function.ThrowingConsumer$1.accept(ThrowingConsumer.java:88)
+	at org.springframework.boot.SpringApplication.callRunner(SpringApplication.java:798)
+	at org.springframework.boot.SpringApplication.callRunner(SpringApplication.java:789)
+	at org.springframework.boot.SpringApplication.lambda$callRunners$3(SpringApplication.java:774)
+	at java.base/java.util.stream.ForEachOps$ForEachOp$OfRef.accept(ForEachOps.java:183)
+	at java.base/java.util.stream.SortedOps$SizedRefSortingSink.end(SortedOps.java:357)
+	at java.base/java.util.stream.AbstractPipeline.copyInto(AbstractPipeline.java:510)
+	at java.base/java.util.stream.AbstractPipeline.wrapAndCopyInto(AbstractPipeline.java:499)
+	at java.base/java.util.stream.ForEachOps$ForEachOp.evaluateSequential(ForEachOps.java:150)
+	at java.base/java.util.stream.ForEachOps$ForEachOp$OfRef.evaluateSequential(ForEachOps.java:173)
+	at java.base/java.util.stream.AbstractPipeline.evaluate(AbstractPipeline.java:234)
+	at java.base/java.util.stream.ReferencePipeline.forEach(ReferencePipeline.java:596)
+	at org.springframework.boot.SpringApplication.callRunners(SpringApplication.java:774)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:341)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1354)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1343)
+	at com.example.kun_uz_lesson1.KunUzLesson1Application.main(KunUzLesson1Application.java:10)
+16 февр. 2024 - 15:17:59.455 INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+16 февр. 2024 - 15:17:59.457 INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+16 февр. 2024 - 15:17:59.462 INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+16 февр. 2024 - 15:18:36.938 INFO  c.e.k.KunUzLesson1Application - Starting KunUzLesson1Application using Java 17.0.7 with PID 15252 (C:\kun.uz\kun_uz_lesson1\target\classes started by HP in C:\kun.uz\kun_uz_lesson1)
+16 февр. 2024 - 15:18:36.953 INFO  c.e.k.KunUzLesson1Application - No active profile set, falling back to 1 default profile: "default"
+16 февр. 2024 - 15:18:37.845 INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+16 февр. 2024 - 15:18:37.938 INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 85 ms. Found 12 JPA repository interfaces.
+16 февр. 2024 - 15:18:38.550 INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 8080 (http)
+16 февр. 2024 - 15:18:38.561 INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+16 февр. 2024 - 15:18:38.562 INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.18]
+16 февр. 2024 - 15:18:38.651 INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+16 февр. 2024 - 15:18:38.652 INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 1656 ms
+16 февр. 2024 - 15:18:38.714 INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+16 февр. 2024 - 15:18:38.957 INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@61d60e38
+16 февр. 2024 - 15:18:38.959 INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+16 февр. 2024 - 15:18:39.111 INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+16 февр. 2024 - 15:18:39.177 INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 6.4.1.Final
+16 февр. 2024 - 15:18:39.225 INFO  o.h.c.i.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+16 февр. 2024 - 15:18:39.468 INFO  o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+16 февр. 2024 - 15:18:40.866 INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+16 февр. 2024 - 15:18:41.112 INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+16 февр. 2024 - 15:18:41.366 INFO  o.s.d.j.r.query.QueryEnhancerFactory - Hibernate is in classpath; If applicable, HQL parser will be used.
+16 февр. 2024 - 15:18:42.413 WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+16 февр. 2024 - 15:18:42.783 INFO  o.s.s.web.DefaultSecurityFilterChain - Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@411db18d, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@7d24bd80, org.springframework.security.web.context.SecurityContextHolderFilter@3057a923, org.springframework.security.web.header.HeaderWriterFilter@bba6542, org.springframework.security.web.authentication.logout.LogoutFilter@5d81bc79, com.example.kun_uz_lesson1.config.JwtTokenFilter@6770a229, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@25082311, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@48acb864, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@6a28f67a, org.springframework.security.web.access.ExceptionTranslationFilter@5cb9ef8a, org.springframework.security.web.access.intercept.AuthorizationFilter@2927d781]
+16 февр. 2024 - 15:18:43.204 INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port 8080 (http) with context path ''
+16 февр. 2024 - 15:18:43.217 INFO  c.e.k.KunUzLesson1Application - Started KunUzLesson1Application in 6.745 seconds (process running for 7.379)
+16 февр. 2024 - 15:18:43.280 INFO  o.f.c.i.license.VersionPrinter - Flyway Community Edition 9.22.3 by Redgate
+16 февр. 2024 - 15:18:43.280 INFO  o.f.c.i.license.VersionPrinter - See release notes here: https://rd.gt/416ObMi
+16 февр. 2024 - 15:18:43.280 INFO  o.f.c.i.license.VersionPrinter - 
+16 февр. 2024 - 15:18:43.295 INFO  org.flywaydb.core.FlywayExecutor - Database: jdbc:postgresql://localhost:5432/kun_uz (PostgreSQL 16.0)
+16 февр. 2024 - 15:18:43.302 WARN  o.f.c.i.database.base.Database - Flyway upgrade recommended: PostgreSQL 16.0 is newer than this version of Flyway and support has not been tested. The latest supported version of PostgreSQL is 15.
+16 февр. 2024 - 15:18:43.342 INFO  o.s.b.a.l.ConditionEvaluationReportLogger - 
+
+Error starting ApplicationContext. To display the condition evaluation report re-run your application with 'debug' enabled.
+16 февр. 2024 - 15:18:43.360 ERROR o.s.boot.SpringApplication - Application run failed
+org.flywaydb.core.api.exception.FlywayValidateException: Validate failed: Migrations have failed validation
+Detected applied migration not resolved locally: 3.
+If you removed this migration intentionally, run repair to mark the migration as deleted.
+Detected applied migration not resolved locally: 5.
+If you removed this migration intentionally, run repair to mark the migration as deleted.
+Need more flexibility with validation rules? Learn more: https://rd.gt/3AbJUZE
+	at org.flywaydb.core.Flyway.lambda$migrate$0(Flyway.java:146)
+	at org.flywaydb.core.FlywayExecutor.execute(FlywayExecutor.java:213)
+	at org.flywaydb.core.Flyway.migrate(Flyway.java:140)
+	at com.example.kun_uz_lesson1.service.CommandLineAppStartupRunner.run(CommandLineAppStartupRunner.java:19)
+	at org.springframework.boot.SpringApplication.lambda$callRunner$5(SpringApplication.java:790)
+	at org.springframework.util.function.ThrowingConsumer$1.acceptWithException(ThrowingConsumer.java:83)
+	at org.springframework.util.function.ThrowingConsumer.accept(ThrowingConsumer.java:60)
+	at org.springframework.util.function.ThrowingConsumer$1.accept(ThrowingConsumer.java:88)
+	at org.springframework.boot.SpringApplication.callRunner(SpringApplication.java:798)
+	at org.springframework.boot.SpringApplication.callRunner(SpringApplication.java:789)
+	at org.springframework.boot.SpringApplication.lambda$callRunners$3(SpringApplication.java:774)
+	at java.base/java.util.stream.ForEachOps$ForEachOp$OfRef.accept(ForEachOps.java:183)
+	at java.base/java.util.stream.SortedOps$SizedRefSortingSink.end(SortedOps.java:357)
+	at java.base/java.util.stream.AbstractPipeline.copyInto(AbstractPipeline.java:510)
+	at java.base/java.util.stream.AbstractPipeline.wrapAndCopyInto(AbstractPipeline.java:499)
+	at java.base/java.util.stream.ForEachOps$ForEachOp.evaluateSequential(ForEachOps.java:150)
+	at java.base/java.util.stream.ForEachOps$ForEachOp$OfRef.evaluateSequential(ForEachOps.java:173)
+	at java.base/java.util.stream.AbstractPipeline.evaluate(AbstractPipeline.java:234)
+	at java.base/java.util.stream.ReferencePipeline.forEach(ReferencePipeline.java:596)
+	at org.springframework.boot.SpringApplication.callRunners(SpringApplication.java:774)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:341)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1354)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1343)
+	at com.example.kun_uz_lesson1.KunUzLesson1Application.main(KunUzLesson1Application.java:10)
+16 февр. 2024 - 15:18:43.383 INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+16 февр. 2024 - 15:18:43.386 INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+16 февр. 2024 - 15:18:43.400 INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+16 февр. 2024 - 15:19:08.991 INFO  c.e.k.KunUzLesson1Application - Starting KunUzLesson1Application using Java 17.0.7 with PID 14008 (C:\kun.uz\kun_uz_lesson1\target\classes started by HP in C:\kun.uz\kun_uz_lesson1)
+16 февр. 2024 - 15:19:09.004 INFO  c.e.k.KunUzLesson1Application - No active profile set, falling back to 1 default profile: "default"
+16 февр. 2024 - 15:19:09.931 INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+16 февр. 2024 - 15:19:10.027 INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 87 ms. Found 12 JPA repository interfaces.
+16 февр. 2024 - 15:19:10.644 INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 8080 (http)
+16 февр. 2024 - 15:19:10.656 INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+16 февр. 2024 - 15:19:10.656 INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.18]
+16 февр. 2024 - 15:19:10.757 INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+16 февр. 2024 - 15:19:10.757 INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 1710 ms
+16 февр. 2024 - 15:19:10.821 INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+16 февр. 2024 - 15:19:11.026 INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@61d60e38
+16 февр. 2024 - 15:19:11.027 INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+16 февр. 2024 - 15:19:11.118 INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+16 февр. 2024 - 15:19:11.194 INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 6.4.1.Final
+16 февр. 2024 - 15:19:11.231 INFO  o.h.c.i.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+16 февр. 2024 - 15:19:11.495 INFO  o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+16 февр. 2024 - 15:19:12.905 INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+16 февр. 2024 - 15:19:13.167 INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+16 февр. 2024 - 15:19:13.421 INFO  o.s.d.j.r.query.QueryEnhancerFactory - Hibernate is in classpath; If applicable, HQL parser will be used.
+16 февр. 2024 - 15:19:14.493 WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+16 февр. 2024 - 15:19:14.920 INFO  o.s.s.web.DefaultSecurityFilterChain - Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@411db18d, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@7d24bd80, org.springframework.security.web.context.SecurityContextHolderFilter@3057a923, org.springframework.security.web.header.HeaderWriterFilter@bba6542, org.springframework.security.web.authentication.logout.LogoutFilter@5d81bc79, com.example.kun_uz_lesson1.config.JwtTokenFilter@6770a229, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@25082311, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@48acb864, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@6a28f67a, org.springframework.security.web.access.ExceptionTranslationFilter@5cb9ef8a, org.springframework.security.web.access.intercept.AuthorizationFilter@2927d781]
+16 февр. 2024 - 15:19:15.360 INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port 8080 (http) with context path ''
+16 февр. 2024 - 15:19:15.372 INFO  c.e.k.KunUzLesson1Application - Started KunUzLesson1Application in 6.861 seconds (process running for 7.486)
+16 февр. 2024 - 15:19:15.439 INFO  o.f.c.i.license.VersionPrinter - Flyway Community Edition 9.22.3 by Redgate
+16 февр. 2024 - 15:19:15.439 INFO  o.f.c.i.license.VersionPrinter - See release notes here: https://rd.gt/416ObMi
+16 февр. 2024 - 15:19:15.439 INFO  o.f.c.i.license.VersionPrinter - 
+16 февр. 2024 - 15:19:15.456 INFO  org.flywaydb.core.FlywayExecutor - Database: jdbc:postgresql://localhost:5432/kun_uz (PostgreSQL 16.0)
+16 февр. 2024 - 15:19:15.463 WARN  o.f.c.i.database.base.Database - Flyway upgrade recommended: PostgreSQL 16.0 is newer than this version of Flyway and support has not been tested. The latest supported version of PostgreSQL is 15.
+16 февр. 2024 - 15:19:15.503 INFO  o.s.b.a.l.ConditionEvaluationReportLogger - 
+
+Error starting ApplicationContext. To display the condition evaluation report re-run your application with 'debug' enabled.
+16 февр. 2024 - 15:19:15.521 ERROR o.s.boot.SpringApplication - Application run failed
+org.flywaydb.core.api.exception.FlywayValidateException: Validate failed: Migrations have failed validation
+Detected applied migration not resolved locally: 3.
+If you removed this migration intentionally, run repair to mark the migration as deleted.
+Detected resolved migration not applied to database: 4.
+To ignore this migration, set -ignoreMigrationPatterns='*:ignored'. To allow executing this migration, set -outOfOrder=true.
+Need more flexibility with validation rules? Learn more: https://rd.gt/3AbJUZE
+	at org.flywaydb.core.Flyway.lambda$migrate$0(Flyway.java:146)
+	at org.flywaydb.core.FlywayExecutor.execute(FlywayExecutor.java:213)
+	at org.flywaydb.core.Flyway.migrate(Flyway.java:140)
+	at com.example.kun_uz_lesson1.service.CommandLineAppStartupRunner.run(CommandLineAppStartupRunner.java:19)
+	at org.springframework.boot.SpringApplication.lambda$callRunner$5(SpringApplication.java:790)
+	at org.springframework.util.function.ThrowingConsumer$1.acceptWithException(ThrowingConsumer.java:83)
+	at org.springframework.util.function.ThrowingConsumer.accept(ThrowingConsumer.java:60)
+	at org.springframework.util.function.ThrowingConsumer$1.accept(ThrowingConsumer.java:88)
+	at org.springframework.boot.SpringApplication.callRunner(SpringApplication.java:798)
+	at org.springframework.boot.SpringApplication.callRunner(SpringApplication.java:789)
+	at org.springframework.boot.SpringApplication.lambda$callRunners$3(SpringApplication.java:774)
+	at java.base/java.util.stream.ForEachOps$ForEachOp$OfRef.accept(ForEachOps.java:183)
+	at java.base/java.util.stream.SortedOps$SizedRefSortingSink.end(SortedOps.java:357)
+	at java.base/java.util.stream.AbstractPipeline.copyInto(AbstractPipeline.java:510)
+	at java.base/java.util.stream.AbstractPipeline.wrapAndCopyInto(AbstractPipeline.java:499)
+	at java.base/java.util.stream.ForEachOps$ForEachOp.evaluateSequential(ForEachOps.java:150)
+	at java.base/java.util.stream.ForEachOps$ForEachOp$OfRef.evaluateSequential(ForEachOps.java:173)
+	at java.base/java.util.stream.AbstractPipeline.evaluate(AbstractPipeline.java:234)
+	at java.base/java.util.stream.ReferencePipeline.forEach(ReferencePipeline.java:596)
+	at org.springframework.boot.SpringApplication.callRunners(SpringApplication.java:774)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:341)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1354)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1343)
+	at com.example.kun_uz_lesson1.KunUzLesson1Application.main(KunUzLesson1Application.java:10)
+16 февр. 2024 - 15:19:15.545 INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+16 февр. 2024 - 15:19:15.547 INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+16 февр. 2024 - 15:19:15.553 INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+16 февр. 2024 - 15:19:33.846 INFO  c.e.k.KunUzLesson1Application - Starting KunUzLesson1Application using Java 17.0.7 with PID 3940 (C:\kun.uz\kun_uz_lesson1\target\classes started by HP in C:\kun.uz\kun_uz_lesson1)
+16 февр. 2024 - 15:19:33.860 INFO  c.e.k.KunUzLesson1Application - No active profile set, falling back to 1 default profile: "default"
+16 февр. 2024 - 15:19:34.785 INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+16 февр. 2024 - 15:19:34.874 INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 80 ms. Found 12 JPA repository interfaces.
+16 февр. 2024 - 15:19:35.514 INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 8080 (http)
+16 февр. 2024 - 15:19:35.525 INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+16 февр. 2024 - 15:19:35.526 INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.18]
+16 февр. 2024 - 15:19:35.594 INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+16 февр. 2024 - 15:19:35.595 INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 1691 ms
+16 февр. 2024 - 15:19:35.665 INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+16 февр. 2024 - 15:19:35.857 INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@7ceb6c45
+16 февр. 2024 - 15:19:35.858 INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+16 февр. 2024 - 15:19:35.953 INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+16 февр. 2024 - 15:19:36.029 INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 6.4.1.Final
+16 февр. 2024 - 15:19:36.069 INFO  o.h.c.i.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+16 февр. 2024 - 15:19:36.322 INFO  o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+16 февр. 2024 - 15:19:37.725 INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+16 февр. 2024 - 15:19:37.950 INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+16 февр. 2024 - 15:19:38.190 INFO  o.s.d.j.r.query.QueryEnhancerFactory - Hibernate is in classpath; If applicable, HQL parser will be used.
+16 февр. 2024 - 15:19:39.017 WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+16 февр. 2024 - 15:19:39.289 INFO  o.s.s.web.DefaultSecurityFilterChain - Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@c9dcfcd, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@4431233f, org.springframework.security.web.context.SecurityContextHolderFilter@4299b47d, org.springframework.security.web.header.HeaderWriterFilter@7a6ef10b, org.springframework.security.web.authentication.logout.LogoutFilter@40c31127, com.example.kun_uz_lesson1.config.JwtTokenFilter@3872c85f, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@7d6c4c43, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@5cb9ef8a, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@201ac0ef, org.springframework.security.web.access.ExceptionTranslationFilter@7f55e1b9, org.springframework.security.web.access.intercept.AuthorizationFilter@5ec2462]
+16 февр. 2024 - 15:19:39.620 INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port 8080 (http) with context path ''
+16 февр. 2024 - 15:19:39.629 INFO  c.e.k.KunUzLesson1Application - Started KunUzLesson1Application in 6.25 seconds (process running for 6.907)
+16 февр. 2024 - 15:19:39.676 INFO  o.f.c.i.license.VersionPrinter - Flyway Community Edition 9.22.3 by Redgate
+16 февр. 2024 - 15:19:39.676 INFO  o.f.c.i.license.VersionPrinter - See release notes here: https://rd.gt/416ObMi
+16 февр. 2024 - 15:19:39.676 INFO  o.f.c.i.license.VersionPrinter - 
+16 февр. 2024 - 15:19:39.688 INFO  org.flywaydb.core.FlywayExecutor - Database: jdbc:postgresql://localhost:5432/kun_uz (PostgreSQL 16.0)
+16 февр. 2024 - 15:19:39.693 WARN  o.f.c.i.database.base.Database - Flyway upgrade recommended: PostgreSQL 16.0 is newer than this version of Flyway and support has not been tested. The latest supported version of PostgreSQL is 15.
+16 февр. 2024 - 15:19:39.723 INFO  o.s.b.a.l.ConditionEvaluationReportLogger - 
+
+Error starting ApplicationContext. To display the condition evaluation report re-run your application with 'debug' enabled.
+16 февр. 2024 - 15:19:39.745 ERROR o.s.boot.SpringApplication - Application run failed
+org.flywaydb.core.api.exception.FlywayValidateException: Validate failed: Migrations have failed validation
+Detected resolved migration not applied to database: 4.
+To ignore this migration, set -ignoreMigrationPatterns='*:ignored'. To allow executing this migration, set -outOfOrder=true.
+Need more flexibility with validation rules? Learn more: https://rd.gt/3AbJUZE
+	at org.flywaydb.core.Flyway.lambda$migrate$0(Flyway.java:146)
+	at org.flywaydb.core.FlywayExecutor.execute(FlywayExecutor.java:213)
+	at org.flywaydb.core.Flyway.migrate(Flyway.java:140)
+	at com.example.kun_uz_lesson1.service.CommandLineAppStartupRunner.run(CommandLineAppStartupRunner.java:19)
+	at org.springframework.boot.SpringApplication.lambda$callRunner$5(SpringApplication.java:790)
+	at org.springframework.util.function.ThrowingConsumer$1.acceptWithException(ThrowingConsumer.java:83)
+	at org.springframework.util.function.ThrowingConsumer.accept(ThrowingConsumer.java:60)
+	at org.springframework.util.function.ThrowingConsumer$1.accept(ThrowingConsumer.java:88)
+	at org.springframework.boot.SpringApplication.callRunner(SpringApplication.java:798)
+	at org.springframework.boot.SpringApplication.callRunner(SpringApplication.java:789)
+	at org.springframework.boot.SpringApplication.lambda$callRunners$3(SpringApplication.java:774)
+	at java.base/java.util.stream.ForEachOps$ForEachOp$OfRef.accept(ForEachOps.java:183)
+	at java.base/java.util.stream.SortedOps$SizedRefSortingSink.end(SortedOps.java:357)
+	at java.base/java.util.stream.AbstractPipeline.copyInto(AbstractPipeline.java:510)
+	at java.base/java.util.stream.AbstractPipeline.wrapAndCopyInto(AbstractPipeline.java:499)
+	at java.base/java.util.stream.ForEachOps$ForEachOp.evaluateSequential(ForEachOps.java:150)
+	at java.base/java.util.stream.ForEachOps$ForEachOp$OfRef.evaluateSequential(ForEachOps.java:173)
+	at java.base/java.util.stream.AbstractPipeline.evaluate(AbstractPipeline.java:234)
+	at java.base/java.util.stream.ReferencePipeline.forEach(ReferencePipeline.java:596)
+	at org.springframework.boot.SpringApplication.callRunners(SpringApplication.java:774)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:341)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1354)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1343)
+	at com.example.kun_uz_lesson1.KunUzLesson1Application.main(KunUzLesson1Application.java:10)
+16 февр. 2024 - 15:19:39.762 INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+16 февр. 2024 - 15:19:39.764 INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+16 февр. 2024 - 15:19:39.767 INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+16 февр. 2024 - 15:21:00.274 INFO  c.e.k.KunUzLesson1Application - Starting KunUzLesson1Application using Java 17.0.7 with PID 22348 (C:\kun.uz\kun_uz_lesson1\target\classes started by HP in C:\kun.uz\kun_uz_lesson1)
+16 февр. 2024 - 15:21:00.288 INFO  c.e.k.KunUzLesson1Application - No active profile set, falling back to 1 default profile: "default"
+16 февр. 2024 - 15:21:01.178 INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+16 февр. 2024 - 15:21:01.267 INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 82 ms. Found 12 JPA repository interfaces.
+16 февр. 2024 - 15:21:01.904 INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 8080 (http)
+16 февр. 2024 - 15:21:01.915 INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+16 февр. 2024 - 15:21:01.915 INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.18]
+16 февр. 2024 - 15:21:01.993 INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+16 февр. 2024 - 15:21:01.994 INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 1662 ms
+16 февр. 2024 - 15:21:02.054 INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+16 февр. 2024 - 15:21:02.266 INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@61d60e38
+16 февр. 2024 - 15:21:02.268 INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+16 февр. 2024 - 15:21:02.394 INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+16 февр. 2024 - 15:21:02.489 INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 6.4.1.Final
+16 февр. 2024 - 15:21:02.531 INFO  o.h.c.i.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+16 февр. 2024 - 15:21:02.784 INFO  o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+16 февр. 2024 - 15:21:04.163 INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+16 февр. 2024 - 15:21:04.402 INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+16 февр. 2024 - 15:21:04.671 INFO  o.s.d.j.r.query.QueryEnhancerFactory - Hibernate is in classpath; If applicable, HQL parser will be used.
+16 февр. 2024 - 15:21:05.728 WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+16 февр. 2024 - 15:21:06.111 INFO  o.s.s.web.DefaultSecurityFilterChain - Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@411db18d, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@7d24bd80, org.springframework.security.web.context.SecurityContextHolderFilter@3057a923, org.springframework.security.web.header.HeaderWriterFilter@bba6542, org.springframework.security.web.authentication.logout.LogoutFilter@5d81bc79, com.example.kun_uz_lesson1.config.JwtTokenFilter@6770a229, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@25082311, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@48acb864, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@6a28f67a, org.springframework.security.web.access.ExceptionTranslationFilter@5cb9ef8a, org.springframework.security.web.access.intercept.AuthorizationFilter@2927d781]
+16 февр. 2024 - 15:21:06.533 INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port 8080 (http) with context path ''
+16 февр. 2024 - 15:21:06.546 INFO  c.e.k.KunUzLesson1Application - Started KunUzLesson1Application in 6.749 seconds (process running for 7.37)
+16 февр. 2024 - 15:21:06.612 INFO  o.f.c.i.license.VersionPrinter - Flyway Community Edition 9.22.3 by Redgate
+16 февр. 2024 - 15:21:06.612 INFO  o.f.c.i.license.VersionPrinter - See release notes here: https://rd.gt/416ObMi
+16 февр. 2024 - 15:21:06.612 INFO  o.f.c.i.license.VersionPrinter - 
+16 февр. 2024 - 15:21:06.628 INFO  org.flywaydb.core.FlywayExecutor - Database: jdbc:postgresql://localhost:5432/kun_uz (PostgreSQL 16.0)
+16 февр. 2024 - 15:21:06.634 WARN  o.f.c.i.database.base.Database - Flyway upgrade recommended: PostgreSQL 16.0 is newer than this version of Flyway and support has not been tested. The latest supported version of PostgreSQL is 15.
+16 февр. 2024 - 15:21:06.658 INFO  o.f.c.i.s.JdbcTableSchemaHistory - Schema history table "public"."flyway_schema_history" does not exist yet
+16 февр. 2024 - 15:21:06.661 INFO  o.f.core.internal.command.DbValidate - Successfully validated 4 migrations (execution time 00:00.018s)
+16 февр. 2024 - 15:21:06.676 INFO  o.f.c.i.s.JdbcTableSchemaHistory - Creating Schema History table "public"."flyway_schema_history" with baseline ...
+16 февр. 2024 - 15:21:06.700 INFO  o.f.core.internal.command.DbBaseline - Successfully baselined schema with version: 1
+16 февр. 2024 - 15:21:06.713 INFO  o.f.core.internal.command.DbMigrate - Current version of schema "public": 1
+16 февр. 2024 - 15:21:06.717 INFO  o.f.core.internal.command.DbMigrate - Migrating schema "public" to version "2 - init admin"
+16 февр. 2024 - 15:21:06.731 INFO  o.f.core.internal.command.DbMigrate - Migrating schema "public" to version "3 - init region"
+16 февр. 2024 - 15:21:06.742 INFO  o.f.core.internal.command.DbMigrate - Migrating schema "public" to version "4 - init category"
+16 февр. 2024 - 15:21:06.752 INFO  o.f.core.internal.command.DbMigrate - Successfully applied 3 migrations to schema "public", now at version v4 (execution time 00:00.011s)
+16 февр. 2024 - 16:29:44.082 INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+16 февр. 2024 - 16:29:44.120 INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+16 февр. 2024 - 16:29:44.132 INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+16 февр. 2024 - 18:35:58.237 INFO  c.e.k.KunUzLesson1Application - Starting KunUzLesson1Application using Java 17.0.7 with PID 10952 (C:\kun.uz\kun_uz_lesson1\target\classes started by HP in C:\kun.uz\kun_uz_lesson1)
+16 февр. 2024 - 18:35:58.258 INFO  c.e.k.KunUzLesson1Application - No active profile set, falling back to 1 default profile: "default"
+16 февр. 2024 - 18:35:59.290 INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+16 февр. 2024 - 18:35:59.377 INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 77 ms. Found 12 JPA repository interfaces.
+16 февр. 2024 - 18:36:00.072 INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 8080 (http)
+16 февр. 2024 - 18:36:00.086 INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+16 февр. 2024 - 18:36:00.086 INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.18]
+16 февр. 2024 - 18:36:00.170 INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+16 февр. 2024 - 18:36:00.170 INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 1863 ms
+16 февр. 2024 - 18:36:00.238 INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+16 февр. 2024 - 18:36:00.484 INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@561f9d92
+16 февр. 2024 - 18:36:00.486 INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+16 февр. 2024 - 18:36:00.587 INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+16 февр. 2024 - 18:36:00.669 INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 6.4.1.Final
+16 февр. 2024 - 18:36:00.719 INFO  o.h.c.i.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+16 февр. 2024 - 18:36:01.011 INFO  o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+16 февр. 2024 - 18:36:02.292 INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+16 февр. 2024 - 18:36:02.442 INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+16 февр. 2024 - 18:36:02.663 INFO  o.s.d.j.r.query.QueryEnhancerFactory - Hibernate is in classpath; If applicable, HQL parser will be used.
+16 февр. 2024 - 18:36:03.521 WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+16 февр. 2024 - 18:36:03.824 INFO  o.s.s.web.DefaultSecurityFilterChain - Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@db62b5f, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@5e6d2502, org.springframework.security.web.context.SecurityContextHolderFilter@6ae729fb, org.springframework.security.web.header.HeaderWriterFilter@39badc71, org.springframework.security.web.authentication.logout.LogoutFilter@506d7831, com.example.kun_uz_lesson1.config.JwtTokenFilter@641bd93e, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@22351330, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@2158d1d1, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@26be5ee, org.springframework.security.web.access.ExceptionTranslationFilter@378446f9, org.springframework.security.web.access.intercept.AuthorizationFilter@64d711b0]
+16 февр. 2024 - 18:36:04.182 INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port 8080 (http) with context path ''
+16 февр. 2024 - 18:36:04.191 INFO  c.e.k.KunUzLesson1Application - Started KunUzLesson1Application in 6.491 seconds (process running for 7.248)
+16 февр. 2024 - 18:36:04.252 INFO  o.f.c.i.license.VersionPrinter - Flyway Community Edition 9.22.3 by Redgate
+16 февр. 2024 - 18:36:04.253 INFO  o.f.c.i.license.VersionPrinter - See release notes here: https://rd.gt/416ObMi
+16 февр. 2024 - 18:36:04.253 INFO  o.f.c.i.license.VersionPrinter - 
+16 февр. 2024 - 18:36:04.264 INFO  org.flywaydb.core.FlywayExecutor - Database: jdbc:postgresql://localhost:5432/kun_uz (PostgreSQL 16.0)
+16 февр. 2024 - 18:36:04.269 WARN  o.f.c.i.database.base.Database - Flyway upgrade recommended: PostgreSQL 16.0 is newer than this version of Flyway and support has not been tested. The latest supported version of PostgreSQL is 15.
+16 февр. 2024 - 18:36:04.303 INFO  o.f.core.internal.command.DbValidate - Successfully validated 5 migrations (execution time 00:00.025s)
+16 февр. 2024 - 18:36:04.312 INFO  o.f.core.internal.command.DbMigrate - Current version of schema "public": 4
+16 февр. 2024 - 18:36:04.315 INFO  o.f.core.internal.command.DbMigrate - Schema "public" is up to date. No migration necessary.
+16 февр. 2024 - 18:37:51.452 INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+16 февр. 2024 - 18:37:51.453 INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+16 февр. 2024 - 18:37:51.454 INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 1 ms
+16 февр. 2024 - 18:38:00.809 INFO  c.e.k.controller.AuthController - Login aadmin@mail.ru 
+16 февр. 2024 - 18:38:00.809 WARN  c.e.k.controller.AuthController - Login aadmin@mail.ru 
+16 февр. 2024 - 18:38:00.810 ERROR c.e.k.controller.AuthController - Login aadmin@mail.ru 
+16 февр. 2024 - 18:38:00.928 ERROR c.e.k.c.ExceptionHandlerController - com.example.kun_uz_lesson1.exp.AppBadException: Email или пароль указан неверно
+16 февр. 2024 - 18:38:08.257 INFO  c.e.k.controller.AuthController - Login aadmin@mail.ru 
+16 февр. 2024 - 18:38:08.257 WARN  c.e.k.controller.AuthController - Login aadmin@mail.ru 
+16 февр. 2024 - 18:38:08.257 ERROR c.e.k.controller.AuthController - Login aadmin@mail.ru 
+16 февр. 2024 - 18:38:08.260 ERROR c.e.k.c.ExceptionHandlerController - com.example.kun_uz_lesson1.exp.AppBadException: Email или пароль указан неверно
+16 февр. 2024 - 18:38:36.341 INFO  c.e.k.controller.AuthController - Login adminceek@gmail.com 
+16 февр. 2024 - 18:38:36.342 WARN  c.e.k.controller.AuthController - Login adminceek@gmail.com 
+16 февр. 2024 - 18:38:36.343 ERROR c.e.k.controller.AuthController - Login adminceek@gmail.com 
+16 февр. 2024 - 18:38:36.347 ERROR c.e.k.c.ExceptionHandlerController - com.example.kun_uz_lesson1.exp.AppBadException: Email или пароль указан неверно
+16 февр. 2024 - 18:40:07.189 INFO  c.e.k.controller.AuthController - Login adminceek@gmail.com  
+16 февр. 2024 - 18:40:07.190 WARN  c.e.k.controller.AuthController - Login adminceek@gmail.com  
+16 февр. 2024 - 18:40:07.190 ERROR c.e.k.controller.AuthController - Login adminceek@gmail.com  
+16 февр. 2024 - 18:40:07.194 ERROR c.e.k.c.ExceptionHandlerController - com.example.kun_uz_lesson1.exp.AppBadException: Email или пароль указан неверно
+16 февр. 2024 - 18:40:11.464 INFO  c.e.k.controller.AuthController - Login adminceek@gmail.com  
+16 февр. 2024 - 18:40:11.465 WARN  c.e.k.controller.AuthController - Login adminceek@gmail.com  
+16 февр. 2024 - 18:40:11.465 ERROR c.e.k.controller.AuthController - Login adminceek@gmail.com  
+16 февр. 2024 - 18:40:11.469 ERROR c.e.k.c.ExceptionHandlerController - com.example.kun_uz_lesson1.exp.AppBadException: Email или пароль указан неверно
+16 февр. 2024 - 18:40:30.876 INFO  c.e.k.controller.AuthController - Login adminceek@gmail.com 
+16 февр. 2024 - 18:40:30.876 WARN  c.e.k.controller.AuthController - Login adminceek@gmail.com 
+16 февр. 2024 - 18:40:30.877 ERROR c.e.k.controller.AuthController - Login adminceek@gmail.com 
+16 февр. 2024 - 18:40:30.880 ERROR c.e.k.c.ExceptionHandlerController - com.example.kun_uz_lesson1.exp.AppBadException: Email или пароль указан неверно
+16 февр. 2024 - 18:40:35.488 INFO  c.e.k.controller.AuthController - Login adminceek@gmail.com 
+16 февр. 2024 - 18:40:35.488 WARN  c.e.k.controller.AuthController - Login adminceek@gmail.com 
+16 февр. 2024 - 18:40:35.488 ERROR c.e.k.controller.AuthController - Login adminceek@gmail.com 
+16 февр. 2024 - 18:40:35.492 ERROR c.e.k.c.ExceptionHandlerController - com.example.kun_uz_lesson1.exp.AppBadException: Email или пароль указан неверно
+16 февр. 2024 - 18:40:39.149 INFO  c.e.k.controller.AuthController - Login adminceek@gmail.com 
+16 февр. 2024 - 18:40:39.149 WARN  c.e.k.controller.AuthController - Login adminceek@gmail.com 
+16 февр. 2024 - 18:40:39.149 ERROR c.e.k.controller.AuthController - Login adminceek@gmail.com 
+16 февр. 2024 - 18:40:39.154 ERROR c.e.k.c.ExceptionHandlerController - com.example.kun_uz_lesson1.exp.AppBadException: Email или пароль указан неверно
+16 февр. 2024 - 18:42:14.798 INFO  c.e.k.controller.AuthController - Login asanjarbeksultanov2023@gmail.com 
+16 февр. 2024 - 18:42:14.798 WARN  c.e.k.controller.AuthController - Login asanjarbeksultanov2023@gmail.com 
+16 февр. 2024 - 18:42:14.798 ERROR c.e.k.controller.AuthController - Login asanjarbeksultanov2023@gmail.com 
+16 февр. 2024 - 18:42:14.801 ERROR c.e.k.c.ExceptionHandlerController - com.example.kun_uz_lesson1.exp.AppBadException: Email или пароль указан неверно
+16 февр. 2024 - 18:42:24.094 INFO  c.e.k.controller.AuthController - Login sanjarbeksultanov2023@gmail.com 
+16 февр. 2024 - 18:42:24.094 WARN  c.e.k.controller.AuthController - Login sanjarbeksultanov2023@gmail.com 
+16 февр. 2024 - 18:42:24.095 ERROR c.e.k.controller.AuthController - Login sanjarbeksultanov2023@gmail.com 
+16 февр. 2024 - 18:42:24.102 ERROR c.e.k.c.ExceptionHandlerController - com.example.kun_uz_lesson1.exp.AppBadException: Profile not active
+16 февр. 2024 - 18:42:50.302 INFO  c.e.k.controller.AuthController - Login sanjarbeksultanov2023@gmail.com 
+16 февр. 2024 - 18:42:50.303 WARN  c.e.k.controller.AuthController - Login sanjarbeksultanov2023@gmail.com 
+16 февр. 2024 - 18:42:50.303 ERROR c.e.k.controller.AuthController - Login sanjarbeksultanov2023@gmail.com 
+16 февр. 2024 - 18:43:15.866 WARN  o.h.e.jdbc.spi.SqlExceptionHelper - SQL Error: 0, SQLState: 22P02
+16 февр. 2024 - 18:43:15.867 ERROR o.h.e.jdbc.spi.SqlExceptionHelper - ОШИБКА: неверный синтаксис для типа smallint: "LIKE"
+  Где: функция PL/pgSQL article_status_count_trigger_function(), строка 4, оператор IF
+16 февр. 2024 - 18:43:15.877 ERROR c.e.k.c.ExceptionHandlerController - org.springframework.dao.DataIntegrityViolationException: could not execute statement [ОШИБКА: неверный синтаксис для типа smallint: "LIKE"
+  Где: функция PL/pgSQL article_status_count_trigger_function(), строка 4, оператор IF] [insert into article_like (article_id,created_date,profile_id,status,updated_date,visible) values (?,?,?,?,?,?)]; SQL [insert into article_like (article_id,created_date,profile_id,status,updated_date,visible) values (?,?,?,?,?,?)]
+16 февр. 2024 - 18:44:38.525 INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+16 февр. 2024 - 18:44:38.530 INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+16 февр. 2024 - 18:44:38.541 INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+16 февр. 2024 - 18:44:44.754 INFO  c.e.k.KunUzLesson1Application - Starting KunUzLesson1Application using Java 17.0.7 with PID 4420 (C:\kun.uz\kun_uz_lesson1\target\classes started by HP in C:\kun.uz\kun_uz_lesson1)
+16 февр. 2024 - 18:44:44.769 INFO  c.e.k.KunUzLesson1Application - No active profile set, falling back to 1 default profile: "default"
+16 февр. 2024 - 18:44:45.772 INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+16 февр. 2024 - 18:44:45.870 INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 89 ms. Found 12 JPA repository interfaces.
+16 февр. 2024 - 18:44:46.596 INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 8080 (http)
+16 февр. 2024 - 18:44:46.609 INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+16 февр. 2024 - 18:44:46.610 INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.18]
+16 февр. 2024 - 18:44:46.695 INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+16 февр. 2024 - 18:44:46.696 INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 1883 ms
+16 февр. 2024 - 18:44:46.757 INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+16 февр. 2024 - 18:44:47.071 INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@34c76167
+16 февр. 2024 - 18:44:47.073 INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+16 февр. 2024 - 18:44:47.172 INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+16 февр. 2024 - 18:44:47.261 INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 6.4.1.Final
+16 февр. 2024 - 18:44:47.311 INFO  o.h.c.i.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+16 февр. 2024 - 18:44:47.603 INFO  o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+16 февр. 2024 - 18:44:49.146 INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+16 февр. 2024 - 18:44:49.309 INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+16 февр. 2024 - 18:44:49.534 INFO  o.s.d.j.r.query.QueryEnhancerFactory - Hibernate is in classpath; If applicable, HQL parser will be used.
+16 февр. 2024 - 18:44:50.639 WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+16 февр. 2024 - 18:44:51.006 INFO  o.s.s.web.DefaultSecurityFilterChain - Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@3e7e4aea, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@78835956, org.springframework.security.web.context.SecurityContextHolderFilter@7414167a, org.springframework.security.web.header.HeaderWriterFilter@2158d1d1, org.springframework.security.web.authentication.logout.LogoutFilter@4cb3e76c, com.example.kun_uz_lesson1.config.JwtTokenFilter@74f6237, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@7d8fcde8, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@12620e98, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@38794a3, org.springframework.security.web.access.ExceptionTranslationFilter@5513982, org.springframework.security.web.access.intercept.AuthorizationFilter@5415ed48]
+16 февр. 2024 - 18:44:51.382 INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port 8080 (http) with context path ''
+16 февр. 2024 - 18:44:51.393 INFO  c.e.k.KunUzLesson1Application - Started KunUzLesson1Application in 7.055 seconds (process running for 7.78)
+16 февр. 2024 - 18:44:51.444 INFO  o.f.c.i.license.VersionPrinter - Flyway Community Edition 9.22.3 by Redgate
+16 февр. 2024 - 18:44:51.444 INFO  o.f.c.i.license.VersionPrinter - See release notes here: https://rd.gt/416ObMi
+16 февр. 2024 - 18:44:51.444 INFO  o.f.c.i.license.VersionPrinter - 
+16 февр. 2024 - 18:44:51.456 INFO  org.flywaydb.core.FlywayExecutor - Database: jdbc:postgresql://localhost:5432/kun_uz (PostgreSQL 16.0)
+16 февр. 2024 - 18:44:51.461 WARN  o.f.c.i.database.base.Database - Flyway upgrade recommended: PostgreSQL 16.0 is newer than this version of Flyway and support has not been tested. The latest supported version of PostgreSQL is 15.
+16 февр. 2024 - 18:44:51.487 INFO  o.f.core.internal.command.DbValidate - Successfully validated 5 migrations (execution time 00:00.018s)
+16 февр. 2024 - 18:44:51.496 INFO  o.f.core.internal.command.DbMigrate - Current version of schema "public": 4
+16 февр. 2024 - 18:44:51.499 INFO  o.f.core.internal.command.DbMigrate - Schema "public" is up to date. No migration necessary.
+16 февр. 2024 - 18:44:57.026 INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+16 февр. 2024 - 18:44:57.026 INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+16 февр. 2024 - 18:44:57.028 INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 1 ms
+16 февр. 2024 - 18:45:36.692 ERROR c.e.k.c.ExceptionHandlerController - org.springframework.security.access.AccessDeniedException: Access Denied
+16 февр. 2024 - 18:47:14.802 INFO  c.e.k.controller.AuthController - Login sanjarsultanov2023@gmail.com 
+16 февр. 2024 - 18:47:14.802 WARN  c.e.k.controller.AuthController - Login sanjarsultanov2023@gmail.com 
+16 февр. 2024 - 18:47:14.803 ERROR c.e.k.controller.AuthController - Login sanjarsultanov2023@gmail.com 
+16 февр. 2024 - 18:47:36.062 ERROR c.e.k.c.ExceptionHandlerController - java.util.NoSuchElementException: No value present
+16 февр. 2024 - 18:49:00.636 INFO  c.e.k.controller.AuthController - Login sanjarbeksultanov2023@gmail.com 
+16 февр. 2024 - 18:49:00.637 WARN  c.e.k.controller.AuthController - Login sanjarbeksultanov2023@gmail.com 
+16 февр. 2024 - 18:49:00.637 ERROR c.e.k.controller.AuthController - Login sanjarbeksultanov2023@gmail.com 
+16 февр. 2024 - 18:50:19.103 ERROR c.e.k.c.ExceptionHandlerController - java.util.NoSuchElementException: No value present
+16 февр. 2024 - 18:51:00.807 ERROR c.e.k.c.ExceptionHandlerController - org.springframework.security.access.AccessDeniedException: Access Denied
+16 февр. 2024 - 18:51:26.324 ERROR c.e.k.c.ExceptionHandlerController - org.springframework.security.access.AccessDeniedException: Access Denied
+16 февр. 2024 - 18:51:51.726 ERROR c.e.k.c.ExceptionHandlerController - org.springframework.security.access.AccessDeniedException: Access Denied
+16 февр. 2024 - 18:52:08.256 INFO  c.e.k.controller.AuthController - Login sanjarsultanov2023@gmail.com 
+16 февр. 2024 - 18:52:08.257 WARN  c.e.k.controller.AuthController - Login sanjarsultanov2023@gmail.com 
+16 февр. 2024 - 18:52:08.257 ERROR c.e.k.controller.AuthController - Login sanjarsultanov2023@gmail.com 
+16 февр. 2024 - 18:52:30.820 WARN  o.h.e.jdbc.spi.SqlExceptionHelper - SQL Error: 0, SQLState: 23503
+16 февр. 2024 - 18:52:30.821 ERROR o.h.e.jdbc.spi.SqlExceptionHelper - ОШИБКА: INSERT или UPDATE в таблице "article" нарушает ограничение внешнего ключа "fkbmunhs7hvekhvrss0fd13ofyf"
+  Подробности: Ключ (photo_id)=(d0d9ec2e-a9a1-4397-87c2-836365032f60) отсутствует в таблице "attach".
+16 февр. 2024 - 18:52:30.829 ERROR c.e.k.c.ExceptionHandlerController - org.springframework.dao.DataIntegrityViolationException: could not execute statement [ОШИБКА: INSERT или UPDATE в таблице "article" нарушает ограничение внешнего ключа "fkbmunhs7hvekhvrss0fd13ofyf"
+  Подробности: Ключ (photo_id)=(d0d9ec2e-a9a1-4397-87c2-836365032f60) отсутствует в таблице "attach".] [insert into article (category_id,content,content_en,content_ru,content_uz,created_date,description,description_en,description_ru,description_uz,dislike_count,like_count,moderator_id,photo_id,published_date,publisher_id,region_id,shared_count,status,title,title_en,title_ru,title_uz,view_count,visible,id) values (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)]; SQL [insert into article (category_id,content,content_en,content_ru,content_uz,created_date,description,description_en,description_ru,description_uz,dislike_count,like_count,moderator_id,photo_id,published_date,publisher_id,region_id,shared_count,status,title,title_en,title_ru,title_uz,view_count,visible,id) values (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)]; constraint [null]
+16 февр. 2024 - 18:52:45.980 WARN  o.h.e.jdbc.spi.SqlExceptionHelper - SQL Error: 0, SQLState: 23503
+16 февр. 2024 - 18:52:45.980 ERROR o.h.e.jdbc.spi.SqlExceptionHelper - ОШИБКА: INSERT или UPDATE в таблице "article" нарушает ограничение внешнего ключа "fkbmunhs7hvekhvrss0fd13ofyf"
+  Подробности: Ключ (photo_id)=(d0d9ec2e-a9a1-4397-87c2-836365032f60) отсутствует в таблице "attach".
+16 февр. 2024 - 18:52:45.981 ERROR c.e.k.c.ExceptionHandlerController - org.springframework.dao.DataIntegrityViolationException: could not execute statement [ОШИБКА: INSERT или UPDATE в таблице "article" нарушает ограничение внешнего ключа "fkbmunhs7hvekhvrss0fd13ofyf"
+  Подробности: Ключ (photo_id)=(d0d9ec2e-a9a1-4397-87c2-836365032f60) отсутствует в таблице "attach".] [insert into article (category_id,content,content_en,content_ru,content_uz,created_date,description,description_en,description_ru,description_uz,dislike_count,like_count,moderator_id,photo_id,published_date,publisher_id,region_id,shared_count,status,title,title_en,title_ru,title_uz,view_count,visible,id) values (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)]; SQL [insert into article (category_id,content,content_en,content_ru,content_uz,created_date,description,description_en,description_ru,description_uz,dislike_count,like_count,moderator_id,photo_id,published_date,publisher_id,region_id,shared_count,status,title,title_en,title_ru,title_uz,view_count,visible,id) values (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)]; constraint [null]
+16 февр. 2024 - 18:53:03.180 ERROR c.e.k.c.ExceptionHandlerController - org.springframework.security.access.AccessDeniedException: Access Denied
+16 февр. 2024 - 18:53:47.201 ERROR c.e.k.c.ExceptionHandlerController - org.springframework.security.access.AccessDeniedException: Access Denied
+16 февр. 2024 - 18:54:41.278 ERROR c.e.k.c.ExceptionHandlerController - org.springframework.security.access.AccessDeniedException: Access Denied
+16 февр. 2024 - 18:55:07.741 INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+16 февр. 2024 - 18:55:07.743 INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+16 февр. 2024 - 18:55:07.750 INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+16 февр. 2024 - 18:55:11.964 INFO  c.e.k.KunUzLesson1Application - Starting KunUzLesson1Application using Java 17.0.7 with PID 15944 (C:\kun.uz\kun_uz_lesson1\target\classes started by HP in C:\kun.uz\kun_uz_lesson1)
+16 февр. 2024 - 18:55:11.978 INFO  c.e.k.KunUzLesson1Application - No active profile set, falling back to 1 default profile: "default"
+16 февр. 2024 - 18:55:12.915 INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+16 февр. 2024 - 18:55:13.006 INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 83 ms. Found 12 JPA repository interfaces.
+16 февр. 2024 - 18:55:13.636 INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 8080 (http)
+16 февр. 2024 - 18:55:13.648 INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+16 февр. 2024 - 18:55:13.649 INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.18]
+16 февр. 2024 - 18:55:13.748 INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+16 февр. 2024 - 18:55:13.749 INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 1725 ms
+16 февр. 2024 - 18:55:13.811 INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+16 февр. 2024 - 18:55:14.045 INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@78d92eef
+16 февр. 2024 - 18:55:14.046 INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+16 февр. 2024 - 18:55:14.137 INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+16 февр. 2024 - 18:55:14.209 INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 6.4.1.Final
+16 февр. 2024 - 18:55:14.255 INFO  o.h.c.i.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+16 февр. 2024 - 18:55:14.522 INFO  o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+16 февр. 2024 - 18:55:15.906 INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+16 февр. 2024 - 18:55:16.062 INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+16 февр. 2024 - 18:55:16.297 INFO  o.s.d.j.r.query.QueryEnhancerFactory - Hibernate is in classpath; If applicable, HQL parser will be used.
+16 февр. 2024 - 18:55:17.347 WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+16 февр. 2024 - 18:55:17.709 INFO  o.s.s.web.DefaultSecurityFilterChain - Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@4d5399f4, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@1490b1a4, org.springframework.security.web.context.SecurityContextHolderFilter@7ad31e9e, org.springframework.security.web.header.HeaderWriterFilter@12620e98, org.springframework.security.web.authentication.logout.LogoutFilter@6845dfcc, com.example.kun_uz_lesson1.config.JwtTokenFilter@173e4b75, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@35f011cf, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@4f5c55a8, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@28908c04, org.springframework.security.web.access.ExceptionTranslationFilter@13258770, org.springframework.security.web.access.intercept.AuthorizationFilter@10658b31]
+16 февр. 2024 - 18:55:18.077 INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port 8080 (http) with context path ''
+16 февр. 2024 - 18:55:18.088 INFO  c.e.k.KunUzLesson1Application - Started KunUzLesson1Application in 6.61 seconds (process running for 7.282)
+16 февр. 2024 - 18:55:18.147 INFO  o.f.c.i.license.VersionPrinter - Flyway Community Edition 9.22.3 by Redgate
+16 февр. 2024 - 18:55:18.147 INFO  o.f.c.i.license.VersionPrinter - See release notes here: https://rd.gt/416ObMi
+16 февр. 2024 - 18:55:18.147 INFO  o.f.c.i.license.VersionPrinter - 
+16 февр. 2024 - 18:55:18.159 INFO  org.flywaydb.core.FlywayExecutor - Database: jdbc:postgresql://localhost:5432/kun_uz (PostgreSQL 16.0)
+16 февр. 2024 - 18:55:18.165 WARN  o.f.c.i.database.base.Database - Flyway upgrade recommended: PostgreSQL 16.0 is newer than this version of Flyway and support has not been tested. The latest supported version of PostgreSQL is 15.
+16 февр. 2024 - 18:55:18.191 INFO  o.f.core.internal.command.DbValidate - Successfully validated 5 migrations (execution time 00:00.019s)
+16 февр. 2024 - 18:55:18.200 INFO  o.f.core.internal.command.DbMigrate - Current version of schema "public": 4
+16 февр. 2024 - 18:55:18.202 INFO  o.f.core.internal.command.DbMigrate - Schema "public" is up to date. No migration necessary.
+16 февр. 2024 - 18:55:19.559 INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+16 февр. 2024 - 18:55:19.559 INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+16 февр. 2024 - 18:55:19.561 INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 2 ms
+16 февр. 2024 - 18:55:19.973 WARN  o.h.e.jdbc.spi.SqlExceptionHelper - SQL Error: 0, SQLState: 23503
+16 февр. 2024 - 18:55:19.974 ERROR o.h.e.jdbc.spi.SqlExceptionHelper - ОШИБКА: INSERT или UPDATE в таблице "article" нарушает ограничение внешнего ключа "fkbmunhs7hvekhvrss0fd13ofyf"
+  Подробности: Ключ (photo_id)=(d0d9ec2e-a9a1-4397-87c2-836365032f60) отсутствует в таблице "attach".
+16 февр. 2024 - 18:55:19.985 ERROR c.e.k.c.ExceptionHandlerController - org.springframework.dao.DataIntegrityViolationException: could not execute statement [ОШИБКА: INSERT или UPDATE в таблице "article" нарушает ограничение внешнего ключа "fkbmunhs7hvekhvrss0fd13ofyf"
+  Подробности: Ключ (photo_id)=(d0d9ec2e-a9a1-4397-87c2-836365032f60) отсутствует в таблице "attach".] [insert into article (category_id,content,content_en,content_ru,content_uz,created_date,description,description_en,description_ru,description_uz,dislike_count,like_count,moderator_id,photo_id,published_date,publisher_id,region_id,shared_count,status,title,title_en,title_ru,title_uz,view_count,visible,id) values (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)]; SQL [insert into article (category_id,content,content_en,content_ru,content_uz,created_date,description,description_en,description_ru,description_uz,dislike_count,like_count,moderator_id,photo_id,published_date,publisher_id,region_id,shared_count,status,title,title_en,title_ru,title_uz,view_count,visible,id) values (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)]; constraint [null]
+16 февр. 2024 - 18:55:33.115 INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+16 февр. 2024 - 18:55:33.120 INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+16 февр. 2024 - 18:55:33.124 INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+16 февр. 2024 - 18:55:37.388 INFO  c.e.k.KunUzLesson1Application - Starting KunUzLesson1Application using Java 17.0.7 with PID 16592 (C:\kun.uz\kun_uz_lesson1\target\classes started by HP in C:\kun.uz\kun_uz_lesson1)
+16 февр. 2024 - 18:55:37.403 INFO  c.e.k.KunUzLesson1Application - No active profile set, falling back to 1 default profile: "default"
+16 февр. 2024 - 18:55:38.379 INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+16 февр. 2024 - 18:55:38.476 INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 90 ms. Found 12 JPA repository interfaces.
+16 февр. 2024 - 18:55:39.120 INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 8080 (http)
+16 февр. 2024 - 18:55:39.133 INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+16 февр. 2024 - 18:55:39.133 INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.18]
+16 февр. 2024 - 18:55:39.212 INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+16 февр. 2024 - 18:55:39.213 INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 1768 ms
+16 февр. 2024 - 18:55:39.279 INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+16 февр. 2024 - 18:55:39.509 INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@404ced67
+16 февр. 2024 - 18:55:39.511 INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+16 февр. 2024 - 18:55:39.615 INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+16 февр. 2024 - 18:55:39.699 INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 6.4.1.Final
+16 февр. 2024 - 18:55:39.760 INFO  o.h.c.i.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+16 февр. 2024 - 18:55:40.036 INFO  o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+16 февр. 2024 - 18:55:41.502 INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+16 февр. 2024 - 18:55:41.660 INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+16 февр. 2024 - 18:55:41.906 INFO  o.s.d.j.r.query.QueryEnhancerFactory - Hibernate is in classpath; If applicable, HQL parser will be used.
+16 февр. 2024 - 18:55:42.988 WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+16 февр. 2024 - 18:55:43.333 INFO  o.s.s.web.DefaultSecurityFilterChain - Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@72ce2982, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@4d5399f4, org.springframework.security.web.context.SecurityContextHolderFilter@79b07ccd, org.springframework.security.web.header.HeaderWriterFilter@7d8fcde8, org.springframework.security.web.authentication.logout.LogoutFilter@26be5ee, com.example.kun_uz_lesson1.config.JwtTokenFilter@78f2cab9, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@78c7d992, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@35f011cf, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@1490b1a4, org.springframework.security.web.access.ExceptionTranslationFilter@7414167a, org.springframework.security.web.access.intercept.AuthorizationFilter@5c00b341]
+16 февр. 2024 - 18:55:43.681 INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port 8080 (http) with context path ''
+16 февр. 2024 - 18:55:43.691 INFO  c.e.k.KunUzLesson1Application - Started KunUzLesson1Application in 6.788 seconds (process running for 7.47)
+16 февр. 2024 - 18:55:43.741 INFO  o.f.c.i.license.VersionPrinter - Flyway Community Edition 9.22.3 by Redgate
+16 февр. 2024 - 18:55:43.741 INFO  o.f.c.i.license.VersionPrinter - See release notes here: https://rd.gt/416ObMi
+16 февр. 2024 - 18:55:43.741 INFO  o.f.c.i.license.VersionPrinter - 
+16 февр. 2024 - 18:55:43.753 INFO  org.flywaydb.core.FlywayExecutor - Database: jdbc:postgresql://localhost:5432/kun_uz (PostgreSQL 16.0)
+16 февр. 2024 - 18:55:43.758 WARN  o.f.c.i.database.base.Database - Flyway upgrade recommended: PostgreSQL 16.0 is newer than this version of Flyway and support has not been tested. The latest supported version of PostgreSQL is 15.
+16 февр. 2024 - 18:55:43.784 INFO  o.f.core.internal.command.DbValidate - Successfully validated 5 migrations (execution time 00:00.018s)
+16 февр. 2024 - 18:55:43.793 INFO  o.f.core.internal.command.DbMigrate - Current version of schema "public": 4
+16 февр. 2024 - 18:55:43.796 INFO  o.f.core.internal.command.DbMigrate - Schema "public" is up to date. No migration necessary.
+16 февр. 2024 - 19:09:39.287 WARN  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=9m59s595ms187µs300ns).
+16 февр. 2024 - 19:09:44.267 INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+16 февр. 2024 - 19:09:44.272 INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+16 февр. 2024 - 19:09:44.279 INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+16 февр. 2024 - 19:09:47.413 INFO  c.e.k.KunUzLesson1Application - Starting KunUzLesson1Application using Java 17.0.7 with PID 13356 (C:\kun.uz\kun_uz_lesson1\target\classes started by HP in C:\kun.uz\kun_uz_lesson1)
+16 февр. 2024 - 19:09:47.432 INFO  c.e.k.KunUzLesson1Application - No active profile set, falling back to 1 default profile: "default"
+16 февр. 2024 - 19:09:48.486 INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+16 февр. 2024 - 19:09:48.603 INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 108 ms. Found 12 JPA repository interfaces.
+16 февр. 2024 - 19:09:49.383 INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 8080 (http)
+16 февр. 2024 - 19:09:49.398 INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+16 февр. 2024 - 19:09:49.399 INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.18]
+16 февр. 2024 - 19:09:49.495 INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+16 февр. 2024 - 19:09:49.496 INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 2013 ms
+16 февр. 2024 - 19:09:49.578 INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+16 февр. 2024 - 19:09:49.832 INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@3de79067
+16 февр. 2024 - 19:09:49.834 INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+16 февр. 2024 - 19:09:49.975 INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+16 февр. 2024 - 19:09:50.075 INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 6.4.1.Final
+16 февр. 2024 - 19:09:50.121 INFO  o.h.c.i.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+16 февр. 2024 - 19:09:50.432 INFO  o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+16 февр. 2024 - 19:09:52.077 INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+16 февр. 2024 - 19:09:52.241 INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+16 февр. 2024 - 19:09:52.515 INFO  o.s.d.j.r.query.QueryEnhancerFactory - Hibernate is in classpath; If applicable, HQL parser will be used.
+16 февр. 2024 - 19:09:54.870 WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+16 февр. 2024 - 19:09:55.607 INFO  o.s.s.web.DefaultSecurityFilterChain - Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@2f062dbc, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@78e5b18, org.springframework.security.web.context.SecurityContextHolderFilter@27cd156a, org.springframework.security.web.header.HeaderWriterFilter@3b8adbda, org.springframework.security.web.authentication.logout.LogoutFilter@491ef90c, com.example.kun_uz_lesson1.config.JwtTokenFilter@62a9e9bf, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@37a522c8, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@6ab80ea, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@352a2660, org.springframework.security.web.access.ExceptionTranslationFilter@48b14e4a, org.springframework.security.web.access.intercept.AuthorizationFilter@7d49ebf2]
+16 февр. 2024 - 19:09:56.510 INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port 8080 (http) with context path ''
+16 февр. 2024 - 19:09:56.532 INFO  c.e.k.KunUzLesson1Application - Started KunUzLesson1Application in 9.639 seconds (process running for 10.926)
+16 февр. 2024 - 19:09:56.675 INFO  o.f.c.i.license.VersionPrinter - Flyway Community Edition 9.22.3 by Redgate
+16 февр. 2024 - 19:09:56.675 INFO  o.f.c.i.license.VersionPrinter - See release notes here: https://rd.gt/416ObMi
+16 февр. 2024 - 19:09:56.675 INFO  o.f.c.i.license.VersionPrinter - 
+16 февр. 2024 - 19:09:56.726 INFO  org.flywaydb.core.FlywayExecutor - Database: jdbc:postgresql://localhost:5432/kun_uz (PostgreSQL 16.0)
+16 февр. 2024 - 19:09:56.737 WARN  o.f.c.i.database.base.Database - Flyway upgrade recommended: PostgreSQL 16.0 is newer than this version of Flyway and support has not been tested. The latest supported version of PostgreSQL is 15.
+16 февр. 2024 - 19:09:56.852 INFO  o.f.core.internal.command.DbValidate - Successfully validated 5 migrations (execution time 00:00.083s)
+16 февр. 2024 - 19:09:56.877 INFO  o.f.core.internal.command.DbMigrate - Current version of schema "public": 4
+16 февр. 2024 - 19:09:56.890 INFO  o.f.core.internal.command.DbMigrate - Schema "public" is up to date. No migration necessary.
+16 февр. 2024 - 19:09:59.625 INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+16 февр. 2024 - 19:09:59.626 INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+16 февр. 2024 - 19:09:59.627 INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 1 ms
+16 февр. 2024 - 19:10:00.516 ERROR c.e.k.c.ExceptionHandlerController - org.springframework.security.access.AccessDeniedException: Access Denied
+16 февр. 2024 - 19:12:02.557 ERROR c.e.k.c.ExceptionHandlerController - org.springframework.security.access.AccessDeniedException: Access Denied
+16 февр. 2024 - 19:12:59.148 INFO  c.e.k.controller.AuthController - Login sanjarsultanov2023@gmail.com 
+16 февр. 2024 - 19:12:59.149 WARN  c.e.k.controller.AuthController - Login sanjarsultanov2023@gmail.com 
+16 февр. 2024 - 19:12:59.149 ERROR c.e.k.controller.AuthController - Login sanjarsultanov2023@gmail.com 
+16 февр. 2024 - 19:13:33.565 WARN  o.h.e.jdbc.spi.SqlExceptionHelper - SQL Error: 0, SQLState: 23503
+16 февр. 2024 - 19:13:33.566 ERROR o.h.e.jdbc.spi.SqlExceptionHelper - ОШИБКА: INSERT или UPDATE в таблице "article" нарушает ограничение внешнего ключа "fkbmunhs7hvekhvrss0fd13ofyf"
+  Подробности: Ключ (photo_id)=(d0d9ec2e-a9a1-4397-87c2-836365032f60) отсутствует в таблице "attach".
+16 февр. 2024 - 19:14:11.763 WARN  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=51s742ms340µs400ns).
+16 февр. 2024 - 19:14:11.770 ERROR c.e.k.c.ExceptionHandlerController - org.springframework.dao.DataIntegrityViolationException: could not execute statement [ОШИБКА: INSERT или UPDATE в таблице "article" нарушает ограничение внешнего ключа "fkbmunhs7hvekhvrss0fd13ofyf"
+  Подробности: Ключ (photo_id)=(d0d9ec2e-a9a1-4397-87c2-836365032f60) отсутствует в таблице "attach".] [insert into article (category_id,content,content_en,content_ru,content_uz,created_date,description,description_en,description_ru,description_uz,dislike_count,like_count,moderator_id,photo_id,published_date,publisher_id,region_id,shared_count,status,title,title_en,title_ru,title_uz,view_count,visible,id) values (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)]; SQL [insert into article (category_id,content,content_en,content_ru,content_uz,created_date,description,description_en,description_ru,description_uz,dislike_count,like_count,moderator_id,photo_id,published_date,publisher_id,region_id,shared_count,status,title,title_en,title_ru,title_uz,view_count,visible,id) values (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)]; constraint [null]
+16 февр. 2024 - 19:14:11.890 INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+16 февр. 2024 - 19:14:11.893 INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+16 февр. 2024 - 19:14:11.900 INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+16 февр. 2024 - 19:14:14.943 INFO  c.e.k.KunUzLesson1Application - Starting KunUzLesson1Application using Java 17.0.7 with PID 15804 (C:\kun.uz\kun_uz_lesson1\target\classes started by HP in C:\kun.uz\kun_uz_lesson1)
+16 февр. 2024 - 19:14:14.963 INFO  c.e.k.KunUzLesson1Application - No active profile set, falling back to 1 default profile: "default"
+16 февр. 2024 - 19:14:15.879 INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+16 февр. 2024 - 19:14:15.972 INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 85 ms. Found 12 JPA repository interfaces.
+16 февр. 2024 - 19:14:16.617 INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 8080 (http)
+16 февр. 2024 - 19:14:16.629 INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+16 февр. 2024 - 19:14:16.629 INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.18]
+16 февр. 2024 - 19:14:16.707 INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+16 февр. 2024 - 19:14:16.707 INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 1688 ms
+16 февр. 2024 - 19:14:16.780 INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+16 февр. 2024 - 19:14:17.011 INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@30b3d899
+16 февр. 2024 - 19:14:17.013 INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+16 февр. 2024 - 19:14:17.109 INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+16 февр. 2024 - 19:14:17.175 INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 6.4.1.Final
+16 февр. 2024 - 19:14:17.212 INFO  o.h.c.i.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+16 февр. 2024 - 19:14:17.470 INFO  o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+16 февр. 2024 - 19:14:18.866 INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+16 февр. 2024 - 19:14:19.030 INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+16 февр. 2024 - 19:14:19.251 INFO  o.s.d.j.r.query.QueryEnhancerFactory - Hibernate is in classpath; If applicable, HQL parser will be used.
+16 февр. 2024 - 19:14:20.312 WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+16 февр. 2024 - 19:14:20.675 INFO  o.s.s.web.DefaultSecurityFilterChain - Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@78835956, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@38794a3, org.springframework.security.web.context.SecurityContextHolderFilter@13258770, org.springframework.security.web.header.HeaderWriterFilter@72238cf0, org.springframework.security.web.authentication.logout.LogoutFilter@64d711b0, com.example.kun_uz_lesson1.config.JwtTokenFilter@50e7f88b, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@12620e98, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@46916d68, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@5c00b341, org.springframework.security.web.access.ExceptionTranslationFilter@22351330, org.springframework.security.web.access.intercept.AuthorizationFilter@636787fd]
+16 февр. 2024 - 19:14:21.091 INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port 8080 (http) with context path ''
+16 февр. 2024 - 19:14:21.103 INFO  c.e.k.KunUzLesson1Application - Started KunUzLesson1Application in 6.791 seconds (process running for 7.478)
+16 февр. 2024 - 19:14:21.165 INFO  o.f.c.i.license.VersionPrinter - Flyway Community Edition 9.22.3 by Redgate
+16 февр. 2024 - 19:14:21.166 INFO  o.f.c.i.license.VersionPrinter - See release notes here: https://rd.gt/416ObMi
+16 февр. 2024 - 19:14:21.166 INFO  o.f.c.i.license.VersionPrinter - 
+16 февр. 2024 - 19:14:21.182 INFO  org.flywaydb.core.FlywayExecutor - Database: jdbc:postgresql://localhost:5432/kun_uz (PostgreSQL 16.0)
+16 февр. 2024 - 19:14:21.188 WARN  o.f.c.i.database.base.Database - Flyway upgrade recommended: PostgreSQL 16.0 is newer than this version of Flyway and support has not been tested. The latest supported version of PostgreSQL is 15.
+16 февр. 2024 - 19:14:21.219 INFO  o.f.core.internal.command.DbValidate - Successfully validated 5 migrations (execution time 00:00.022s)
+16 февр. 2024 - 19:14:21.230 INFO  o.f.core.internal.command.DbMigrate - Current version of schema "public": 4
+16 февр. 2024 - 19:14:21.232 INFO  o.f.core.internal.command.DbMigrate - Schema "public" is up to date. No migration necessary.
+16 февр. 2024 - 19:14:41.678 INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+16 февр. 2024 - 19:14:41.679 INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+16 февр. 2024 - 19:14:41.680 INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 1 ms
+16 февр. 2024 - 19:14:42.096 WARN  o.h.e.jdbc.spi.SqlExceptionHelper - SQL Error: 0, SQLState: 23503
+16 февр. 2024 - 19:14:42.097 ERROR o.h.e.jdbc.spi.SqlExceptionHelper - ОШИБКА: INSERT или UPDATE в таблице "article" нарушает ограничение внешнего ключа "fkbmunhs7hvekhvrss0fd13ofyf"
+  Подробности: Ключ (photo_id)=(d0d9ec2e-a9a1-4397-87c2-836365032f60) отсутствует в таблице "attach".
+16 февр. 2024 - 19:14:42.106 ERROR c.e.k.c.ExceptionHandlerController - org.springframework.dao.DataIntegrityViolationException: could not execute statement [ОШИБКА: INSERT или UPDATE в таблице "article" нарушает ограничение внешнего ключа "fkbmunhs7hvekhvrss0fd13ofyf"
+  Подробности: Ключ (photo_id)=(d0d9ec2e-a9a1-4397-87c2-836365032f60) отсутствует в таблице "attach".] [insert into article (category_id,content,content_en,content_ru,content_uz,created_date,description,description_en,description_ru,description_uz,dislike_count,like_count,moderator_id,photo_id,published_date,publisher_id,region_id,shared_count,status,title,title_en,title_ru,title_uz,view_count,visible,id) values (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)]; SQL [insert into article (category_id,content,content_en,content_ru,content_uz,created_date,description,description_en,description_ru,description_uz,dislike_count,like_count,moderator_id,photo_id,published_date,publisher_id,region_id,shared_count,status,title,title_en,title_ru,title_uz,view_count,visible,id) values (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)]; constraint [null]
+16 февр. 2024 - 19:16:31.652 WARN  o.h.e.jdbc.spi.SqlExceptionHelper - SQL Error: 0, SQLState: 23503
+16 февр. 2024 - 19:16:31.653 ERROR o.h.e.jdbc.spi.SqlExceptionHelper - ОШИБКА: INSERT или UPDATE в таблице "article" нарушает ограничение внешнего ключа "fkbmunhs7hvekhvrss0fd13ofyf"
+  Подробности: Ключ (photo_id)=(d0d9ec2e-a9a1-4397-87c2-836365032f60) отсутствует в таблице "attach".
+16 февр. 2024 - 19:16:31.654 ERROR c.e.k.c.ExceptionHandlerController - org.springframework.dao.DataIntegrityViolationException: could not execute statement [ОШИБКА: INSERT или UPDATE в таблице "article" нарушает ограничение внешнего ключа "fkbmunhs7hvekhvrss0fd13ofyf"
+  Подробности: Ключ (photo_id)=(d0d9ec2e-a9a1-4397-87c2-836365032f60) отсутствует в таблице "attach".] [insert into article (category_id,content,content_en,content_ru,content_uz,created_date,description,description_en,description_ru,description_uz,dislike_count,like_count,moderator_id,photo_id,published_date,publisher_id,region_id,shared_count,status,title,title_en,title_ru,title_uz,view_count,visible,id) values (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)]; SQL [insert into article (category_id,content,content_en,content_ru,content_uz,created_date,description,description_en,description_ru,description_uz,dislike_count,like_count,moderator_id,photo_id,published_date,publisher_id,region_id,shared_count,status,title,title_en,title_ru,title_uz,view_count,visible,id) values (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)]; constraint [null]
+16 февр. 2024 - 19:17:03.674 WARN  o.h.e.jdbc.spi.SqlExceptionHelper - SQL Error: 0, SQLState: 23503
+16 февр. 2024 - 19:17:03.674 ERROR o.h.e.jdbc.spi.SqlExceptionHelper - ОШИБКА: INSERT или UPDATE в таблице "article" нарушает ограничение внешнего ключа "fkbmunhs7hvekhvrss0fd13ofyf"
+  Подробности: Ключ (photo_id)=(d0d9ec2e-a9a1-4397-87c2-836365032f60) отсутствует в таблице "attach".
+16 февр. 2024 - 19:17:03.675 ERROR c.e.k.c.ExceptionHandlerController - org.springframework.dao.DataIntegrityViolationException: could not execute statement [ОШИБКА: INSERT или UPDATE в таблице "article" нарушает ограничение внешнего ключа "fkbmunhs7hvekhvrss0fd13ofyf"
+  Подробности: Ключ (photo_id)=(d0d9ec2e-a9a1-4397-87c2-836365032f60) отсутствует в таблице "attach".] [insert into article (category_id,content,content_en,content_ru,content_uz,created_date,description,description_en,description_ru,description_uz,dislike_count,like_count,moderator_id,photo_id,published_date,publisher_id,region_id,shared_count,status,title,title_en,title_ru,title_uz,view_count,visible,id) values (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)]; SQL [insert into article (category_id,content,content_en,content_ru,content_uz,created_date,description,description_en,description_ru,description_uz,dislike_count,like_count,moderator_id,photo_id,published_date,publisher_id,region_id,shared_count,status,title,title_en,title_ru,title_uz,view_count,visible,id) values (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)]; constraint [null]
+16 февр. 2024 - 19:17:27.149 WARN  o.h.e.jdbc.spi.SqlExceptionHelper - SQL Error: 0, SQLState: 23503
+16 февр. 2024 - 19:17:27.149 ERROR o.h.e.jdbc.spi.SqlExceptionHelper - ОШИБКА: INSERT или UPDATE в таблице "article" нарушает ограничение внешнего ключа "fkbmunhs7hvekhvrss0fd13ofyf"
+  Подробности: Ключ (photo_id)=(d0d9ec2e-a9a1-4397-87c2-836365032f60) отсутствует в таблице "attach".
+16 февр. 2024 - 19:17:27.151 ERROR c.e.k.c.ExceptionHandlerController - org.springframework.dao.DataIntegrityViolationException: could not execute statement [ОШИБКА: INSERT или UPDATE в таблице "article" нарушает ограничение внешнего ключа "fkbmunhs7hvekhvrss0fd13ofyf"
+  Подробности: Ключ (photo_id)=(d0d9ec2e-a9a1-4397-87c2-836365032f60) отсутствует в таблице "attach".] [insert into article (category_id,content,content_en,content_ru,content_uz,created_date,description,description_en,description_ru,description_uz,dislike_count,like_count,moderator_id,photo_id,published_date,publisher_id,region_id,shared_count,status,title,title_en,title_ru,title_uz,view_count,visible,id) values (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)]; SQL [insert into article (category_id,content,content_en,content_ru,content_uz,created_date,description,description_en,description_ru,description_uz,dislike_count,like_count,moderator_id,photo_id,published_date,publisher_id,region_id,shared_count,status,title,title_en,title_ru,title_uz,view_count,visible,id) values (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)]; constraint [null]
+16 февр. 2024 - 19:17:55.184 WARN  o.h.e.jdbc.spi.SqlExceptionHelper - SQL Error: 0, SQLState: 23503
+16 февр. 2024 - 19:17:55.185 ERROR o.h.e.jdbc.spi.SqlExceptionHelper - ОШИБКА: INSERT или UPDATE в таблице "article" нарушает ограничение внешнего ключа "fkbmunhs7hvekhvrss0fd13ofyf"
+  Подробности: Ключ (photo_id)=(d0d9ec2e-a9a1-4397-87c2-836365032f60) отсутствует в таблице "attach".
+16 февр. 2024 - 19:17:55.186 ERROR c.e.k.c.ExceptionHandlerController - org.springframework.dao.DataIntegrityViolationException: could not execute statement [ОШИБКА: INSERT или UPDATE в таблице "article" нарушает ограничение внешнего ключа "fkbmunhs7hvekhvrss0fd13ofyf"
+  Подробности: Ключ (photo_id)=(d0d9ec2e-a9a1-4397-87c2-836365032f60) отсутствует в таблице "attach".] [insert into article (category_id,content,content_en,content_ru,content_uz,created_date,description,description_en,description_ru,description_uz,dislike_count,like_count,moderator_id,photo_id,published_date,publisher_id,region_id,shared_count,status,title,title_en,title_ru,title_uz,view_count,visible,id) values (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)]; SQL [insert into article (category_id,content,content_en,content_ru,content_uz,created_date,description,description_en,description_ru,description_uz,dislike_count,like_count,moderator_id,photo_id,published_date,publisher_id,region_id,shared_count,status,title,title_en,title_ru,title_uz,view_count,visible,id) values (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)]; constraint [null]
+16 февр. 2024 - 19:21:59.154 INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+16 февр. 2024 - 19:21:59.157 INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+16 февр. 2024 - 19:21:59.161 INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+16 февр. 2024 - 19:22:14.856 INFO  c.e.k.KunUzLesson1Application - Starting KunUzLesson1Application using Java 17.0.7 with PID 11488 (C:\kun.uz\kun_uz_lesson1\target\classes started by HP in C:\kun.uz\kun_uz_lesson1)
+16 февр. 2024 - 19:22:14.870 INFO  c.e.k.KunUzLesson1Application - No active profile set, falling back to 1 default profile: "default"
+16 февр. 2024 - 19:22:15.831 INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+16 февр. 2024 - 19:22:15.922 INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 76 ms. Found 12 JPA repository interfaces.
+16 февр. 2024 - 19:22:16.649 INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 8080 (http)
+16 февр. 2024 - 19:22:16.662 INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+16 февр. 2024 - 19:22:16.662 INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.18]
+16 февр. 2024 - 19:22:16.746 INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+16 февр. 2024 - 19:22:16.746 INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 1834 ms
+16 февр. 2024 - 19:22:16.808 INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+16 февр. 2024 - 19:22:17.033 INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@71531dd7
+16 февр. 2024 - 19:22:17.035 INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+16 февр. 2024 - 19:22:17.139 INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+16 февр. 2024 - 19:22:17.222 INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 6.4.1.Final
+16 февр. 2024 - 19:22:17.273 INFO  o.h.c.i.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+16 февр. 2024 - 19:22:17.564 INFO  o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+16 февр. 2024 - 19:22:19.095 INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+16 февр. 2024 - 19:22:19.260 INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+16 февр. 2024 - 19:22:19.535 INFO  o.s.d.j.r.query.QueryEnhancerFactory - Hibernate is in classpath; If applicable, HQL parser will be used.
+16 февр. 2024 - 19:22:20.705 WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+16 февр. 2024 - 19:22:21.076 INFO  o.s.s.web.DefaultSecurityFilterChain - Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@72ce2982, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@4d5399f4, org.springframework.security.web.context.SecurityContextHolderFilter@79b07ccd, org.springframework.security.web.header.HeaderWriterFilter@7d8fcde8, org.springframework.security.web.authentication.logout.LogoutFilter@26be5ee, com.example.kun_uz_lesson1.config.JwtTokenFilter@32441ed4, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@78c7d992, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@35f011cf, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@1490b1a4, org.springframework.security.web.access.ExceptionTranslationFilter@7414167a, org.springframework.security.web.access.intercept.AuthorizationFilter@5c00b341]
+16 февр. 2024 - 19:22:21.522 INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port 8080 (http) with context path ''
+16 февр. 2024 - 19:22:21.537 INFO  c.e.k.KunUzLesson1Application - Started KunUzLesson1Application in 7.18 seconds (process running for 7.856)
+16 февр. 2024 - 19:22:21.597 INFO  o.f.c.i.license.VersionPrinter - Flyway Community Edition 9.22.3 by Redgate
+16 февр. 2024 - 19:22:21.597 INFO  o.f.c.i.license.VersionPrinter - See release notes here: https://rd.gt/416ObMi
+16 февр. 2024 - 19:22:21.597 INFO  o.f.c.i.license.VersionPrinter - 
+16 февр. 2024 - 19:22:21.612 INFO  org.flywaydb.core.FlywayExecutor - Database: jdbc:postgresql://localhost:5432/kun_uz (PostgreSQL 16.0)
+16 февр. 2024 - 19:22:21.617 WARN  o.f.c.i.database.base.Database - Flyway upgrade recommended: PostgreSQL 16.0 is newer than this version of Flyway and support has not been tested. The latest supported version of PostgreSQL is 15.
+16 февр. 2024 - 19:22:21.652 INFO  o.f.core.internal.command.DbValidate - Successfully validated 5 migrations (execution time 00:00.024s)
+16 февр. 2024 - 19:22:21.662 INFO  o.f.core.internal.command.DbMigrate - Current version of schema "public": 4
+16 февр. 2024 - 19:22:21.668 INFO  o.f.core.internal.command.DbMigrate - Schema "public" is up to date. No migration necessary.
+16 февр. 2024 - 19:35:06.235 INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+16 февр. 2024 - 19:35:06.239 INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+16 февр. 2024 - 19:35:06.246 INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+16 февр. 2024 - 20:30:35.078 INFO  c.e.k.KunUzLesson1Application - Starting KunUzLesson1Application using Java 17.0.7 with PID 12028 (C:\kun.uz\kun_uz_lesson1\target\classes started by HP in C:\kun.uz\kun_uz_lesson1)
+16 февр. 2024 - 20:30:35.089 INFO  c.e.k.KunUzLesson1Application - No active profile set, falling back to 1 default profile: "default"
+16 февр. 2024 - 20:30:35.740 INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+16 февр. 2024 - 20:30:35.794 INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 48 ms. Found 12 JPA repository interfaces.
+16 февр. 2024 - 20:30:36.210 INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 8080 (http)
+16 февр. 2024 - 20:30:36.218 INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+16 февр. 2024 - 20:30:36.219 INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.18]
+16 февр. 2024 - 20:30:36.270 INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+16 февр. 2024 - 20:30:36.271 INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 1150 ms
+16 февр. 2024 - 20:30:36.314 INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+16 февр. 2024 - 20:30:36.465 INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@78d92eef
+16 февр. 2024 - 20:30:36.467 INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+16 февр. 2024 - 20:30:36.529 INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+16 февр. 2024 - 20:30:36.582 INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 6.4.1.Final
+16 февр. 2024 - 20:30:36.609 INFO  o.h.c.i.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+16 февр. 2024 - 20:30:36.794 INFO  o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+16 февр. 2024 - 20:30:37.693 INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+16 февр. 2024 - 20:30:37.796 INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+16 февр. 2024 - 20:30:37.950 INFO  o.s.d.j.r.query.QueryEnhancerFactory - Hibernate is in classpath; If applicable, HQL parser will be used.
+16 февр. 2024 - 20:30:38.605 WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+16 февр. 2024 - 20:30:38.843 INFO  o.s.s.web.DefaultSecurityFilterChain - Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@38794a3, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@5c00b341, org.springframework.security.web.context.SecurityContextHolderFilter@7d8fcde8, org.springframework.security.web.header.HeaderWriterFilter@7e32261f, org.springframework.security.web.authentication.logout.LogoutFilter@4df4f611, com.example.kun_uz_lesson1.config.JwtTokenFilter@7a461744, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@46916d68, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@79b07ccd, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@10658b31, org.springframework.security.web.access.ExceptionTranslationFilter@2158d1d1, org.springframework.security.web.access.intercept.AuthorizationFilter@3e7e4aea]
+16 февр. 2024 - 20:30:39.141 INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port 8080 (http) with context path ''
+16 февр. 2024 - 20:30:39.148 INFO  c.e.k.KunUzLesson1Application - Started KunUzLesson1Application in 4.382 seconds (process running for 4.894)
+16 февр. 2024 - 20:30:39.200 INFO  o.f.c.i.license.VersionPrinter - Flyway Community Edition 9.22.3 by Redgate
+16 февр. 2024 - 20:30:39.201 INFO  o.f.c.i.license.VersionPrinter - See release notes here: https://rd.gt/416ObMi
+16 февр. 2024 - 20:30:39.201 INFO  o.f.c.i.license.VersionPrinter - 
+16 февр. 2024 - 20:30:39.211 INFO  org.flywaydb.core.FlywayExecutor - Database: jdbc:postgresql://localhost:5432/kun_uz (PostgreSQL 16.0)
+16 февр. 2024 - 20:30:39.215 WARN  o.f.c.i.database.base.Database - Flyway upgrade recommended: PostgreSQL 16.0 is newer than this version of Flyway and support has not been tested. The latest supported version of PostgreSQL is 15.
+16 февр. 2024 - 20:30:39.236 INFO  o.f.core.internal.command.DbValidate - Successfully validated 5 migrations (execution time 00:00.016s)
+16 февр. 2024 - 20:30:39.243 INFO  o.f.core.internal.command.DbMigrate - Current version of schema "public": 4
+16 февр. 2024 - 20:30:39.245 INFO  o.f.core.internal.command.DbMigrate - Schema "public" is up to date. No migration necessary.
+16 февр. 2024 - 20:31:27.180 INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+16 февр. 2024 - 20:31:27.180 INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+16 февр. 2024 - 20:31:27.181 INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 1 ms
+16 февр. 2024 - 20:31:27.425 WARN  o.h.e.jdbc.spi.SqlExceptionHelper - SQL Error: 0, SQLState: 22P02
+16 февр. 2024 - 20:31:27.426 ERROR o.h.e.jdbc.spi.SqlExceptionHelper - ОШИБКА: неверный синтаксис для типа smallint: "LIKE"
+  Где: функция PL/pgSQL article_status_count_trigger_function(), строка 4, оператор IF
+16 февр. 2024 - 20:31:27.432 ERROR c.e.k.c.ExceptionHandlerController - org.springframework.dao.DataIntegrityViolationException: could not execute statement [ОШИБКА: неверный синтаксис для типа smallint: "LIKE"
+  Где: функция PL/pgSQL article_status_count_trigger_function(), строка 4, оператор IF] [insert into article_like (article_id,created_date,profile_id,status,updated_date,visible) values (?,?,?,?,?,?)]; SQL [insert into article_like (article_id,created_date,profile_id,status,updated_date,visible) values (?,?,?,?,?,?)]
+16 февр. 2024 - 20:32:02.836 INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+16 февр. 2024 - 20:32:02.839 INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+16 февр. 2024 - 20:32:02.842 INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+16 февр. 2024 - 20:32:04.583 INFO  c.e.k.KunUzLesson1Application - Starting KunUzLesson1Application using Java 17.0.7 with PID 12660 (C:\kun.uz\kun_uz_lesson1\target\classes started by HP in C:\kun.uz\kun_uz_lesson1)
+16 февр. 2024 - 20:32:04.592 INFO  c.e.k.KunUzLesson1Application - No active profile set, falling back to 1 default profile: "default"
+16 февр. 2024 - 20:32:05.175 INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+16 февр. 2024 - 20:32:05.233 INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 53 ms. Found 12 JPA repository interfaces.
+16 февр. 2024 - 20:32:05.673 INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 8080 (http)
+16 февр. 2024 - 20:32:05.681 INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+16 февр. 2024 - 20:32:05.681 INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.18]
+16 февр. 2024 - 20:32:05.726 INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+16 февр. 2024 - 20:32:05.726 INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 1106 ms
+16 февр. 2024 - 20:32:05.765 INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+16 февр. 2024 - 20:32:05.888 INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@447521e
+16 февр. 2024 - 20:32:05.890 INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+16 февр. 2024 - 20:32:05.967 INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+16 февр. 2024 - 20:32:06.007 INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 6.4.1.Final
+16 февр. 2024 - 20:32:06.033 INFO  o.h.c.i.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+16 февр. 2024 - 20:32:06.206 INFO  o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+16 февр. 2024 - 20:32:07.121 INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+16 февр. 2024 - 20:32:07.218 INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+16 февр. 2024 - 20:32:07.393 INFO  o.s.d.j.r.query.QueryEnhancerFactory - Hibernate is in classpath; If applicable, HQL parser will be used.
+16 февр. 2024 - 20:32:08.519 WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+16 февр. 2024 - 20:32:08.853 INFO  o.s.s.web.DefaultSecurityFilterChain - Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@71b6886, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@7bdab06c, org.springframework.security.web.context.SecurityContextHolderFilter@633332e2, org.springframework.security.web.header.HeaderWriterFilter@7569efdd, org.springframework.security.web.authentication.logout.LogoutFilter@1886e8b9, com.example.kun_uz_lesson1.config.JwtTokenFilter@12dcfa6a, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@a308ffd, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@36e8e3e1, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@620bab73, org.springframework.security.web.access.ExceptionTranslationFilter@67387eba, org.springframework.security.web.access.intercept.AuthorizationFilter@75ad8ca8]
+16 февр. 2024 - 20:32:09.288 INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port 8080 (http) with context path ''
+16 февр. 2024 - 20:32:09.298 INFO  c.e.k.KunUzLesson1Application - Started KunUzLesson1Application in 5.038 seconds (process running for 5.592)
+16 февр. 2024 - 20:32:09.366 INFO  o.f.c.i.license.VersionPrinter - Flyway Community Edition 9.22.3 by Redgate
+16 февр. 2024 - 20:32:09.366 INFO  o.f.c.i.license.VersionPrinter - See release notes here: https://rd.gt/416ObMi
+16 февр. 2024 - 20:32:09.366 INFO  o.f.c.i.license.VersionPrinter - 
+16 февр. 2024 - 20:32:09.385 INFO  org.flywaydb.core.FlywayExecutor - Database: jdbc:postgresql://localhost:5432/kun_uz (PostgreSQL 16.0)
+16 февр. 2024 - 20:32:09.390 WARN  o.f.c.i.database.base.Database - Flyway upgrade recommended: PostgreSQL 16.0 is newer than this version of Flyway and support has not been tested. The latest supported version of PostgreSQL is 15.
+16 февр. 2024 - 20:32:09.425 INFO  o.f.core.internal.command.DbValidate - Successfully validated 5 migrations (execution time 00:00.025s)
+16 февр. 2024 - 20:32:09.436 INFO  o.f.core.internal.command.DbMigrate - Current version of schema "public": 4
+16 февр. 2024 - 20:32:09.440 INFO  o.f.core.internal.command.DbMigrate - Schema "public" is up to date. No migration necessary.
+16 февр. 2024 - 20:32:11.442 INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+16 февр. 2024 - 20:32:11.442 INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+16 февр. 2024 - 20:32:11.443 INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 1 ms
+16 февр. 2024 - 20:32:11.875 WARN  o.h.e.jdbc.spi.SqlExceptionHelper - SQL Error: 0, SQLState: 22P02
+16 февр. 2024 - 20:32:11.875 ERROR o.h.e.jdbc.spi.SqlExceptionHelper - ОШИБКА: неверный синтаксис для типа smallint: "LIKE"
+  Где: функция PL/pgSQL article_status_count_trigger_function(), строка 4, оператор IF
+16 февр. 2024 - 20:32:11.886 ERROR c.e.k.c.ExceptionHandlerController - org.springframework.dao.DataIntegrityViolationException: could not execute statement [ОШИБКА: неверный синтаксис для типа smallint: "LIKE"
+  Где: функция PL/pgSQL article_status_count_trigger_function(), строка 4, оператор IF] [insert into article_like (article_id,created_date,profile_id,status,updated_date,visible) values (?,?,?,?,?,?)]; SQL [insert into article_like (article_id,created_date,profile_id,status,updated_date,visible) values (?,?,?,?,?,?)]
+16 февр. 2024 - 20:35:11.389 INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+16 февр. 2024 - 20:35:11.391 INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+16 февр. 2024 - 20:35:11.394 INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+16 февр. 2024 - 20:35:14.113 INFO  c.e.k.KunUzLesson1Application - Starting KunUzLesson1Application using Java 17.0.7 with PID 19072 (C:\kun.uz\kun_uz_lesson1\target\classes started by HP in C:\kun.uz\kun_uz_lesson1)
+16 февр. 2024 - 20:35:14.123 INFO  c.e.k.KunUzLesson1Application - No active profile set, falling back to 1 default profile: "default"
+16 февр. 2024 - 20:35:14.666 INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+16 февр. 2024 - 20:35:14.713 INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 42 ms. Found 12 JPA repository interfaces.
+16 февр. 2024 - 20:35:15.091 INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 8080 (http)
+16 февр. 2024 - 20:35:15.098 INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+16 февр. 2024 - 20:35:15.098 INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.18]
+16 февр. 2024 - 20:35:15.141 INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+16 февр. 2024 - 20:35:15.142 INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 986 ms
+16 февр. 2024 - 20:35:15.180 INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+16 февр. 2024 - 20:35:15.293 INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@ceb7701
+16 февр. 2024 - 20:35:15.294 INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+16 февр. 2024 - 20:35:15.358 INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+16 февр. 2024 - 20:35:15.393 INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 6.4.1.Final
+16 февр. 2024 - 20:35:15.417 INFO  o.h.c.i.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+16 февр. 2024 - 20:35:15.563 INFO  o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+16 февр. 2024 - 20:35:16.396 INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+16 февр. 2024 - 20:35:16.494 INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+16 февр. 2024 - 20:35:16.633 INFO  o.s.d.j.r.query.QueryEnhancerFactory - Hibernate is in classpath; If applicable, HQL parser will be used.
+16 февр. 2024 - 20:35:17.270 WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+16 февр. 2024 - 20:35:17.482 INFO  o.s.s.web.DefaultSecurityFilterChain - Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@5989f463, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@27cc84a2, org.springframework.security.web.context.SecurityContextHolderFilter@3e7e4aea, org.springframework.security.web.header.HeaderWriterFilter@6845dfcc, org.springframework.security.web.authentication.logout.LogoutFilter@12e4c6a0, com.example.kun_uz_lesson1.config.JwtTokenFilter@26a5007, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@38794a3, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@5c00b341, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@48b14e4a, org.springframework.security.web.access.ExceptionTranslationFilter@5e6d2502, org.springframework.security.web.access.intercept.AuthorizationFilter@4ab4b4cd]
+16 февр. 2024 - 20:35:17.736 INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port 8080 (http) with context path ''
+16 февр. 2024 - 20:35:17.743 INFO  c.e.k.KunUzLesson1Application - Started KunUzLesson1Application in 3.913 seconds (process running for 4.294)
+16 февр. 2024 - 20:35:17.782 INFO  o.f.c.i.license.VersionPrinter - Flyway Community Edition 9.22.3 by Redgate
+16 февр. 2024 - 20:35:17.782 INFO  o.f.c.i.license.VersionPrinter - See release notes here: https://rd.gt/416ObMi
+16 февр. 2024 - 20:35:17.782 INFO  o.f.c.i.license.VersionPrinter - 
+16 февр. 2024 - 20:35:17.792 INFO  org.flywaydb.core.FlywayExecutor - Database: jdbc:postgresql://localhost:5432/kun_uz (PostgreSQL 16.0)
+16 февр. 2024 - 20:35:17.795 WARN  o.f.c.i.database.base.Database - Flyway upgrade recommended: PostgreSQL 16.0 is newer than this version of Flyway and support has not been tested. The latest supported version of PostgreSQL is 15.
+16 февр. 2024 - 20:35:17.815 INFO  o.f.core.internal.command.DbValidate - Successfully validated 5 migrations (execution time 00:00.014s)
+16 февр. 2024 - 20:35:17.821 INFO  o.f.core.internal.command.DbMigrate - Current version of schema "public": 4
+16 февр. 2024 - 20:35:17.823 INFO  o.f.core.internal.command.DbMigrate - Schema "public" is up to date. No migration necessary.
+16 февр. 2024 - 20:35:21.298 INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+16 февр. 2024 - 20:35:21.299 INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+16 февр. 2024 - 20:35:21.299 INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 0 ms
+16 февр. 2024 - 20:35:21.516 WARN  o.h.e.jdbc.spi.SqlExceptionHelper - SQL Error: 0, SQLState: 22P02
+16 февр. 2024 - 20:35:21.516 ERROR o.h.e.jdbc.spi.SqlExceptionHelper - ОШИБКА: неверный синтаксис для типа smallint: "LIKE"
+  Где: функция PL/pgSQL article_status_count_trigger_function(), строка 4, оператор IF
+16 февр. 2024 - 20:35:21.521 ERROR c.e.k.c.ExceptionHandlerController - org.springframework.dao.DataIntegrityViolationException: could not execute statement [ОШИБКА: неверный синтаксис для типа smallint: "LIKE"
+  Где: функция PL/pgSQL article_status_count_trigger_function(), строка 4, оператор IF] [insert into article_like (article_id,created_date,profile_id,status,updated_date,visible) values (?,?,?,?,?,?)]; SQL [insert into article_like (article_id,created_date,profile_id,status,updated_date,visible) values (?,?,?,?,?,?)]
+16 февр. 2024 - 20:38:39.138 INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+16 февр. 2024 - 20:38:39.140 INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+16 февр. 2024 - 20:38:39.143 INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+16 февр. 2024 - 20:38:41.896 INFO  c.e.k.KunUzLesson1Application - Starting KunUzLesson1Application using Java 17.0.7 with PID 8536 (C:\kun.uz\kun_uz_lesson1\target\classes started by HP in C:\kun.uz\kun_uz_lesson1)
+16 февр. 2024 - 20:38:41.905 INFO  c.e.k.KunUzLesson1Application - No active profile set, falling back to 1 default profile: "default"
+16 февр. 2024 - 20:38:42.445 INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+16 февр. 2024 - 20:38:42.494 INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 44 ms. Found 12 JPA repository interfaces.
+16 февр. 2024 - 20:38:42.877 INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 8080 (http)
+16 февр. 2024 - 20:38:42.884 INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+16 февр. 2024 - 20:38:42.884 INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.18]
+16 февр. 2024 - 20:38:42.927 INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+16 февр. 2024 - 20:38:42.927 INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 992 ms
+16 февр. 2024 - 20:38:42.967 INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+16 февр. 2024 - 20:38:43.080 INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@27e199ce
+16 февр. 2024 - 20:38:43.082 INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+16 февр. 2024 - 20:38:43.150 INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+16 февр. 2024 - 20:38:43.187 INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 6.4.1.Final
+16 февр. 2024 - 20:38:43.212 INFO  o.h.c.i.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+16 февр. 2024 - 20:38:43.362 INFO  o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+16 февр. 2024 - 20:38:44.200 INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+16 февр. 2024 - 20:38:44.294 INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+16 февр. 2024 - 20:38:44.433 INFO  o.s.d.j.r.query.QueryEnhancerFactory - Hibernate is in classpath; If applicable, HQL parser will be used.
+16 февр. 2024 - 20:38:45.078 WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+16 февр. 2024 - 20:38:45.301 INFO  o.s.s.web.DefaultSecurityFilterChain - Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@726615d7, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@46030cfd, org.springframework.security.web.context.SecurityContextHolderFilter@db62b5f, org.springframework.security.web.header.HeaderWriterFilter@4cb3e76c, org.springframework.security.web.authentication.logout.LogoutFilter@4ea4e0f3, com.example.kun_uz_lesson1.config.JwtTokenFilter@74a46f81, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@26be5ee, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@6845dfcc, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@41019971, org.springframework.security.web.access.ExceptionTranslationFilter@c04a1ca, org.springframework.security.web.access.intercept.AuthorizationFilter@3ec72844]
+16 февр. 2024 - 20:38:45.562 INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port 8080 (http) with context path ''
+16 февр. 2024 - 20:38:45.570 INFO  c.e.k.KunUzLesson1Application - Started KunUzLesson1Application in 3.954 seconds (process running for 4.373)
+16 февр. 2024 - 20:38:45.610 INFO  o.f.c.i.license.VersionPrinter - Flyway Community Edition 9.22.3 by Redgate
+16 февр. 2024 - 20:38:45.610 INFO  o.f.c.i.license.VersionPrinter - See release notes here: https://rd.gt/416ObMi
+16 февр. 2024 - 20:38:45.610 INFO  o.f.c.i.license.VersionPrinter - 
+16 февр. 2024 - 20:38:45.620 INFO  org.flywaydb.core.FlywayExecutor - Database: jdbc:postgresql://localhost:5432/kun_uz (PostgreSQL 16.0)
+16 февр. 2024 - 20:38:45.623 WARN  o.f.c.i.database.base.Database - Flyway upgrade recommended: PostgreSQL 16.0 is newer than this version of Flyway and support has not been tested. The latest supported version of PostgreSQL is 15.
+16 февр. 2024 - 20:38:45.644 INFO  o.f.core.internal.command.DbValidate - Successfully validated 5 migrations (execution time 00:00.015s)
+16 февр. 2024 - 20:38:45.651 INFO  o.f.core.internal.command.DbMigrate - Current version of schema "public": 4
+16 февр. 2024 - 20:38:45.652 INFO  o.f.core.internal.command.DbMigrate - Schema "public" is up to date. No migration necessary.
+16 февр. 2024 - 20:38:49.287 INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+16 февр. 2024 - 20:38:49.287 INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+16 февр. 2024 - 20:38:49.288 INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 1 ms
+16 февр. 2024 - 20:38:49.510 WARN  o.h.e.jdbc.spi.SqlExceptionHelper - SQL Error: 0, SQLState: 22P02
+16 февр. 2024 - 20:38:49.510 ERROR o.h.e.jdbc.spi.SqlExceptionHelper - ОШИБКА: неверный синтаксис для типа smallint: "LIKE"
+  Где: функция PL/pgSQL article_status_count_trigger_function(), строка 4, оператор IF
+16 февр. 2024 - 20:38:49.516 ERROR c.e.k.c.ExceptionHandlerController - org.springframework.dao.DataIntegrityViolationException: could not execute statement [ОШИБКА: неверный синтаксис для типа smallint: "LIKE"
+  Где: функция PL/pgSQL article_status_count_trigger_function(), строка 4, оператор IF] [insert into article_like (article_id,created_date,profile_id,status,updated_date,visible) values (?,?,?,?,?,?)]; SQL [insert into article_like (article_id,created_date,profile_id,status,updated_date,visible) values (?,?,?,?,?,?)]
+16 февр. 2024 - 21:36:21.135 INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+16 февр. 2024 - 21:36:21.165 INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+16 февр. 2024 - 21:36:21.175 INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.

@@ -1,14 +1,15 @@
 package com.example.kun_uz_lesson1.entity;
 
 import com.example.kun_uz_lesson1.enums.LikeStatus;
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.Table;
+import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
+import lombok.Getter;
 import lombok.NoArgsConstructor;
+import lombok.Setter;
 
 @NoArgsConstructor
-@AllArgsConstructor
+@Setter
+@Getter
 @Entity
 @Table(name = "article_like")
 public class ArticleLikeEntity extends BaseEntity{
@@ -16,5 +17,12 @@ public class ArticleLikeEntity extends BaseEntity{
     private Integer profileId;
     @Column(name = "article_id")
     private String articleId;
+    @Enumerated(EnumType.STRING)
     private LikeStatus status;
+
+    public ArticleLikeEntity(Integer profileId, String articleId, LikeStatus status) {
+        this.profileId = profileId;
+        this.articleId = articleId;
+        this.status = status;
+    }
 }

@@ -29,6 +29,7 @@ public class ArticleDTO {
     private Integer viewCount;
     private ArticleStatus status;
 
+    private AttachDTO photo;
     private Integer[] articleTypeId;
     private List<Integer> articleType;
     private Integer regionId;
